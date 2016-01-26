@@ -1,10 +1,28 @@
-// filename ******** fixed.h ************** 
+// filename ******** fixed.c ************** 
 // Jeremiah Bartlett -- JJB2954
 // Ty Winkler -- TAW2328
 // 1/25/2016
 
-#include <stdio.h>
-#include <stdint.h>
+#include "fixed.h"
+
+void BookExamples(void){ // examples from the book
+  int8_t cc = 0x56; // (‘V’)
+  int32_t xx = 100;
+  int16_t yy = -100;
+  float zz = 3.14159265;
+  printf("Hello world\n");      //Hello world
+  printf("cc = %c %d\n",cc,cc);  //cc = V 86
+  printf("cc = %#x\n",cc);      //cc = 0x56
+  printf("xx = %c %d\n",xx,xx);  //xx = d 100
+  printf("xx = %#x\n",xx);      //xx = 0x64
+  printf("yy = %d\n",yy);        //yy = -100
+  printf("%#x   \n",yy);        //yy = 0xffffff9c
+  printf("%e \n",zz);            //zz = 3.14159e+00
+  printf("%E \n",zz);            //zz = 3.14159E+00
+  printf("%f     \n",zz);        //zz = 3.14159
+  printf("%g     \n",zz);        //zz = 3.14159 (shorter of two, either f or e)
+  printf("%3.2f     \n",zz);    //zz =  3.14
+}
 
 /****************ST7735_sDecOut3***************
  converts fixed point number to LCD
@@ -21,8 +39,31 @@ Parameter LCD display
     31    " 0.031" 
 -12345    " *.***"
  */ 
-void ST7735_sDecOut3(int32_t n);
-
+void ST7735_sDecOut3(int32_t n){
+	int negative = 0;
+	if (n < 0) {
+		negative = 1;
+		n = n*-1;
+	}
+	int firstDigit = n/1000;
+	int secondDigit = (n/100)%10;
+	int thirdDigit = (n/10)%10;
+	int fourthDigit = n%10;
+	if (n > 9999 || n < -9999){
+		printf(" *.***\n");
+	} else {
+		if (negative){
+			printf("-");
+		} else {
+			printf(" ");
+		}
+		printf("%d",firstDigit);
+		printf(".");
+		printf("%d",secondDigit);
+		printf("%d",thirdDigit);
+		printf("%d\n",fourthDigit);
+	}
+}
 
 /**************ST7735_uBinOut8***************
  unsigned 32-bit binary fixed-point with a resolution of 1/256. 
@@ -45,7 +86,9 @@ Parameter LCD display
 255997	  "999.99"
 256000	  "***.**"
 */
-void ST7735_uBinOut8(uint32_t n); 
+void ST7735_uBinOut8(uint32_t n) {
+
+}	
 
 /**************ST7735_XYplotInit***************
  Specify the X and Y axes for an x-y scatter plot
@@ -58,7 +101,9 @@ void ST7735_uBinOut8(uint32_t n);
  Outputs: none
  assumes minX < maxX, and miny < maxY
 */
-void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY);
+void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY) {
+	
+}
 
 /**************ST7735_XYplot***************
  Plot an array of (x,y) data
@@ -69,14 +114,6 @@ void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, in
  assumes ST7735_XYplotInit has been previously called
  neglect any points outside the minX maxY minY maxY bounds
 */
-void ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]);
-
-/***************LCD Test*******************
-Prints an example Test to the LCD using printf
-Inputs: none
-Outputs: none
-*/
-void BookExamples(void);
-
-
-
+void ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]) {
+	
+}
