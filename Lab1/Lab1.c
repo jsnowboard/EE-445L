@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // filename ******** Lab1.c ************** 
 // made for the TM4C123G and ST7735 LCD display
 // Test the functions in fixed.c by printing the
@@ -80,4 +79,3 @@ int main(void){
 	}
 	for(;;) {} /* wait forever */
 }
->>>>>>> 445533f62d2150cd784a9591d7175d3722bae2c3
