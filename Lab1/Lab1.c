@@ -68,6 +68,17 @@ outTestCaseType outTests8[11]={
 {	256000,	  "***.**"}
 };
 
+int32_t pointXTest1[3]={
+	44,
+	45,
+	101
+};
+int32_t pointYTest1[3]={
+	49,
+	49,
+	52
+};
+
 unsigned int Errors,AnError;
 char Buffer[10];
 
@@ -76,12 +87,14 @@ int main(void){
 	Output_Init();              // initialize output device
   Output_Color(ST7735_YELLOW);
 	Errors = 0;
+	ST7735_XYplotInit("LCD_Output", 25, 100, 25, 100);
+	ST7735_XYplot(3,pointXTest1 , pointYTest1);
 	for(i=0; i<11; i++){
 		
 		//------------LCD Screen Tests----------------
 		//BookExamples();	//Test function used to make sure the LCD will print with printf
 		//ST7735_sDecOut3(outTests3[i].InNumber);
-		ST7735_uBinOut8(outTests8[i].InNumber);
+		//ST7735_uBinOut8(outTests8[i].InNumber);
 		//ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY);
 		//ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]);
 		//--------------------------------------------

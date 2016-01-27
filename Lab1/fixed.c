@@ -4,7 +4,13 @@
 // 1/25/2016
 
 #include "fixed.h"
+#include "ST7735.h"
 
+//Absolute min and max points on LCD
+int32_t minXplot=0;
+int32_t maxXplot=127;
+int32_t minYplot=32;
+int32_t maxYplot=159;
 
 void BookExamples(void){ // examples from the book
   int8_t cc = 0x56; // (‘V’)
@@ -138,7 +144,13 @@ void ST7735_uBinOut8(uint32_t n) {
  assumes minX < maxX, and miny < maxY
 */
 void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY) {
-	
+	ST7735_InitR(INITR_GREENTAB);
+	ST7735_PlotClear(minY, maxY);
+	ST7735_DrawString(0, 0, title, ST7735_YELLOW);
+	minXplot=minX;
+	minYplot=minYplot+minY;
+	maxXplot=maxX;
+	maxYplot=maxY+minYplot;
 }
 
 /**************ST7735_XYplot***************
@@ -155,8 +167,16 @@ void ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]) {
 	int n;
 	for(n=0; n < num; n++){
 		//For the Kentec
-		LCD_DrawPixel(bufX[n], bufY[n], 0xFFE0);
+		//LCD_DrawPixel(bufX[n], bufY[n], 0xFFE0);
 		//For the SS7735
 		//ST7735_XYPoint(bufX[n], bufY[n]);
+		int yRange=(maxYplot-minYplot);
+		int y=minYplot+bufY[n];
+		int xRange=(maxXplot-minXplot);
+		int x=minXplot+bufX[n];
+		if(bufX[n]<=maxXplot && bufY[n]<=minYplot)
+		{
+			ST7735_DrawPixel(x, y, ST7735_BLUE);
+		}
 	}
 }
