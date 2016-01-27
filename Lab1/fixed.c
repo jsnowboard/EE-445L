@@ -5,6 +5,7 @@
 
 #include "fixed.h"
 
+
 void BookExamples(void){ // examples from the book
   int8_t cc = 0x56; // (‘V’)
   int32_t xx = 100;
@@ -150,5 +151,12 @@ void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, in
  neglect any points outside the minX maxY minY maxY bounds
 */
 void ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]) {
-	
+
+	int n;
+	for(n=0; n < num; n++){
+		//For the Kentec
+		LCD_DrawPixel(bufX[n], bufY[n], 0xFFE0);
+		//For the SS7735
+		//ST7735_XYPoint(bufX[n], bufY[n]);
+	}
 }
