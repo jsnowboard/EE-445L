@@ -54,6 +54,20 @@ outTestCaseType outTests3[16]={
 {256000,  "***.**" }  // error
 };
 
+outTestCaseType outTests8[11]={
+{		   0,	  "  0.00"},
+{			 2,	  "  0.01"},
+{			64,	  "  0.25"},
+{		 100,	  "  0.39"},
+{		 500,	  "  1.95"},
+{		 512,	  "  2.00"},
+{		5000,	  " 19.53"},
+{	 30000,	  "117.19"},
+{	255997,	  "999.99"},
+{ 128798,		"503.12"},
+{	256000,	  "***.**"}
+};
+
 unsigned int Errors,AnError;
 char Buffer[10];
 
@@ -62,12 +76,12 @@ int main(void){
 	Output_Init();              // initialize output device
   Output_Color(ST7735_YELLOW);
 	Errors = 0;
-	for(i=0; i<16; i++){
+	for(i=0; i<11; i++){
 		
 		//------------LCD Screen Tests----------------
 		//BookExamples();	//Test function used to make sure the LCD will print with printf
-		ST7735_sDecOut3(outTests3[i].InNumber);
-		//ST7735_uBinOut8(uint32_t n);
+		//ST7735_sDecOut3(outTests3[i].InNumber);
+		ST7735_uBinOut8(outTests8[i].InNumber);
 		//ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY);
 		//ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]);
 		//--------------------------------------------

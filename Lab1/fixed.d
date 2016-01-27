@@ -1,4 +1,4 @@
-.\fixed.o: fixed.c
-.\fixed.o: fixed.h
-.\fixed.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\fixed.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+fixed.o: fixed.c
+fixed.o: fixed.h
+fixed.o: C:\Program Files\Keil\ARM\RV31\Inc\stdio.h
+fixed.o: C:\Program Files\Keil\ARM\RV31\Inc\stdint.h

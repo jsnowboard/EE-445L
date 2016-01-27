@@ -87,7 +87,42 @@ Parameter LCD display
 256000	  "***.**"
 */
 void ST7735_uBinOut8(uint32_t n) {
-
+	if(n>=256000)
+	{
+		printf("***.**\n");
+	}
+	else
+	{
+		int start=0;
+		int hundreds=(n/25600)%10;
+		int tens=(n/2560)%10;
+		int ones=(n/256)%10;
+		int tenths=(n*10/256)%10;
+		int hundredths=(n*100/256)%10;
+		int thousandths=(n*1000/256)%10;
+		if(hundreds>0){
+			printf("%d", hundreds);
+			start=1;
+		}
+		else{
+			printf(" ");
+		}
+		if(tens>0||start>0){
+			printf("%d", tens);
+		}
+		else{
+			printf(" ");
+		}
+		printf("%d", ones);
+		printf(".");
+		printf("%d",tenths);
+		if(thousandths>=5)
+		{
+			hundredths=hundredths+1;
+		}
+		printf("%d\n",hundredths);
+		//printf("%d", thousandths);
+	}
 }	
 
 /**************ST7735_XYplotInit***************
