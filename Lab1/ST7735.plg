@@ -100,3 +100,157 @@ Connecting: Mode=JTAG, Speed=1000000Hz
 Erase Done.
 Programming Done.
 Verify OK.
+Build target 'ST7735'
+compiling Lab1.c...
+Lab1.c(107): warning:  #223-D: function "strcmp" declared implicitly
+compiling fixed.c...
+fixed.c(179): warning:  #177-D: variable "yRange" was declared but never referenced
+fixed.c(181): warning:  #177-D: variable "xRange" was declared but never referenced
+linking...
+Program Size: Code=6380 RO-data=2484 RW-data=96 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 3 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling fixed.c...
+fixed.c(179): warning:  #177-D: variable "yRange" was declared but never referenced
+fixed.c(181): warning:  #177-D: variable "xRange" was declared but never referenced
+linking...
+Program Size: Code=6372 RO-data=2484 RW-data=96 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 2 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling fixed.c...
+fixed.c(179): warning:  #177-D: variable "yRange" was declared but never referenced
+fixed.c(181): warning:  #177-D: variable "xRange" was declared but never referenced
+linking...
+Program Size: Code=6500 RO-data=2484 RW-data=96 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 2 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling fixed.c...
+fixed.c(179): warning:  #177-D: variable "yRange" was declared but never referenced
+fixed.c(181): warning:  #177-D: variable "xRange" was declared but never referenced
+linking...
+Program Size: Code=6500 RO-data=2484 RW-data=96 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 2 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling Lab1.c...
+Lab1.c(107): warning:  #223-D: function "strcmp" declared implicitly
+linking...
+Program Size: Code=6500 RO-data=2484 RW-data=96 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling Lab1.c...
+Lab1.c(106): warning:  #223-D: function "strcmp" declared implicitly
+compiling fixed.c...
+fixed.c(179): warning:  #177-D: variable "yRange" was declared but never referenced
+fixed.c(181): warning:  #177-D: variable "xRange" was declared but never referenced
+linking...
+Program Size: Code=6500 RO-data=2484 RW-data=96 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 3 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling Lab1.c...
+Lab1.c(106): warning:  #223-D: function "strcmp" declared implicitly
+compiling fixed.c...
+fixed.c(179): warning:  #177-D: variable "yRange" was declared but never referenced
+fixed.c(181): warning:  #177-D: variable "xRange" was declared but never referenced
+linking...
+Program Size: Code=6512 RO-data=2484 RW-data=96 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 3 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling Lab1.c...
+Lab1.c(116): warning:  #223-D: function "strcmp" declared implicitly
+compiling fixed.c...
+fixed.c(179): warning:  #177-D: variable "yRange" was declared but never referenced
+fixed.c(181): warning:  #177-D: variable "xRange" was declared but never referenced
+linking...
+Program Size: Code=6512 RO-data=2484 RW-data=136 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 3 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Connection failed!, error code=&d
+Build target 'ST7735'
+linking...
+Program Size: Code=6512 RO-data=2484 RW-data=136 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling Lab1.c...
+Lab1.c(116): warning:  #223-D: function "strcmp" declared implicitly
+linking...
+Program Size: Code=6512 RO-data=2484 RW-data=136 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling Lab1.c...
+Lab1.c(116): warning:  #223-D: function "strcmp" declared implicitly
+linking...
+Program Size: Code=6320 RO-data=2484 RW-data=120 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling Lab1.c...
+Lab1.c(116): warning:  #223-D: function "strcmp" declared implicitly
+linking...
+Program Size: Code=6320 RO-data=2484 RW-data=120 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
+Build target 'ST7735'
+compiling Lab1.c...
+Lab1.c(116): warning:  #223-D: function "strcmp" declared implicitly
+linking...
+Program Size: Code=6388 RO-data=2484 RW-data=120 ZI-data=1040  
+"ST7735.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE445L\\Lab1\\ST7735.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.

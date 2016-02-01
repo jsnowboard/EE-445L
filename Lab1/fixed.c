@@ -1,19 +1,11 @@
 // filename ******** fixed.c ************** 
 // Jeremiah Bartlett -- JJB2954
 // Ty Winkler -- TAW2328
-<<<<<<< HEAD
-// Creation Date: 1/25/2016
-// Revision Date: 1/31/2016
-//
 // Lab 1
 // TA: Ryan Chow
-//
-//
-=======
 // Initial Creation: 1/25/2016
 // Last Revision: 1/31/2016
 // Lab Number: 16325
->>>>>>> 6601ab3f8a8dae43fdc3941e2af45a58244761e4
 
 #include "fixed.h"
 #include "ST7735.h"
@@ -159,9 +151,10 @@ void ST7735_uBinOut8(uint32_t n) {
 void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY) {
 	ST7735_InitR(INITR_GREENTAB);
 	ST7735_PlotClear(minY, maxY);
-	ST7735_DrawString(0, 0, title, ST7735_YELLOW);
+	//ST7735_DrawString(0, 0, title, ST7735_YELLOW);
+	printf("%s", title);
 	MinXplot=minX;
-	MinYplot=MinYplot+minY;
+	MinYplot=minY+MinYplot;
 	MaxXplot=maxX;
 	MaxYplot=maxY+MinYplot;
 }
