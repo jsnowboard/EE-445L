@@ -1,6 +1,7 @@
 // filename ******** fixed.c ************** 
 // Jeremiah Bartlett -- JJB2954
 // Ty Winkler -- TAW2328
+<<<<<<< HEAD
 // Creation Date: 1/25/2016
 // Revision Date: 1/31/2016
 //
@@ -8,6 +9,11 @@
 // TA: Ryan Chow
 //
 //
+=======
+// Initial Creation: 1/25/2016
+// Last Revision: 1/31/2016
+// Lab Number: 16325
+>>>>>>> 6601ab3f8a8dae43fdc3941e2af45a58244761e4
 
 #include "fixed.h"
 #include "ST7735.h"

@@ -5,7 +5,9 @@
 // 
 // Jeremiah Bartlett -- JJB2954
 // Ty Winkler -- TAW2328
-// 1/25/2016
+// Initial Creation: 1/25/2016
+// Last Revision: 1/31/2016
+// Lab Number: 16325
 //
 //Lab 1
 //TA: Ryan Chow
