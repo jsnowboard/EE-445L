@@ -108,11 +108,11 @@ Section Cross References
     fixed.o(i.BookExamples) refers to printfa.o(i.__0printf) for __2printf
     fixed.o(i.BookExamples) refers to f2d.o(.text) for __aeabi_f2d
     fixed.o(i.ST7735_XYplot) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
-    fixed.o(i.ST7735_XYplot) refers to fixed.o(.data) for maxYplot
+    fixed.o(i.ST7735_XYplot) refers to fixed.o(.data) for MaxYplot
     fixed.o(i.ST7735_XYplotInit) refers to st7735.o(i.ST7735_InitR) for ST7735_InitR
     fixed.o(i.ST7735_XYplotInit) refers to st7735.o(i.ST7735_PlotClear) for ST7735_PlotClear
     fixed.o(i.ST7735_XYplotInit) refers to st7735.o(i.ST7735_DrawString) for ST7735_DrawString
-    fixed.o(i.ST7735_XYplotInit) refers to fixed.o(.data) for minXplot
+    fixed.o(i.ST7735_XYplotInit) refers to fixed.o(.data) for MinXplot
     fixed.o(i.ST7735_sDecOut3) refers to printfa.o(i.__0printf) for __2printf
     fixed.o(i.ST7735_uBinOut8) refers to printfa.o(i.__0printf) for __2printf
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -411,7 +411,7 @@ Removing Unused input sections from the image.
     Removing st7735.o(.bss), (12 bytes).
     Removing fixed.o(i.BookExamples), (308 bytes).
     Removing fixed.o(i.ST7735_sDecOut3), (180 bytes).
-    Removing fixed.o(i.ST7735_uBinOut8), (232 bytes).
+    Removing fixed.o(i.ST7735_uBinOut8), (244 bytes).
     Removing f2d.o(.text), (44 bytes).
     Removing dadd.o(.text), (332 bytes).
     Removing dmul.o(.text), (224 bytes).
@@ -420,7 +420,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (40 bytes).
     Removing depilogue.o(.text), (190 bytes).
 
-39 unused section(s) (total 4388 bytes) removed from the image.
+39 unused section(s) (total 4400 bytes) removed from the image.
 
 ==============================================================================
 
@@ -753,10 +753,10 @@ Image Symbol Table
     pointYTest1                              0x20000038   Data          12  lab1.o(.data)
     Errors                                   0x20000044   Data           4  lab1.o(.data)
     AnError                                  0x20000048   Data           4  lab1.o(.data)
-    minXplot                                 0x2000004c   Data           4  fixed.o(.data)
-    maxXplot                                 0x20000050   Data           4  fixed.o(.data)
-    minYplot                                 0x20000054   Data           4  fixed.o(.data)
-    maxYplot                                 0x20000058   Data           4  fixed.o(.data)
+    MinXplot                                 0x2000004c   Data           4  fixed.o(.data)
+    MaxXplot                                 0x20000050   Data           4  fixed.o(.data)
+    MinYplot                                 0x20000054   Data           4  fixed.o(.data)
+    MaxYplot                                 0x20000058   Data           4  fixed.o(.data)
     Buffer                                   0x2000005c   Data          10  lab1.o(.bss)
     __initial_sp                             0x20000468   Data           0  startup.o(STACK)
 

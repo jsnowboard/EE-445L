@@ -1,7 +1,11 @@
 // filename ******** fixed.h ************** 
 // Jeremiah Bartlett -- JJB2954
 // Ty Winkler -- TAW2328
-// 1/25/2016
+// Creation Date: 1/25/2016
+// Revision Date: 1/31/2016
+//
+// Lab 1
+// TA: Ryan Chow
 
 #include <stdio.h>
 #include <stdint.h>

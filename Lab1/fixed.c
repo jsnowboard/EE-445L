@@ -1,16 +1,22 @@
 // filename ******** fixed.c ************** 
 // Jeremiah Bartlett -- JJB2954
 // Ty Winkler -- TAW2328
-// 1/25/2016
+// Creation Date: 1/25/2016
+// Revision Date: 1/31/2016
+//
+// Lab 1
+// TA: Ryan Chow
+//
+//
 
 #include "fixed.h"
 #include "ST7735.h"
 
 //Absolute min and max points on LCD
-int32_t minXplot=0;
-int32_t maxXplot=127;
-int32_t minYplot=32;
-int32_t maxYplot=159;
+int32_t MinXplot=0;
+int32_t MaxXplot=127;
+int32_t MinYplot=32;
+int32_t MaxYplot=159;
 
 void BookExamples(void){ // examples from the book
   int8_t cc = 0x56; // (‘V’)
@@ -127,8 +133,9 @@ void ST7735_uBinOut8(uint32_t n) {
 		{
 			hundredths=hundredths+1;
 		}
-		printf("%d\n",hundredths);
-		//printf("%d", thousandths);
+		printf("%d",hundredths);
+		printf("%d", thousandths);
+		printf("\n");
 	}
 }	
 
@@ -147,10 +154,10 @@ void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, in
 	ST7735_InitR(INITR_GREENTAB);
 	ST7735_PlotClear(minY, maxY);
 	ST7735_DrawString(0, 0, title, ST7735_YELLOW);
-	minXplot=minX;
-	minYplot=minYplot+minY;
-	maxXplot=maxX;
-	maxYplot=maxY+minYplot;
+	MinXplot=minX;
+	MinYplot=MinYplot+minY;
+	MaxXplot=maxX;
+	MaxYplot=maxY+MinYplot;
 }
 
 /**************ST7735_XYplot***************
@@ -170,11 +177,11 @@ void ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]) {
 		//LCD_DrawPixel(bufX[n], bufY[n], 0xFFE0);
 		//For the SS7735
 		//ST7735_XYPoint(bufX[n], bufY[n]);
-		int yRange=(maxYplot-minYplot);
-		int y=minYplot+bufY[n];
-		int xRange=(maxXplot-minXplot);
-		int x=minXplot+bufX[n];
-		if(bufX[n]<=maxXplot && bufY[n]<=minYplot)
+		int yRange=(MaxYplot-MinYplot);
+		int y=MinYplot+bufY[n];
+		int xRange=(MaxXplot-MinXplot);
+		int x=MinXplot+bufX[n];
+		if(bufX[n]<=MaxXplot && bufY[n]<=MinYplot)
 		{
 			ST7735_DrawPixel(x, y, ST7735_BLUE);
 		}

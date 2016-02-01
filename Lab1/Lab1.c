@@ -7,6 +7,9 @@
 // Ty Winkler -- TAW2328
 // 1/25/2016
 //
+//Lab 1
+//TA: Ryan Chow
+//
 // hardware connections
 // **********ST7735 TFT and SDC*******************
 // ST7735
@@ -87,7 +90,7 @@ int main(void){
 	Output_Init();              // initialize output device
   Output_Color(ST7735_YELLOW);
 	Errors = 0;
-	ST7735_XYplotInit("LCD_Output", 25, 100, 25, 100);
+	ST7735_XYplotInit("LCD_Output", 0, 100, 0, 100);
 	ST7735_XYplot(3,pointXTest1 , pointYTest1);
 	for(i=0; i<11; i++){
 		
