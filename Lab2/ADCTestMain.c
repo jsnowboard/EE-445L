@@ -96,7 +96,7 @@ void Timer1A_Handler(void){
 		int a = TIMER1_TAR_R;
 		int b = TIMER1_TAR_R;
 		array1[i] = a;
-		array2[i] = a - b;
+		array2[i] = b - a;
 		i++;
 	}
 }
@@ -117,6 +117,17 @@ int main(void){
   EnableInterrupts();
   while(1){
     PF1 ^= 0x02;  // toggles when running in main
+		if(i==1000){
+			i = 0;
+			int largest = 0;
+			while(i < 999){
+				if(largest < array2[i]){
+					largest = array2[i];
+					i++;
+				}
+			}
+			break;
+		}
   }
 }
 

@@ -1,14 +1,14 @@
 Dependencies for Project 'ADCSWTrigger', Target 'ADCSWTrigger': (DO NOT MODIFY !)
-F (.\startup.s)(0x56B175DD)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary--pd "__UVISION_VERSION SETA 517"--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\ADCTestMain.c)(0x56B180A9)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\adctestmain.o --omf_browse .\adctestmain.crf --depend .\adctestmain.d)
-I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (Lab2.h)(0x56B175DD)
-I (../inc/tm4c123gh6pm.h)(0x56A82D31)
-I (PLL.h)(0x56B175DD)
-F (.\PLL.c)(0x56B175DD)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\pll.o --omf_browse .\pll.crf --depend .\pll.d)
-I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (PLL.h)(0x56B175DD)
-I (../inc/tm4c123gh6pm.h)(0x56A82D31)
-F (.\Lab2.c)(0x56B175DD)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\lab2.o --omf_browse .\lab2.crf --depend .\lab2.d)
-I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
-I (../inc/tm4c123gh6pm.h)(0x56A82D31)
+F (.\startup.s)(0x56B2157D)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary--pd "__UVISION_VERSION SETA 517"--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\ADCTestMain.c)(0x56B220FF)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\adctestmain.o --omf_browse .\adctestmain.crf --depend .\adctestmain.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
+I (Lab2.h)(0x56B2157D)
+I (../inc/tm4c123gh6pm.h)(0x5388C2DA)
+I (PLL.h)(0x56B2157D)
+F (.\PLL.c)(0x56B2157D)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\pll.o --omf_browse .\pll.crf --depend .\pll.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
+I (PLL.h)(0x56B2157D)
+I (../inc/tm4c123gh6pm.h)(0x5388C2DA)
+F (.\Lab2.c)(0x56B2157D)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\lab2.o --omf_browse .\lab2.crf --depend .\lab2.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
+I (../inc/tm4c123gh6pm.h)(0x5388C2DA)

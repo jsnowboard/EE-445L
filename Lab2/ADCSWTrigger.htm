@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\ADCSWTrigger.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\ADCSWTrigger.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Tue Feb 02 22:23:14 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Feb 03 09:47:16 2016
 <BR><P>
-<H3>Maximum Stack Usage =          8 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =         16 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-Timer0A_Handler
+__rt_entry_main &rArr; main &rArr; Timer0A_Init100HzInt
 <P>
 <H3>
 Functions with no stack information
@@ -687,8 +687,8 @@ Global Symbols
 <P><STRONG><a name="[ba]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[89]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; exit
+<BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; Timer0A_Init100HzInt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -808,8 +808,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8a]"></a>main</STRONG> (Thumb, 116 bytes, Stack size 0 bytes, adctestmain.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
+<P><STRONG><a name="[8a]"></a>main</STRONG> (Thumb, 194 bytes, Stack size 8 bytes, adctestmain.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
 <LI>Call Chain = main &rArr; Timer0A_Init100HzInt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PLL_Init

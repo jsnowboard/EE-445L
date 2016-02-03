@@ -24,6 +24,8 @@ Section Cross References
     adctestmain.o(i.main) refers to adctestmain.o(i.Timer0A_Init100HzInt) for Timer0A_Init100HzInt
     adctestmain.o(i.main) refers to adctestmain.o(i.Timer1_Init) for Timer1_Init
     adctestmain.o(i.main) refers to startup.o(.text) for EnableInterrupts
+    adctestmain.o(i.main) refers to adctestmain.o(.data) for i
+    adctestmain.o(i.main) refers to adctestmain.o(.bss) for array2
     __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
     __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
@@ -485,9 +487,9 @@ Image Symbol Table
     Timer0A_Init100HzInt                     0x0000059d   Thumb Code    98  adctestmain.o(i.Timer0A_Init100HzInt)
     Timer1A_Handler                          0x00000615   Thumb Code    62  adctestmain.o(i.Timer1A_Handler)
     Timer1_Init                              0x00000665   Thumb Code    68  adctestmain.o(i.Timer1_Init)
-    main                                     0x000006b9   Thumb Code   116  adctestmain.o(i.main)
-    Region$$Table$$Base                      0x0000073c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0000075c   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x000006b9   Thumb Code   194  adctestmain.o(i.main)
+    Region$$Table$$Base                      0x00000794   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000007b4   Number         0  anon$$obj.o(Region$$Table)
     ADCvalue                                 0x20000000   Data           4  adctestmain.o(.data)
     i                                        0x20000004   Data           4  adctestmain.o(.data)
     array1                                   0x20000008   Data        4000  adctestmain.o(.bss)
@@ -503,9 +505,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000764, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000007bc, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x0000075c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x000007b4, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -574,8 +576,8 @@ Memory Map of the image
     0x0000059c   0x00000078   Code   RO           13    i.Timer0A_Init100HzInt  adctestmain.o
     0x00000614   0x00000050   Code   RO           14    i.Timer1A_Handler   adctestmain.o
     0x00000664   0x00000054   Code   RO           15    i.Timer1_Init       adctestmain.o
-    0x000006b8   0x00000084   Code   RO           16    i.main              adctestmain.o
-    0x0000073c   0x00000020   Data   RO          251    Region$$Table       anon$$obj.o
+    0x000006b8   0x000000dc   Code   RO           16    i.main              adctestmain.o
+    0x00000794   0x00000020   Data   RO          251    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000008, Max: 0xffffffff, ABSOLUTE)
@@ -602,13 +604,13 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       480         84          0          8       8000       7499   adctestmain.o
-       276         32          0          0          0        883   lab2.o
-       124          4          0          0          0        435   pll.o
-       692        632          0          0       1024        956   startup.o
+       568         94          0          8       8000       7599   adctestmain.o
+       276         32          0          0          0        875   lab2.o
+       124          4          0          0          0        431   pll.o
+       692        632          0          0       1024        948   startup.o
 
     ----------------------------------------------------------------------
-      1572        752         32          8       9024       9773   Object Totals
+      1660        762         32          8       9024       9853   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -657,15 +659,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1852        768         32          8       9120       9937   Grand Totals
-      1852        768         32          8       9120       9937   ELF Image Totals
-      1852        768         32          8          0          0   ROM Totals
+      1940        778         32          8       9120      10017   Grand Totals
+      1940        778         32          8       9120      10017   ELF Image Totals
+      1940        778         32          8          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1884 (   1.84kB)
+    Total RO  Size (Code + RO Data)                 1972 (   1.93kB)
     Total RW  Size (RW Data + ZI Data)              9128 (   8.91kB)
-    Total ROM Size (Code + RO Data + RW Data)       1892 (   1.85kB)
+    Total ROM Size (Code + RO Data + RW Data)       1980 (   1.93kB)
 
 ==============================================================================
 
