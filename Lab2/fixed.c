@@ -200,5 +200,24 @@ void ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]) {
 //        color 16-bit color, which can be produced by ST7735_Color565() 
 // Output: none
 void ST7735_Line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color) {
-	
+	int currentx = x1;
+	int currenty = y1;
+	int slopenum = y2 - y1;
+	int slopeden = x2 - x1;
+	int reduce;
+	if (slopeden < slopenum){
+		reduce = slopeden;
+	} else {
+		reduce = slopenum;
+	}
+	while (slopenum%reduce != 0 && slopeden%reduce != 0 && reduce > 1){
+		reduce--;
+	}
+	slopenum = slopenum / reduce;
+	slopeden = slopeden / reduce;
+	while(currentx != x2 && currenty != y2){
+		ST7735_DrawPixel(currentx, currenty, color);
+		currentx += slopeden;
+		currenty += slopenum;
+	} 
 }
