@@ -27,6 +27,8 @@
 // top of X-ohm potentiometer connected to +3.3V 
 #include <stdint.h>
 #include "Lab2.h"
+#include "fixed.h"
+#include "ST7735.h"
 #include "../inc/tm4c123gh6pm.h"
 #include "PLL.h"
 
@@ -41,6 +43,7 @@ void WaitForInterrupt(void);  // low power mode
 volatile uint32_t ADCvalue;
 int array1[1000];
 int array2[1000];
+int oldtime;
 int i = 0;
 
 // This debug function initializes Timer0A to request interrupts
@@ -88,17 +91,16 @@ void Timer0A_Handler(void){
   PF2 ^= 0x04;                   // profile
   ADCvalue = ADC0_InSeq3();
   PF2 ^= 0x04;                   // profile
-}
-
-void Timer1A_Handler(void){
-  TIMER1_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER1A timeout
+	
   if (i < 999){
 		int a = TIMER1_TAR_R;
-		int b = TIMER1_TAR_R;
+		int b = oldtime - a;
 		array1[i] = a;
-		array2[i] = b - a;
+		array2[i] = b;
+		oldtime = a;
 		i++;
 	}
+	
 }
 
 int main(void){
@@ -117,6 +119,7 @@ int main(void){
   EnableInterrupts();
   while(1){
     PF1 ^= 0x02;  // toggles when running in main
+		//GPIO_PORTF_DATA_R ^= 0x02;  // Uncomment this for part C. and comment the line above.
 		if(i==1000){
 			i = 0;
 			int largest = 0;
