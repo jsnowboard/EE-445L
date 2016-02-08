@@ -85,6 +85,22 @@ void Timer1_Init(void){
   TIMER1_CTL_R = 0x00000001;    // 10) enable TIMER1A
 }
 
+void Timer2_Init(void){
+  SYSCTL_RCGCTIMER_R |= 0x03;   // 0) activate TIMER2
+  TIMER2_CTL_R = 0x00000000;    // 1) disable TIMER2A during setup
+  TIMER2_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
+  TIMER2_TAMR_R = 0x00000002;   // 3) configure for periodic mode, default down-count settings
+  TIMER2_TAILR_R = 0xFFFFFFFF;    // 4) reload value
+  TIMER2_TAPR_R = 0;            // 5) bus clock resolution
+  TIMER2_ICR_R = 0x00000001;    // 6) clear TIMER1A timeout flag
+  //TIMER2_IMR_R = 0x00000001;    // 7) arm timeout interrupt
+  NVIC_PRI5_R = 0x00000000; // 8) priority 1
+// interrupts enabled in the main program after all devices initialized
+// vector number 37, interrupt number 21
+  NVIC_EN0_R = 1<<21;           // 9) enable IRQ 21 in NVIC
+  TIMER2_CTL_R = 0x00000001;    // 10) enable TIMER1A
+}
+
 void Timer0A_Handler(void){
   TIMER0_ICR_R = TIMER_ICR_TATOCINT;    // acknowledge timer0A timeout
   PF2 ^= 0x04;                   // profile
@@ -109,6 +125,7 @@ int main(void){
   ADC0_InitSWTriggerSeq3_Ch9();         // allow time to finish activating
   Timer0A_Init100HzInt();               // set up Timer0A for 100 Hz interrupts
   Timer1_Init();
+	//Timer2_Init();											//Enable this for part D.
 	GPIO_PORTF_DIR_R |= 0x06;             // make PF2, PF1 out (built-in LED)
   GPIO_PORTF_AFSEL_R &= ~0x06;          // disable alt funct on PF2, PF1
   GPIO_PORTF_DEN_R |= 0x06;             // enable digital I/O on PF2, PF1
@@ -120,6 +137,7 @@ int main(void){
   while(1){
     PF1 ^= 0x02;  // toggles when running in main
 		//GPIO_PORTF_DATA_R ^= 0x02;  // Uncomment this for part C. and comment the line above.
+		//PF1 = (PF1*12345678)/1234567+0x02;  // Uncomment this for part D.
 		if(i==1000){
 			i = 0;
 			int largest = 0;
