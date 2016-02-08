@@ -70,19 +70,16 @@ void Timer0A_Init100HzInt(void){
 }
 
 void Timer1_Init(void){
+  volatile uint32_t delay;
   SYSCTL_RCGCTIMER_R |= 0x02;   // 0) activate TIMER1
+  delay = SYSCTL_RCGCTIMER_R;   // allow time to finish activating
   TIMER1_CTL_R = 0x00000000;    // 1) disable TIMER1A during setup
   TIMER1_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
-  TIMER1_TAMR_R = 0x00000002;   // 3) configure for periodic mode, default down-count settings
-  TIMER1_TAILR_R = 0xFFFFFFFF;    // 4) reload value
+  TIMER1_TAMR_R = 0x00000002;   // 3) configure for periodic mode, down-count
+	TIMER1_TAILR_R = 0x00000002;  // 4) reload value
   TIMER1_TAPR_R = 0;            // 5) bus clock resolution
-  TIMER1_ICR_R = 0x00000001;    // 6) clear TIMER1A timeout flag
-  //TIMER1_IMR_R = 0x00000001;    // 7) arm timeout interrupt
-  NVIC_PRI5_R = (NVIC_PRI5_R&0xFFFF00FF)|0x00008000; // 8) priority 4
-// interrupts enabled in the main program after all devices initialized
-// vector number 37, interrupt number 21
-  NVIC_EN0_R = 1<<21;           // 9) enable IRQ 21 in NVIC
-  TIMER1_CTL_R = 0x00000001;    // 10) enable TIMER1A
+  TIMER1_CTL_R = 0x00000001;    // 10) enable 
+
 }
 
 void Timer2_Init(void){
@@ -108,7 +105,7 @@ void Timer0A_Handler(void){
   ADCvalue = ADC0_InSeq3();
   PF2 ^= 0x04;                   // profile
 	
-  if (i < 999){
+  if (i <= 999){
 		int a = TIMER1_TAR_R;
 		int b = oldtime - a;
 		array1[i] = a;
@@ -134,11 +131,12 @@ int main(void){
   GPIO_PORTF_AMSEL_R = 0;               // disable analog functionality on PF
   PF2 = 0;                      // turn off LED
   EnableInterrupts();
+	i=0;
   while(1){
     PF1 ^= 0x02;  // toggles when running in main
 		//GPIO_PORTF_DATA_R ^= 0x02;  // Uncomment this for part C. and comment the line above.
 		//PF1 = (PF1*12345678)/1234567+0x02;  // Uncomment this for part D.
-		if(i==1000){
+		if(i==1001){
 			i = 0;
 			int largest = 0;
 			while(i < 999){
