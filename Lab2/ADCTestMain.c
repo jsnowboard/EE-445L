@@ -43,6 +43,7 @@ void WaitForInterrupt(void);  // low power mode
 volatile uint32_t ADCvalue;
 int array1[1000];
 int array2[1000];
+int array3[1000];
 int oldtime;
 int i = 0;
 
@@ -76,26 +77,22 @@ void Timer1_Init(void){
   TIMER1_CTL_R = 0x00000000;    // 1) disable TIMER1A during setup
   TIMER1_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
   TIMER1_TAMR_R = 0x00000002;   // 3) configure for periodic mode, down-count
-	TIMER1_TAILR_R = 0x00000002;  // 4) reload value
+	TIMER1_TAILR_R = 0xFFFFFFFF;  // 4) reload value
   TIMER1_TAPR_R = 0;            // 5) bus clock resolution
   TIMER1_CTL_R = 0x00000001;    // 10) enable 
-
 }
 
 void Timer2_Init(void){
-  SYSCTL_RCGCTIMER_R |= 0x03;   // 0) activate TIMER2
-  TIMER2_CTL_R = 0x00000000;    // 1) disable TIMER2A during setup
-  TIMER2_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
-  TIMER2_TAMR_R = 0x00000002;   // 3) configure for periodic mode, default down-count settings
-  TIMER2_TAILR_R = 0xFFFFFFFF;    // 4) reload value
-  TIMER2_TAPR_R = 0;            // 5) bus clock resolution
-  TIMER2_ICR_R = 0x00000001;    // 6) clear TIMER1A timeout flag
-  //TIMER2_IMR_R = 0x00000001;    // 7) arm timeout interrupt
-  NVIC_PRI5_R = 0x00000000; // 8) priority 1
-// interrupts enabled in the main program after all devices initialized
-// vector number 37, interrupt number 21
-  NVIC_EN0_R = 1<<21;           // 9) enable IRQ 21 in NVIC
-  TIMER2_CTL_R = 0x00000001;    // 10) enable TIMER1A
+  volatile uint32_t delay;
+  SYSCTL_RCGCTIMER_R |= 0x03;   // 0) activate TIMER1
+  delay = SYSCTL_RCGCTIMER_R;   // allow time to finish activating
+  TIMER1_CTL_R = 0x00000000;    // 1) disable TIMER1A during setup
+  TIMER1_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
+  TIMER1_TAMR_R = 0x00000002;   // 3) configure for periodic mode, down-count
+	TIMER1_TAILR_R = 799000;  // 4) reload value
+  TIMER1_TAPR_R = 0;            // 5) bus clock resolution
+	NVIC_PRI5_R = 0x00000000; 		// 8) priority 1
+  TIMER1_CTL_R = 0x00000001;    // 10) enable 
 }
 
 void Timer0A_Handler(void){
@@ -107,9 +104,10 @@ void Timer0A_Handler(void){
 	
   if (i <= 999){
 		int a = TIMER1_TAR_R;
-		int b = oldtime - a;
+		int b = oldtime - a;	
 		array1[i] = a;
 		array2[i] = b;
+		array3[i] = ADC0_InSeq3();
 		oldtime = a;
 		i++;
 	}
@@ -136,7 +134,7 @@ int main(void){
     PF1 ^= 0x02;  // toggles when running in main
 		//GPIO_PORTF_DATA_R ^= 0x02;  // Uncomment this for part C. and comment the line above.
 		//PF1 = (PF1*12345678)/1234567+0x02;  // Uncomment this for part D.
-		if(i==1001){
+		if(i==1000){
 			i = 0;
 			int largest = 0;
 			while(i < 999){
