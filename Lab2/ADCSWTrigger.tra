@@ -5,16 +5,16 @@
 ### List of Objects: adding '"adctestmain.o"'
 ### List of Objects: adding '"pll.o"'
 ### List of Objects: adding '"lab2.o"'
-### List of Objects: adding '"st7735.o"'
 ### List of Objects: adding '"fixed.o"'
+### List of Objects: adding '"st7735.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M4 "startup.o" "adctestmain.o" "pll.o" "lab2.o" "st7735.o" "fixed.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--cpu Cortex-M4 "startup.o" "adctestmain.o" "pll.o" "lab2.o" "fixed.o" "st7735.o" --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\ADCSWTrigger.map" -o ADCSWTrigger.axf### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: 'ADCSWTrigger.axf'
 ### ADS-LD Command File: 'ADCSWTrigger.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'ADCSWTrigger.lnp', Handle=0x00000850
+### Creating CmdFile 'ADCSWTrigger.lnp', Handle=0x000005DC
 ### Writing '.lnp' file
 ### ADS-LD Command file 'ADCSWTrigger.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

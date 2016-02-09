@@ -1,0 +1,1 @@
+-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99 -I "C:\Program Files\Keil\ARM\RV31\Inc" -I "C:\Program Files\Keil\ARM\CMSIS\Include" -I "C:\Program Files\Keil\ARM\Inc\Luminary" -Drvmdk -DPART_LM4F120H5QR -o "st7735.o" --omf_browse "st7735.crf" --depend "st7735.d" "ST7735.c"

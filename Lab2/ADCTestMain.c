@@ -130,6 +130,9 @@ void Timer0A_Handler(void){
 }
 
 int main(void){
+	Output_Init();
+	ST7735_XYplotInit("title", 0, 100, 0, 100);
+	
   PLL_Init(Bus80MHz);                   // 80 MHz
   SYSCTL_RCGCGPIO_R |= 0x20;            // activate port F
   ADC0_InitSWTriggerSeq3_Ch9();         // allow time to finish activating
@@ -143,15 +146,17 @@ int main(void){
   GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R&0xFFFFF00F)+0x00000000;
   GPIO_PORTF_AMSEL_R = 0;               // disable analog functionality on PF
   PF2 = 0;                      // turn off LED
+	//ADC0_SAC_R = ADC_SAC_AVG_4X;		 //enable 4 times average before obtaining result
+	//ADC0_SAC_R = ADC_SAC_AVG_16X;   //enable 16 times average before obtaining result
+	//ADC0_SAC_R = ADC_SAC_AVG_64X;  //enable 64 times average before obtaining result
 	EnableInterrupts();
   while(1){
     PF1 ^= 0x02;  // toggles when running in main
 		//GPIO_PORTF_DATA_R ^= 0x02;  // Uncomment this for part C. and comment the line above.
 		//PF1 = (PF1*12345678)/1234567+0x02;  // Uncomment this for part D.
 		if(i==1000){
-			i = 0;
 			int largest = 0;
-			while(i < 999){
+			for(int x=0; x < 999; x++){
 				if(largest < array2[i]){
 					largest = array2[i];
 					i++;

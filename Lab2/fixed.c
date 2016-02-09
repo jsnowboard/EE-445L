@@ -151,7 +151,7 @@ void ST7735_uBinOut8(uint32_t n) {
 void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY) {
 	ST7735_InitR(INITR_GREENTAB);
 	ST7735_PlotClear(minY, maxY);
-	//ST7735_DrawString(0, 0, title, ST7735_YELLOW);
+	ST7735_DrawString(0, 0, title, ST7735_YELLOW);
 	printf("%s", title);
 	MinXplot=minX;
 	MinYplot=minY+MinYplot;
