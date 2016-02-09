@@ -174,7 +174,7 @@
             <Capability>1</Capability>
             <DriverSelection>4097</DriverSelection>
           </Flash1>
-          <bUseTDR>0</bUseTDR>
+          <bUseTDR>1</bUseTDR>
           <Flash2>BIN\lmidk-agdi.dll</Flash2>
           <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
@@ -438,6 +438,11 @@
               <FileName>fixed.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\fixed.c</FilePath>
+            </File>
+            <File>
+              <FileName>Lab2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lab2.c</FilePath>
             </File>
           </Files>
         </Group>

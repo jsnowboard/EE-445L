@@ -7,17 +7,3 @@ C:\Users\Jeremiah\Programming\EE-445L\Lab2\ADCSWTrigger.uvproj
 Project File Date:  02/08/2016
 
 <h2>Output:</h2>
-Build target 'ADCSWTrigger'
-compiling ADCTestMain.c...
-linking...
-Program Size: Code=6634 RO-data=2082 RW-data=84 ZI-data=13364  
-"ADCSWTrigger.axf" - 0 Error(s), 0 Warning(s).
-Build target 'ADCSWTrigger'
-compiling ADCTestMain.c...
-ADCTestMain.c(149): error:  #20: identifier "ADC_SAC_R" is undefined
-Target not created
-Build target 'ADCSWTrigger'
-compiling ADCTestMain.c...
-linking...
-Program Size: Code=6646 RO-data=2082 RW-data=84 ZI-data=13364  
-"ADCSWTrigger.axf" - 0 Error(s), 0 Warning(s).
