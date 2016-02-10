@@ -45,7 +45,10 @@ void WaitForInterrupt(void);  // low power mode
 
 volatile uint32_t ADCvalue;
 int updateTime = 0;
-int currentTime = 0;
+int currentNanoSeconds = 0;
+int currentSeconds = 0;
+int currentMinutes = 0;
+int currentHours = 0;
 int i = 0;
 
 // This debug function initializes Timer0A to request interrupts
@@ -111,17 +114,29 @@ int main(void){
 	ST7735_SetCursor(0,0);
 	printf("Current Time");
 	ST7735_SetCursor(0,1);
-	printf("%d", currentTime);
+	printf("%d:%d:%d:%d", currentHours, currentMinutes, currentSeconds, currentNanoSeconds);
   while(1){
     PF1 ^= 0x02;  // toggles when running in main
 		if(updateTime == 1){
-			currentTime++;
-			updateTime = 0;
-			//Output_Clear();
-			//ST7735_SetCursor(0,0);
-			//printf("Current Time");
+			currentNanoSeconds++;
+			if(currentNanoSeconds == 100){
+				currentSeconds++;
+				currentNanoSeconds = 0;
+				if(currentSeconds == 60){
+					currentMinutes++;
+					currentSeconds = 0;
+					if(currentMinutes == 60){
+						currentHours++;
+						currentMinutes = 0;
+						if(currentHours == 24){
+							currentHours = 0;
+						}
+					}
+				}
+			}
 			ST7735_SetCursor(0,1);
-			printf("%d", currentTime);
+			printf("%d:%d:%d:%d", currentHours, currentMinutes, currentSeconds, currentNanoSeconds);
+			updateTime = 0;
 		}
 		Errors = 0;
 	}
