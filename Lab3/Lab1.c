@@ -1,4 +1,4 @@
-// filename ******** Lab3.c ************** 
+// filename ******** Lab1.c ************** 
 // made for the TM4C123G and ST7735 LCD display
 // Lab 3 is an alarm clock made with the ST7735 display,
 // a pn2222 n-channel bjt, a 1n914b 4ns swutching diode, and tactile switches.
@@ -42,10 +42,16 @@ void EnableInterrupts(void);  // Enable interrupts
 long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
+void increaseSeconds(void);
+void increaseMinutes(void);
+void increaseHours(void);
 
 volatile uint32_t ADCvalue;
 int updateTime = 0;
-int currentNanoSeconds = 0;
+int updateSeconds = 0;
+int updateMinutes = 0;
+int updateHours = 0;
+int currentMilliSeconds = 0;
 int currentSeconds = 0;
 int currentMinutes = 0;
 int currentHours = 0;
@@ -112,14 +118,14 @@ int main(void){
 	ST7735_SetCursor(0,0);
 	printf("Current Time");
 	ST7735_SetCursor(0,1);
-	printf("%02d:%02d:%02d:%02d", currentHours, currentMinutes, currentSeconds, currentNanoSeconds);
+	printf("%02d:%02d:%02d:%02d", currentHours, currentMinutes, currentSeconds, currentMilliSeconds);
   while(1){
     //PF1 ^= 0x02;  // toggles when running in main
 		if(updateTime == 1){
-			currentNanoSeconds++;
-			if(currentNanoSeconds == 100){
+			currentMilliSeconds++;
+			if(currentMilliSeconds == 100){
 				currentSeconds++;
-				currentNanoSeconds = 0;
+				currentMilliSeconds = 0;
 				if(currentSeconds == 60){
 					currentMinutes++;
 					currentSeconds = 0;
@@ -132,10 +138,46 @@ int main(void){
 					}
 				}
 			}
+			if(updateSeconds == 1){
+				increaseSeconds();
+				updateSeconds = 0;
+			}
+			if(updateMinutes == 1){
+				increaseMinutes();
+				updateMinutes = 0;
+			}
+			if(updateHours == 1){
+				increaseHours();
+				updateHours = 0;
+			}
 			ST7735_SetCursor(0,1);
-			printf("%02d:%02d:%02d:%02d", currentHours, currentMinutes, currentSeconds, currentNanoSeconds);
+			printf("%02d:%02d:%02d:%02d", currentHours, currentMinutes, currentSeconds, currentMilliSeconds);
 			updateTime = 0;
 		}
 		Errors = 0;
+	}
+}
+
+void increaseSeconds(void){
+	if(currentSeconds == 59){
+		currentSeconds = 0;
+	} else {
+		currentSeconds++;
+	}
+}
+
+void increaseMinutes(void){
+	if(currentMinutes == 59){
+		currentMinutes = 0;
+	} else {
+		currentMinutes++;
+	}
+}
+
+void increaseHours(void){
+	if(currentHours == 23){
+		currentHours = 0;
+	} else {
+		currentHours++;
 	}
 }
