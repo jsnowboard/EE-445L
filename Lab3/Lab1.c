@@ -64,7 +64,7 @@ void Timer0A_Init100HzInt(void){
   // **** timer0A initialization ****
                                    // configure for periodic mode
   TIMER0_TAMR_R = TIMER_TAMR_TAMR_PERIOD;
-  TIMER0_TAILR_R = 0xC4FFF;         // start value for 100 Hz interrupts
+  TIMER0_TAILR_R = 0xC40FF;         // start value for 100 Hz interrupts
   TIMER0_IMR_R |= TIMER_IMR_TATOIM;// enable timeout (rollover) interrupt
   TIMER0_ICR_R = TIMER_ICR_TATOCINT;// clear timer0A timeout flag
   TIMER0_CTL_R |= TIMER_CTL_TAEN;  // enable timer0A 32-b, periodic, interrupts
@@ -89,8 +89,6 @@ void Timer1_Init(void){
 void Timer0A_Handler(void){
   TIMER0_ICR_R = TIMER_ICR_TATOCINT;    // acknowledge timer0A timeout
   PF2 ^= 0x04;                   // profile
-  PF2 ^= 0x04;                   // profile
-  PF2 ^= 0x04;                   // profile
 	updateTime = 1;
 }
 
@@ -114,9 +112,9 @@ int main(void){
 	ST7735_SetCursor(0,0);
 	printf("Current Time");
 	ST7735_SetCursor(0,1);
-	printf("%d:%d:%d:%d", currentHours, currentMinutes, currentSeconds, currentNanoSeconds);
+	printf("%02d:%02d:%02d:%02d", currentHours, currentMinutes, currentSeconds, currentNanoSeconds);
   while(1){
-    PF1 ^= 0x02;  // toggles when running in main
+    //PF1 ^= 0x02;  // toggles when running in main
 		if(updateTime == 1){
 			currentNanoSeconds++;
 			if(currentNanoSeconds == 100){
@@ -135,7 +133,7 @@ int main(void){
 				}
 			}
 			ST7735_SetCursor(0,1);
-			printf("%d:%d:%d:%d", currentHours, currentMinutes, currentSeconds, currentNanoSeconds);
+			printf("%02d:%02d:%02d:%02d", currentHours, currentMinutes, currentSeconds, currentNanoSeconds);
 			updateTime = 0;
 		}
 		Errors = 0;
