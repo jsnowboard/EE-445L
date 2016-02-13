@@ -1394,7 +1394,7 @@ int32_t j;
   // y=Ymax maps to j=32
   // y=Ymin maps to j=159
   j = 32+(127*(Ymax-y))/Yrange;
-  ST7735_DrawFastVLine(X, j, 159-j, ST7735_BLACK);
+  ST7735_DrawFastVLine(X, j, 159-j, ST7735_BLUE);
 
 }
 

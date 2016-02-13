@@ -139,6 +139,9 @@ int main(void){
   GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R&0xFFFFF00F)+0x00000000;
   GPIO_PORTF_AMSEL_R = 0;               // disable analog functionality on PF
   PF2 = 0;                      // turn off LED
+	//ADC0_SAC_R = ADC_SAC_AVG_4X;		 //enable 4 times average before obtaining result
+	//ADC0_SAC_R = ADC_SAC_AVG_16X;    //enable 16 times average before obtaining result
+	//ADC0_SAC_R = ADC_SAC_AVG_64X;    //enable 64 times average before obtaining result
 	EnableInterrupts();
   while(1){
     PF1 ^= 0x02;  // toggles when running in main
@@ -160,8 +163,9 @@ int main(void){
 			storeFrequency();
 			makePMF(array3, pmf);
 			ST7735_XYplotInit("Lab 2 PMF", 0, 4095, 0, 1000);
-			for(int j = 0; j < 1000; j += 10){
-			 	ST7735_PlotBar(pmf[j] * 9);
+			//ST7735_Line(0, 0, 100, 100, ST7735_YELLOW) ;
+			for(int j = 0; j < 1000; j += 8){
+			 	ST7735_PlotBar(pmf[j]);
 				ST7735_PlotNext();
 			}
 			break;
