@@ -61,7 +61,7 @@ void ADC0_InitSWTriggerSeq3_Ch9(void){
   SYSCTL_RCGCADC_R |= 0x0001;   // 7) activate ADC0 
                                   // 1) activate clock for Port E
   SYSCTL_RCGCGPIO_R |= 0x10;
-  while((SYSCTL_PRGPIO_R&0x10) != 0x10){};
+  //while((SYSCTL_PRGPIO_R&0x10) != 0x10){};
   GPIO_PORTE_DIR_R &= ~0x10;      // 2) make PE4 input
   GPIO_PORTE_AFSEL_R |= 0x10;     // 3) enable alternate function on PE4
   GPIO_PORTE_DEN_R &= ~0x10;      // 4) disable digital I/O on PE4

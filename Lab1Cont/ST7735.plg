@@ -4,21 +4,16 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Jeremiah\Programming\EE-445L\Lab1Cont\ST7735.uvproj
-Project File Date:  02/08/2016
+Project File Date:  02/09/2016
 
 <h2>Output:</h2>
 Build target 'ST7735'
-assembling startup.s...
 compiling PLL.c...
-compiling ST7735.c...
-compiling Lab1.c...
-Lab1.c(45): warning:  #1295-D: Deprecated declaration storeFrequency - give arg types
-Lab1.c(157): warning:  #177-D: variable "x" was declared but never referenced
-Lab1.c(158): warning:  #177-D: variable "y" was declared but never referenced
-compiling fixed.c...
-fixed.c(179): warning:  #177-D: variable "yRange" was declared but never referenced
-fixed.c(181): warning:  #177-D: variable "xRange" was declared but never referenced
+linking...
+Program Size: Code=7648 RO-data=2052 RW-data=124 ZI-data=21028  
+"ST7735.axf" - 0 Error(s), 0 Warning(s).
+Build target 'ST7735'
 compiling Lab2.c...
 linking...
-Program Size: Code=7664 RO-data=2052 RW-data=124 ZI-data=21028  
-"ST7735.axf" - 0 Error(s), 5 Warning(s).
+Program Size: Code=7628 RO-data=2052 RW-data=124 ZI-data=21028  
+"ST7735.axf" - 0 Error(s), 0 Warning(s).

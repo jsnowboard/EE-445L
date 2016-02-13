@@ -14,7 +14,7 @@
 ### ADS-LD Output File: 'ST7735.axf'
 ### ADS-LD Command File: 'ST7735.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile 'ST7735.lnp', Handle=0x00000A3C
+### Creating CmdFile 'ST7735.lnp', Handle=0x0000067C
 ### Writing '.lnp' file
 ### ADS-LD Command file 'ST7735.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

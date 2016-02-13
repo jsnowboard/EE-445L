@@ -67,7 +67,7 @@ void PLL_Init(uint32_t freq){
   SYSCTL_RCC2_R = (SYSCTL_RCC2_R&~0x1FC00000) // clear system clock divider field
                   + (freq<<22);      // configure for 80 MHz clock
   // 5) wait for the PLL to lock by polling PLLLRIS
-  while((SYSCTL_RIS_R&SYSCTL_RIS_PLLLRIS)==0){};
+  //while((SYSCTL_RIS_R&SYSCTL_RIS_PLLLRIS)==0){};
   // 6) enable use of PLL by clearing BYPASS
   SYSCTL_RCC2_R &= ~SYSCTL_RCC2_BYPASS2;
 }

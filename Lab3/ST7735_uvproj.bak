@@ -420,11 +420,6 @@
               <FileType>1</FileType>
               <FilePath>.\Lab2.c</FilePath>
             </File>
-            <File>
-              <FileName>Lab3.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Lab3.c</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>
