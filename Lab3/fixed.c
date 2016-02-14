@@ -11,9 +11,6 @@
 #include "ST7735.h"
 #include <math.h>
 
-#define POSITIVE 1
-#define NEGATIVE -1
-
 //Absolute min and max points on LCD
 int32_t MinXplot=0;
 int32_t MaxXplot=127;
@@ -227,9 +224,9 @@ void ST7735_Line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t co
 	} else {
 		int curCount = 1;
 		if (slopenum > 0){
-			counter = POSITIVE;
+			counter = 1;
 		} else {
-			counter = NEGATIVE;
+			counter = -1;
 		}
 		while (currenty != y2){
 			ST7735_DrawPixel(currentx, currenty, color);
