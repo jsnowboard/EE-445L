@@ -29,6 +29,7 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include <math.h>
 #include "ST7735.h"
 #include "fixed.h"
 #include "Lab2.h"
@@ -37,6 +38,7 @@
 
 #define PF2             (*((volatile uint32_t *)0x40025010))
 #define PF1             (*((volatile uint32_t *)0x40025008))
+#define M_PI 						acos(-1.0)
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
 long StartCritical (void);    // previous I bit, disable interrupts
@@ -45,6 +47,9 @@ void WaitForInterrupt(void);  // low power mode
 void increaseSeconds(void);
 void increaseMinutes(void);
 void increaseHours(void);
+void updateDigitalTime(void);
+void checkInput(void);
+void drawClock(void);
 
 volatile uint32_t ADCvalue;
 int updateTime = 0;
@@ -56,6 +61,47 @@ int currentSeconds = 0;
 int currentMinutes = 0;
 int currentHours = 0;
 int i = 0;
+int cx = 64;
+int cy = 90;
+int radius = 50;
+
+static int xVals[60] = {64,70,76,81,87,
+93,97,102,103,104,
+106,107,109,110,112,
+114,112,110,109,107,
+106,104,103,102,97,
+93,87,81,76,70,
+64,58,52,47,41,
+35,31,26,25,23,
+21,19,18,17,15,
+14,15,17,18,19,
+21,23,25,26,31,
+35,41,47,52,58};
+
+static int yVals[60] = {40,42,43,45,47,
+48, 52, 56, 61, 65,
+70, 76, 81, 87, 90,
+93, 99, 104, 110, 115,
+106, 111, 115, 124, 128,
+132, 133, 135, 137, 138,
+140, 138, 137, 135, 133,
+132, 128, 124, 115, 111,
+106, 115, 110, 104, 99,
+93, 90, 87, 81, 76,
+70, 65, 61, 56, 52, 
+48, 47, 45, 43, 42};
+
+static int xValh[12] = {64, 72, 79,
+84, 77, 70,
+64, 56, 49,
+44, 51, 58
+};
+
+static int yValh[12] = {70, 78, 85,
+90, 97, 104,
+110, 104, 97,
+90,	85, 78
+};
 
 // This debug function initializes Timer0A to request interrupts
 // at a 100 Hz frequency.  It is similar to FreqMeasure.c.
@@ -122,44 +168,71 @@ int main(void){
   while(1){
     //PF1 ^= 0x02;  // toggles when running in main
 		if(updateTime == 1){
-			currentMilliSeconds++;
-			if(currentMilliSeconds == 100){
-				currentSeconds++;
-				currentMilliSeconds = 0;
-				if(currentSeconds == 60){
-					currentMinutes++;
-					currentSeconds = 0;
-					if(currentMinutes == 60){
-						currentHours++;
-						currentMinutes = 0;
-						if(currentHours == 24){
-							currentHours = 0;
-						}
-					}
-				}
-			}
-			if(updateSeconds == 1){
-				increaseSeconds();
-				updateSeconds = 0;
-			}
-			if(updateMinutes == 1){
-				increaseMinutes();
-				updateMinutes = 0;
-			}
-			if(updateHours == 1){
-				increaseHours();
-				updateHours = 0;
-			}
-			ST7735_SetCursor(0,1);
-			printf("%02d:%02d:%02d:%02d", currentHours, currentMinutes, currentSeconds, currentMilliSeconds);
+			updateDigitalTime();
+			checkInput();
+			drawClock();
 			updateTime = 0;
 		}
 		Errors = 0;
 	}
 }
 
+void drawClock(void){
+	ST7735_Circle(cx, cy, radius, ST7735_YELLOW);
+	//Second Hand
+	if (currentMinutes != 60) {
+		ST7735_Line(cx, cy, xVals[currentMinutes - 1], yVals[currentMinutes - 1], ST7735_BLACK);
+	} else {
+		ST7735_Line(cx, cy, xVals[59], yVals[59], ST7735_BLACK);
+	}
+	if (currentHours != 12) {
+		ST7735_Line(cx, cy, xValh[currentHours - 1], yValh[currentHours - 1], ST7735_BLACK);
+	} else {
+		ST7735_Line(cx, cy, xValh[11], yValh[11], ST7735_BLACK);
+	}
+	ST7735_Line(cx, cy, xVals[currentMinutes], yVals[currentMinutes], ST7735_YELLOW);
+	ST7735_Line(cx, cy, xValh[currentHours], yValh[currentHours], ST7735_YELLOW);
+}
+
+void updateDigitalTime(void){
+	currentMilliSeconds++;
+		if(currentMilliSeconds == 100){
+		currentSeconds++;
+		currentMilliSeconds = 0;
+		if(currentSeconds == 60){
+			currentMinutes++;
+			currentSeconds = 0;
+			if(currentMinutes == 60){
+				currentHours++;
+				currentMinutes = 0;
+				if(currentHours == 24){
+					currentHours = 0;
+				}
+			}
+		}
+	}
+	ST7735_SetCursor(0,1);
+	printf("%02d:%02d:%02d:%02d", currentHours, currentMinutes, currentSeconds, currentMilliSeconds);
+}
+
+void checkInput(void) {
+	if(updateSeconds == 1){
+		increaseSeconds();
+		updateSeconds = 0;
+	}
+	if(updateMinutes == 1){
+		increaseMinutes();
+		updateMinutes = 0;
+	}
+	if(updateHours == 1){
+		increaseHours();
+		updateHours = 0;
+	}
+}
+
 void increaseSeconds(void){
 	if(currentSeconds == 59){
+		increaseMinutes();
 		currentSeconds = 0;
 	} else {
 		currentSeconds++;
@@ -168,6 +241,7 @@ void increaseSeconds(void){
 
 void increaseMinutes(void){
 	if(currentMinutes == 59){
+		increaseHours();
 		currentMinutes = 0;
 	} else {
 		currentMinutes++;
