@@ -9,6 +9,7 @@
 
 #include "fixed.h"
 #include "ST7735.h"
+#include <math.h>
 
 //Absolute min and max points on LCD
 int32_t MinXplot=0;
@@ -200,26 +201,40 @@ void ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[]) {
 //        color 16-bit color, which can be produced by ST7735_Color565() 
 // Output: none
 void ST7735_Line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color) {
+	int slopenum; 
+	int slopeden;
 	int currentx = x1;
 	int currenty = y1;
-	int slopenum = y2 - y1;
-	int slopeden = x2 - x1;
-	int reduce;
-	if (slopeden < slopenum){
-		reduce = slopeden;
+	int counter = 0;
+	slopenum = y2 - y1;
+	slopeden = x2 - x1;
+	if ( abs(slopeden) > abs(slopenum) ){
+		int curCount = 1;
+		if (slopeden > 0){
+			counter = 1;
+		} else {
+			counter = -1;
+		}
+		while (currentx != x2){
+			ST7735_DrawPixel(currentx, currenty, color);
+			currentx += counter;
+			currenty = (y1 * slopeden + counter * curCount * slopenum) / (slopeden); 
+			++curCount;
+		}
 	} else {
-		reduce = slopenum;
+		int curCount = 1;
+		if (slopenum > 0){
+			counter = 1;
+		} else {
+			counter = -1;
+		}
+		while (currenty != y2){
+			ST7735_DrawPixel(currentx, currenty, color);
+			currenty += counter;
+			currentx = (x1 * slopenum + counter * curCount * slopeden) / (slopenum);
+			++curCount;
+		}
 	}
-	while (slopenum%reduce != 0 && slopeden%reduce != 0 && reduce > 1){
-		reduce--;
-	}
-	slopenum = slopenum / reduce;
-	slopeden = slopeden / reduce;
-	while(currentx != x2 && currenty != y2){
-		ST7735_DrawPixel(currentx, currenty, color);
-		currentx += slopeden;
-		currenty += slopenum;
-	} 
 }
 
 
@@ -231,6 +246,32 @@ void ST7735_Line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t co
 // outwards from the center.
 //        color 16-bit color, which can be produced by ST7735_Color565() 
 // Output: none
-void ST7735_Circle(uint16_t x1, uint16_t y1, uint16_t radious, uint16_t color) {
+void ST7735_Circle(uint16_t x0, uint16_t y0, uint16_t radius, uint16_t color) {
+	{
+  int x = radius;
+  int y = 0;
+  int decisionOver2 = 1 - x;
 
+  while( y <= x )
+  {
+    ST7735_DrawPixel( x + x0,  y + y0, color);
+    ST7735_DrawPixel( y + x0,  x + y0, color);
+    ST7735_DrawPixel(-x + x0,  y + y0, color);
+    ST7735_DrawPixel(-y + x0,  x + y0, color);
+    ST7735_DrawPixel(-x + x0, -y + y0, color);
+    ST7735_DrawPixel(-y + x0, -x + y0, color);
+    ST7735_DrawPixel( x + x0, -y + y0, color);
+    ST7735_DrawPixel( y + x0, -x + y0, color);
+    y++;
+    if (decisionOver2<=0)
+    {
+      decisionOver2 += 2 * y + 1;
+    }
+    else
+    {
+      x--;
+      decisionOver2 += 2 * (y - x) + 1;
+    }
+  }
+}
 }
