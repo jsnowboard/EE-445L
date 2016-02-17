@@ -1,0 +1,15 @@
+.\main.o: main.c
+.\main.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\main.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\main.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\main.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\main.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\main.o: ../inc/tm4c123gh6pm.h
+.\main.o: pll.h
+.\main.o: UART.h
+.\main.o: systick.h
+.\main.o: esp8266.h
+.\main.o: http.h
+.\main.o: LED.h
+.\main.o: ST7735.h
+.\main.o: fixed.h

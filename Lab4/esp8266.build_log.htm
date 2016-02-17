@@ -1,0 +1,58 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.17.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ty Winkler, University of Texas, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.17
+Toolchain Path:  A:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         SARMCM3.DLL V5.17
+Dialog DLL:      DCM.DLL V1.13.4.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+A:\Documents\Github\EE 445L\trunk\Lab4\espDemo.uvproj
+Project File Date:  02/16/2016
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'A:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'esp8266'
+compiling http.c...
+assembling startup.s...
+compiling fixed.c...
+fixed.c(180): warning:  #177-D: variable "yRange" was declared but never referenced
+  		int yRange=(MaxYplot-MinYplot);
+fixed.c(182): warning:  #177-D: variable "xRange" was declared but never referenced
+  		int xRange=(MaxXplot-MinXplot);
+fixed.c(211): warning:  #223-D: function "abs" declared implicitly
+  	if ( abs(slopeden) > abs(slopenum) ){
+fixed.c(277): warning:  #1-D: last line of file ends without a newline
+  }
+fixed.c: 4 warnings, 0 errors
+compiling pll.c...
+compiling systick.c...
+compiling UART.c...
+compiling main.c...
+compiling esp8266.c...
+compiling LED.c...
+compiling ST7735.c...
+ST7735.c(1604): warning:  #223-D: function "Output_Init" declared implicitly
+    Output_Init();      // reinitialize
+ST7735.c: 1 warning, 0 errors
+linking...
+Program Size: Code=8104 RO-data=32 RW-data=128 ZI-data=4144  
+".\esp8266.axf" - 0 Error(s), 5 Warning(s).
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
