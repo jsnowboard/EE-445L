@@ -2,7 +2,7 @@
 .\rvmdk\netapp.o: ..\cc3100\simplelink\source\datatypes.h
 .\rvmdk\netapp.o: ..\cc3100\simplelink\include\simplelink.h
 .\rvmdk\netapp.o: ..\cc3100\platform\ek-tm4c123gxl\user.h
-.\rvmdk\netapp.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\rvmdk\netapp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\rvmdk\netapp.o: ..\cc3100\platform\ek-tm4c123gxl\board.h
 .\rvmdk\netapp.o: ..\cc3100\platform\ek-tm4c123gxl\spi.h
 .\rvmdk\netapp.o: ..\cc3100\simplelink\include\../source/nonos.h

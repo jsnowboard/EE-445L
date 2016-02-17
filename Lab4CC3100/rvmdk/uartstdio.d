@@ -1,7 +1,7 @@
 .\rvmdk\uartstdio.o: ..\utils\uartstdio.c
-.\rvmdk\uartstdio.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\rvmdk\uartstdio.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\rvmdk\uartstdio.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\rvmdk\uartstdio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\rvmdk\uartstdio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\rvmdk\uartstdio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\rvmdk\uartstdio.o: ..\inc/hw_ints.h
 .\rvmdk\uartstdio.o: ..\inc/hw_memmap.h
 .\rvmdk\uartstdio.o: ..\inc/hw_types.h

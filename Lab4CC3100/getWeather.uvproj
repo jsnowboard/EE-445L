@@ -465,6 +465,11 @@
               <FilePath>..\cc3100\simplelink\source\netcfg.c</FilePath>
             </File>
             <File>
+              <FileName>wlan.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\cc3100\simplelink\source\wlan.c</FilePath>
+            </File>
+            <File>
               <FileName>nonos.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\cc3100\simplelink\source\nonos.c</FilePath>
@@ -493,11 +498,6 @@
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\cc3100\platform\ek-tm4c123gxl\uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>wlan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\wlan.c</FilePath>
             </File>
             <File>
               <FileName>uartstdio.c</FileName>

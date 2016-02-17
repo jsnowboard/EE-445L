@@ -1,7 +1,7 @@
 .\rvmdk\spi.o: ..\cc3100\platform\ek-tm4c123gxl\spi.c
 .\rvmdk\spi.o: ..\cc3100\simplelink\include\simplelink.h
 .\rvmdk\spi.o: ..\cc3100\platform\ek-tm4c123gxl\user.h
-.\rvmdk\spi.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\rvmdk\spi.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\rvmdk\spi.o: ..\cc3100\platform\ek-tm4c123gxl\board.h
 .\rvmdk\spi.o: ..\cc3100\platform\ek-tm4c123gxl\spi.h
 .\rvmdk\spi.o: ..\cc3100\simplelink\include\../source/nonos.h

@@ -2,7 +2,7 @@
 .\rvmdk\fs.o: ..\cc3100\simplelink\source\datatypes.h
 .\rvmdk\fs.o: ..\cc3100\simplelink\include\simplelink.h
 .\rvmdk\fs.o: ..\cc3100\platform\ek-tm4c123gxl\user.h
-.\rvmdk\fs.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\rvmdk\fs.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\rvmdk\fs.o: ..\cc3100\platform\ek-tm4c123gxl\board.h
 .\rvmdk\fs.o: ..\cc3100\platform\ek-tm4c123gxl\spi.h
 .\rvmdk\fs.o: ..\cc3100\simplelink\include\../source/nonos.h

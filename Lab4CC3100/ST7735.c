@@ -1586,7 +1586,7 @@ int ferror(FILE *f){
 // Initialize ST7735 LCD
 // Inputs: none
 // Outputs: none
-void Output_Init(void){
+void Output_Init_ST7735(void){
   ST7735_InitR(INITR_REDTAB);
   ST7735_FillScreen(0);                 // set screen to black
 }
@@ -1601,7 +1601,7 @@ void Output_Off(void){   // Turns off the display
 }
 // Turn on display
 void Output_On(void){ // Turns on the display
-  Output_Init();      // reinitialize
+  Output_Init_ST7735();      // reinitialize
 }
 // set the color for future output
 // Background color is fixed at black

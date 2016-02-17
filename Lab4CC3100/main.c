@@ -100,14 +100,18 @@ Port A, SSI0 (PA2, PA3, PA5, PA6, PA7) sends data to Nokia5110 LCD
 #include "fixed.h"
 #include "ST7735.h"
 
-#define SSID_NAME  "ValvanoJonathaniPhone"        /* Access point name to connect to. */
+#define SSID_NAME  "Tysphone"        /* Access point name to connect to. */
 #define SEC_TYPE   SL_SEC_TYPE_WPA
-#define PASSKEY    "y2uvdjfi5puyd"        /* Password in case of secure AP */
+#define PASSKEY    "12345678"        /* Password in case of secure AP */
 #define BAUD_RATE   115200
 
-char getTemp (char array[]);
+void getTemp (char array[]);
+
 
 int TempArraySize = 5;
+
+char myArray[5];
+
 
 // This initialization function sets up the ADC according to the
 // following parameters.  Any parameters not explicitly listed
@@ -167,7 +171,7 @@ void UART_Init(void){
   UARTStdioConfig(0,BAUD_RATE,50000000);
 }
 
-#define MAX_RECV_BUFF_SIZE  1024
+#define MAX_RECV_BUFF_SIZE  4096
 #define MAX_SEND_BUFF_SIZE  512
 #define MAX_HOSTNAME_SIZE   40
 #define MAX_PASSKEY_SIZE    32
@@ -263,14 +267,14 @@ void Crash(uint32_t time){
  */
 // 1) change Austin Texas to your city
 // 2) you can change metric to imperial if you want temperature in F
-#define REQUEST "GET /data/2.5/weather?q=Austin%20Texas&units=metric HTTP/1.1\r\nUser-Agent: Keil\r\nHost:api.openweathermap.org\r\nAccept: */*\r\n\r\n"
+#define REQUEST "GET /data/2.5/weather?q=Austin%20Texas&units=metric&APPID=955db084d47dd332d35dafe1a3e2881e HTTP/1.1\r\nUser-Agent: Keil\r\nHost:api.openweathermap.org\r\nAccept: */*\r\n\r\n"
 int main(void){int32_t retVal;  SlSecParams_t secParams;
   char *pConfig = NULL; INT32 ASize = 0; SlSockAddrIn_t  Addr;
   initClk();        // PLL 50 MHz
 	
 	//ADC Part f
-	//ADC0_InitSWTriggerSeq3_Ch9();         // allow time to finish activating
-  
+	ADC0_InitSWTriggerSeq3_Ch9();         // allow time to finish activating
+	Output_On();
 	
 	UART_Init();      // Send data to PC, 115200 bps
   LED_Init();       // initialize LaunchPad I/O 
@@ -310,23 +314,35 @@ int main(void){int32_t retVal;  SlSecParams_t secParams;
         UARTprintf(Recvbuff);  UARTprintf("\r\n");
       }
     }
-    while(Board_Input()==0){}; // wait for touch
+    //while(Board_Input()==0){}; // wait for touch
     LED_GreenOff();
 			
 		//Temp Part e
-		//char Temp = getTemp(Recvbuff);
-		//printf("Temp = %20d C", Temp);
-			
+		getTemp(Recvbuff);
+		ST7735_OutChar('T');
+		ST7735_OutChar('e');
+		ST7735_OutChar('m');
+		ST7735_OutChar('p');
+		ST7735_OutChar(' ');
+		ST7735_OutChar('=');
+		ST7735_OutChar(' ');
+		for(int i = 0; i < 5; i++){
+			ST7735_OutChar(myArray[i]);
+		}
+		ST7735_OutChar('\n');
+		
 		//ADC Part f
-		//ADC0_SAC_R = ADC_SAC_AVG_64X;    //enable 64 times average before obtaining result
-    //int voltage = ADC0_InSeq3();
-		//printf("Voltage~%20dV", voltage);
+		ADC0_SAC_R = ADC_SAC_AVG_64X;    //enable 64 times average before obtaining result
+    int voltage = ADC0_InSeq3();
+		printf("Voltage~%20dV", voltage);
+		
+		while(1);
 	}
 }
 
-char getTemp (char array[]){
-	char myArray[TempArraySize];
-	for(int i = 0; i < MAX_RECV_BUFF_SIZE; i++){
+void getTemp (char array[]){
+	for(int i = 0; (i - 6) < MAX_RECV_BUFF_SIZE; i++){
+		//ST7735_OutChar(array[i]);
 		if(array[i] == 't' && array[i+1] == 'e' && array[i+2] == 'm' && array[i+3] == 'p'){
 			i += 6;
 			int j = 0;
@@ -335,9 +351,9 @@ char getTemp (char array[]){
 				i++;
 				j++;
 			}
+			break;
 		}
 	}
-	return myArray[TempArraySize];
 }
 
 /*!
