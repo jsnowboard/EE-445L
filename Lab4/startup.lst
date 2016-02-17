@@ -1082,11 +1082,10 @@ ARM Macro Assembler    Page 17
   673 0000001C         ;*******************************************************
                        ***********************
   674 0000001C                 END
-Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --apcs=interw
-ork --depend=.\startup.d -o.\startup.o -IA:\Keil_v5\ARM\RV31\INC -IA:\Keil_v5\A
-RM\CMSIS\Include -IA:\Keil_v5\ARM\Inc\TI\TM4C123 --predefine="__EVAL SETA 1" --
-predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 517" --list=.
-\startup.lst startup.s
+Command Line: --debug --xref --cpu=Cortex-M4 --apcs=interwork --depend=startup.
+d -ostartup.o -I"C:\Program Files\Keil\ARM\RV31\Inc" -I"C:\Program Files\Keil\A
+RM\CMSIS\Include" -I"C:\Program Files\Keil\ARM\Inc\TI\TM4C123" --predefine="__E
+VAL SETA 1" --predefine="__MICROLIB SETA 1" --list=startup.lst startup.s
 
 
 
@@ -2512,4 +2511,4 @@ Symbol: __main
       At line 277 in file startup.s
 Comment: __main used once
 1 symbol
-476 symbols in table
+475 symbols in table
