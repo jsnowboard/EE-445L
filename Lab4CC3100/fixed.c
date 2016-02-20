@@ -62,18 +62,18 @@ void ST7735_sDecOut3(int32_t n){
 	int thirdDigit = (n/10)%10;
 	int fourthDigit = n%10;
 	if (n > 9999 || n < -9999){
-		printf(" *.***\n");
+		ST7735_OutString(" *.***\n");
 	} else {
 		if (negative){
-			printf("-");
+			//ST7735_OutString("-");
 		} else {
-			printf(" ");
+			//ST7735_OutString(" ");
 		}
-		printf("%d",firstDigit);
-		printf(".");
-		printf("%d",secondDigit);
-		printf("%d",thirdDigit);
-		printf("%d\n",fourthDigit);
+		ST7735_OutUDec(firstDigit);
+		ST7735_OutChar('.');
+		ST7735_OutUDec(secondDigit);
+		ST7735_OutUDec(thirdDigit);
+		ST7735_OutUDec(fourthDigit);
 	}
 }
 

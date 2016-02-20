@@ -106,7 +106,7 @@ Port A, SSI0 (PA2, PA3, PA5, PA6, PA7) sends data to Nokia5110 LCD
 #define BAUD_RATE   115200
 
 void getTemp (char array[]);
-
+char* itoa (int value, char *result, int base);
 
 int TempArraySize = 5;
 
@@ -124,29 +124,24 @@ char myArray[5];
 // SS3 triggering event: software trigger
 // SS3 1st sample source: Ain9 (PE4)
 // SS3 interrupts: enabled but not promoted to controller
+int delay;
 void ADC0_InitSWTriggerSeq3_Ch9(void){ 
-  SYSCTL_RCGCADC_R |= 0x0001;   // 7) activate ADC0 
-                                  // 1) activate clock for Port E
-  SYSCTL_RCGCGPIO_R |= 0x10;
-  //while((SYSCTL_PRGPIO_R&0x10) != 0x10){};
-  GPIO_PORTE_DIR_R &= ~0x10;      // 2) make PE4 input
-  GPIO_PORTE_AFSEL_R |= 0x10;     // 3) enable alternate function on PE4
-  GPIO_PORTE_DEN_R &= ~0x10;      // 4) disable digital I/O on PE4
-  GPIO_PORTE_AMSEL_R |= 0x10;     // 5) enable analog functionality on PE4
-    
-//  while((SYSCTL_PRADC_R&0x0001) != 0x0001){};    // good code, but not yet implemented in simulator
-
-
-  ADC0_PC_R &= ~0xF;              // 7) clear max sample rate field
-  ADC0_PC_R |= 0x1;               //    configure for 125K samples/sec
+  SYSCTL_RCGC2_R |= 0x00000010;   // 1) activate clock for Port E
+  delay = SYSCTL_RCGC2_R;         //    allow time for clock to stabilize
+  GPIO_PORTE_DIR_R &= ~0x20;      // 2) make PE4 input
+  GPIO_PORTE_AFSEL_R |= 0x20;     // 3) enable alternate function on PE2
+  GPIO_PORTE_DEN_R &= ~0x20;      // 4) disable digital I/O on PE2
+  GPIO_PORTE_AMSEL_R |= 0x20;     // 5) enable analog function on PE2
+  SYSCTL_RCGC0_R |= 0x00010000;   // 6) activate ADC0
+  delay = SYSCTL_RCGC2_R;        
+  SYSCTL_RCGC0_R &= ~0x00000300;  // 7) configure for 125K
   ADC0_SSPRI_R = 0x0123;          // 8) Sequencer 3 is highest priority
   ADC0_ACTSS_R &= ~0x0008;        // 9) disable sample sequencer 3
   ADC0_EMUX_R &= ~0xF000;         // 10) seq3 is software trigger
   ADC0_SSMUX3_R &= ~0x000F;       // 11) clear SS3 field
-  ADC0_SSMUX3_R += 9;             //    set channel
+  ADC0_SSMUX3_R += 8;             //    set channel Ain9 (PE4)
   ADC0_SSCTL3_R = 0x0006;         // 12) no TS0 D0, yes IE0 END0
-  ADC0_IM_R &= ~0x0008;           // 13) disable SS3 interrupts
-  ADC0_ACTSS_R |= 0x0008;         // 14) enable sample sequencer 3
+  ADC0_ACTSS_R |= 0x0008;         // 13) enable sample sequencer 3
 }
 
 //------------ADC0_InSeq3------------
@@ -156,7 +151,6 @@ void ADC0_InitSWTriggerSeq3_Ch9(void){
 uint32_t ADC0_InSeq3(void){  uint32_t result;
   ADC0_PSSI_R = 0x0008;            // 1) initiate SS3
   while((ADC0_RIS_R&0x08)==0){};   // 2) wait for conversion done
-    // if you have an A0-A3 revision number, you need to add an 8 usec wait here
   result = ADC0_SSFIFO3_R&0xFFF;   // 3) read result
   ADC0_ISC_R = 0x0008;             // 4) acknowledge completion
   return result;
@@ -268,15 +262,14 @@ void Crash(uint32_t time){
 // 1) change Austin Texas to your city
 // 2) you can change metric to imperial if you want temperature in F
 #define REQUEST "GET /data/2.5/weather?q=Austin%20Texas&units=metric&APPID=955db084d47dd332d35dafe1a3e2881e HTTP/1.1\r\nUser-Agent: Keil\r\nHost:api.openweathermap.org\r\nAccept: */*\r\n\r\n"
+#define SEND "GET /query?city=Austin%20Texas&id=Ty%20Winkler&greet=Int%20Voltage%1D65V&edxcode=8086 HTTP/1.1\r\nUser-Agent: Keil\r\nHost: embedded-systems-server.appspot.com\r\n\r\n"
 int main(void){int32_t retVal;  SlSecParams_t secParams;
   char *pConfig = NULL; INT32 ASize = 0; SlSockAddrIn_t  Addr;
-  initClk();        // PLL 50 MHz
-	
-	//ADC Part f
 	ADC0_InitSWTriggerSeq3_Ch9();         // allow time to finish activating
+  initClk();        // PLL 50 MHz
 	Output_On();
-	
 	UART_Init();      // Send data to PC, 115200 bps
+
   LED_Init();       // initialize LaunchPad I/O 
   UARTprintf("Weather App\n");
   retVal = configureSimpleLinkToDefaultState(pConfig); // set policies
@@ -334,8 +327,31 @@ int main(void){int32_t retVal;  SlSecParams_t secParams;
 		//ADC Part f
 		ADC0_SAC_R = ADC_SAC_AVG_64X;    //enable 64 times average before obtaining result
     int voltage = ADC0_InSeq3();
-		printf("Voltage~%20dV", voltage);
+		ST7735_OutString("Voltage~");
+		ST7735_sDecOut3(voltage);
 		
+		strcpy(HostName,"embedded-systems-server.appspot.com");
+    retVal = sl_NetAppDnsGetHostByName(HostName,
+             strlen(HostName),&DestinationIP, SL_AF_INET);
+		if(retVal == 0){
+      Addr.sin_family = SL_AF_INET;
+      Addr.sin_port = sl_Htons(80);
+      Addr.sin_addr.s_addr = sl_Htonl(DestinationIP);// IP to big endian 
+      ASize = sizeof(SlSockAddrIn_t);
+      SockID = sl_Socket(SL_AF_INET,SL_SOCK_STREAM, 0);
+      if( SockID >= 0 ){
+        retVal = sl_Connect(SockID, ( SlSockAddr_t *)&Addr, ASize);
+      }
+      if((SockID >= 0)&&(retVal >= 0)){
+        strcpy(SendBuff, SEND); 
+        sl_Send(SockID, SendBuff, strlen(SendBuff), 0);// Send the HTTP GET 
+        sl_Recv(SockID, Recvbuff, MAX_RECV_BUFF_SIZE, 0);// Receive response 
+        sl_Close(SockID);
+        LED_GreenOn();
+        UARTprintf("\r\n\r\n");
+        UARTprintf(Recvbuff);  UARTprintf("\r\n");
+      }
+    }
 		while(1);
 	}
 }
@@ -354,6 +370,30 @@ void getTemp (char array[]){
 			break;
 		}
 	}
+}
+
+char* itoa (int value, char *result, int base) {
+    // check that the base if valid
+    if (base < 2 || base > 36) { *result = '\0'; return result; }
+
+    char* ptr = result, *ptr1 = result, tmp_char;
+    int tmp_value;
+
+    do {
+        tmp_value = value;
+        value /= base;
+        *ptr++ = "zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz" [35 + (tmp_value - value * base)];
+    } while ( value );
+
+    // Apply negative sign
+    if (tmp_value < 0) *ptr++ = '-';
+    *ptr-- = '\0';
+    while (ptr1 < ptr) {
+        tmp_char = *ptr;
+        *ptr--= *ptr1;
+        *ptr1++ = tmp_char;
+    }
+    return result;
 }
 
 /*!
