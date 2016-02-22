@@ -262,7 +262,7 @@ void Crash(uint32_t time){
 // 1) change Austin Texas to your city
 // 2) you can change metric to imperial if you want temperature in F
 #define REQUEST "GET /data/2.5/weather?q=Austin%20Texas&units=metric&APPID=955db084d47dd332d35dafe1a3e2881e HTTP/1.1\r\nUser-Agent: Keil\r\nHost:api.openweathermap.org\r\nAccept: */*\r\n\r\n"
-#define SEND "GET /query?city=Austin%20Texas&id=Ty%20Winkler&greet=Int%20Voltage%1D65V&edxcode=8086 HTTP/1.1\r\nUser-Agent: Keil\r\nHost: embedded-systems-server.appspot.com\r\n\r\n"
+#define SEND "GET /query?city=Austin%20Texas&id=Ty%20Winkler&greet=Voltage%3D1.5V&edxcode=8086 HTTP/1.1\r\nUser-Agent: Keil\r\nHost: embsysmooc.appspot.com\r\n\r\n"
 int main(void){int32_t retVal;  SlSecParams_t secParams;
   char *pConfig = NULL; INT32 ASize = 0; SlSockAddrIn_t  Addr;
 	ADC0_InitSWTriggerSeq3_Ch9();         // allow time to finish activating
@@ -330,7 +330,18 @@ int main(void){int32_t retVal;  SlSecParams_t secParams;
 		ST7735_OutString("Voltage~");
 		ST7735_sDecOut3(voltage);
 		
-		strcpy(HostName,"embedded-systems-server.appspot.com");
+		char* voltageString;
+		char* voltageStringNum;
+		sprintf(voltageStringNum, "%d", voltage);
+		
+		char* sendString;
+		voltageString = strcat("GET /query?city=Austin%20Texas&id=Ty%20Winkler%20Jeremiah%20Bartlett&greet=Voltage%3D", voltageStringNum);
+		sendString = strcat(voltageString, "&edxcode=8086 HTTP/1.1\r\nUser-Agent: Keil\r\nHost: embsysmooc.appspot.com\r\n\r\n");
+		ST7735_OutString("\n");
+		ST7735_OutString(sendString);
+		ST7735_OutString("\n");
+		
+		strcpy(HostName,"embsysmooc.appspot.com");
     retVal = sl_NetAppDnsGetHostByName(HostName,
              strlen(HostName),&DestinationIP, SL_AF_INET);
 		if(retVal == 0){
@@ -343,13 +354,14 @@ int main(void){int32_t retVal;  SlSecParams_t secParams;
         retVal = sl_Connect(SockID, ( SlSockAddr_t *)&Addr, ASize);
       }
       if((SockID >= 0)&&(retVal >= 0)){
-        strcpy(SendBuff, SEND); 
+        strcpy(SendBuff, sendString); 
         sl_Send(SockID, SendBuff, strlen(SendBuff), 0);// Send the HTTP GET 
         sl_Recv(SockID, Recvbuff, MAX_RECV_BUFF_SIZE, 0);// Receive response 
         sl_Close(SockID);
         LED_GreenOn();
         UARTprintf("\r\n\r\n");
-        UARTprintf(Recvbuff);  UARTprintf("\r\n");
+				ST7735_OutString("\n");
+        ST7735_OutString(Recvbuff);  UARTprintf("\r\n");
       }
     }
 		while(1);
