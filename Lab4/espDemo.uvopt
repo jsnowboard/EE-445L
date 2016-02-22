@@ -103,7 +103,6 @@
         <tRmem>1</tRmem>
         <tRfunc>0</tRfunc>
         <tRbox>1</tRbox>
-        <tRtrace>0</tRtrace>
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
         <nTsel>4</nTsel>
@@ -178,9 +177,6 @@
           <ItemText>ServerResponseBuffer</ItemText>
         </Mm>
       </MemoryWindow2>
-      <Tracepoint>
-        <THDelay>0</THDelay>
-      </Tracepoint>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
@@ -217,7 +213,6 @@
     <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
-    <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>1</GroupNumber>
       <FileNumber>1</FileNumber>
@@ -231,8 +226,6 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\startup.s</PathWithFileName>
       <FilenameWithoutPath>startup.s</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
@@ -240,15 +233,13 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>72</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>7</TopLine>
-      <CurrentLine>17</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
@@ -263,8 +254,6 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\pll.c</PathWithFileName>
       <FilenameWithoutPath>pll.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
@@ -272,15 +261,13 @@
       <FileType>1</FileType>
       <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>2</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>2</TopLine>
-      <CurrentLine>63</CurrentLine>
+      <TopLine>124</TopLine>
+      <CurrentLine>5</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\esp8266.c</PathWithFileName>
       <FilenameWithoutPath>esp8266.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
@@ -295,8 +282,6 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\UART.c</PathWithFileName>
       <FilenameWithoutPath>UART.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
@@ -311,8 +296,6 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\LED.c</PathWithFileName>
       <FilenameWithoutPath>LED.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
     </File>
   </Group>
 

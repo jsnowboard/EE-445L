@@ -7,13 +7,12 @@
 
   <Targets>
     <Target>
-      <TargetName>getWeather</TargetName>
+      <TargetName>PeriodicTimer0AInts</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060061::V5.06 update 1 (build 61)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
-          <Device>TM4C123GH6PM</Device>
+          <Device>LM4F120H5QR</Device>
           <Vendor>Texas Instruments</Vendor>
           <Cpu>IRAM(0x20000000-0x20007FFF) IROM(0-0x3FFFF) CLOCK(8000000) CPUTYPE("Cortex-M4") FPU2</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -30,7 +29,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:TM4C123GH6PM$SVD\TM4C123\TM4C123GH6PM.svd</SFDFile>
+          <SFDFile></SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -45,14 +44,14 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\rvmdk\</OutputDirectory>
-          <OutputName>getWeather</OutputName>
+          <OutputDirectory>.\</OutputDirectory>
+          <OutputName>PeriodicTimer0AInts</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\rvmdk\</ListingPath>
+          <ListingPath>.\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -73,18 +72,14 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopB1X>0</nStopB1X>
-            <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
-            <RunUserProg1>1</RunUserProg1>
+            <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>fromelf --bin --output .\rvmdk\cc31000_starter.bin .\rvmdk\cc31000_starter.axf</UserProg1Name>
+            <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopA1X>0</nStopA1X>
-            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
           <SVCSIdString></SVCSIdString>
@@ -109,7 +104,7 @@
           <SimDllName>SARMCM3.DLL</SimDllName>
           <SimDllArguments>-MPU</SimDllArguments>
           <SimDlgDll>DCM.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pCM4</SimDlgDllArguments>
+          <SimDlgDllArguments>-pCM4 -dLaunchPadDLL</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
           <TargetDllArguments>-MPU</TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
@@ -133,22 +128,20 @@
             <RestoreFunctions>1</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
-            <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
             <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>1</RunToMain>
+            <RunToMain>0</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>0</RestoreTracepoints>
-            <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>3</TargetSelection>
+          <TargetSelection>4</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -172,11 +165,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4099</DriverSelection>
+            <DriverSelection>4097</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\lmidk-agdi.dll</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -197,8 +190,8 @@
             <ldmm>1</ldmm>
             <ldXref>1</ldXref>
             <BigEnd>0</BigEnd>
-            <AdsALst>0</AdsALst>
-            <AdsACrf>0</AdsACrf>
+            <AdsALst>1</AdsALst>
+            <AdsACrf>1</AdsACrf>
             <AdsANop>0</AdsANop>
             <AdsANot>0</AdsANot>
             <AdsLLst>1</AdsLLst>
@@ -221,14 +214,13 @@
             <hadIRAM>1</hadIRAM>
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
-            <RvdsVP>2</RvdsVP>
+            <RvdsVP>1</RvdsVP>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
-            <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
@@ -349,29 +341,23 @@
           </ArmAdsMisc>
           <Cads>
             <interw>0</interw>
-            <Optim>3</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
             <EnumInt>0</EnumInt>
-            <PlainCh>0</PlainCh>
+            <PlainCh>1</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
-            <useXO>0</useXO>
-            <v6Lang>0</v6Lang>
-            <v6LangP>0</v6LangP>
-            <vShortEn>0</vShortEn>
-            <vShortWch>0</vShortWch>
             <VariousControls>
-              <MiscControls>--c99</MiscControls>
-              <Define>rvmdk PART_TM4C123GH6PM _POSIX_SOURCE UART_BUFFERED TARGET_IS_TM4C123_RB1</Define>
+              <MiscControls>--C99</MiscControls>
+              <Define>rvmdk PART_LM4F120H5QR</Define>
               <Undefine></Undefine>
-              <IncludePath>..;..\;..\..\..\..;..\cc3100;..\cc3100\platform\ek-tm4c123gxl;..\cc3100\simplelink\include;..\cc3100\simplelink\source</IncludePath>
+              <IncludePath>..;..\..\..</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -383,7 +369,6 @@
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
-            <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -400,11 +385,10 @@
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
-            <pXoBase></pXoBase>
-            <ScatterFile>cc31000_starter.sct</ScatterFile>
+            <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc>--entry Reset_Handler</Misc>
+            <Misc></Misc>
             <LinkerInputFile></LinkerInputFile>
             <DisabledWarnings></DisabledWarnings>
           </LDads>
@@ -415,129 +399,24 @@
           <GroupName>Source</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>board.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\platform\ek-tm4c123gxl\board.c</FilePath>
-            </File>
-            <File>
-              <FileName>Nokia5110.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Nokia5110.c</FilePath>
-            </File>
-            <File>
-              <FileName>LED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LED.c</FilePath>
-            </File>
-            <File>
-              <FileName>device.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\device.c</FilePath>
-            </File>
-            <File>
-              <FileName>driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\driver.c</FilePath>
-            </File>
-            <File>
-              <FileName>flowcont.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\flowcont.c</FilePath>
-            </File>
-            <File>
-              <FileName>fs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\fs.c</FilePath>
-            </File>
-            <File>
-              <FileName>netapp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\netapp.c</FilePath>
-            </File>
-            <File>
-              <FileName>netcfg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\netcfg.c</FilePath>
-            </File>
-            <File>
-              <FileName>wlan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\wlan.c</FilePath>
-            </File>
-            <File>
-              <FileName>nonos.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\nonos.c</FilePath>
-            </File>
-            <File>
-              <FileName>socket.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\socket.c</FilePath>
-            </File>
-            <File>
-              <FileName>spawn.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\simplelink\source\spawn.c</FilePath>
-            </File>
-            <File>
-              <FileName>spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\cc3100\platform\ek-tm4c123gxl\spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>startup_rvmdk.S</FileName>
+              <FileName>startup.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\startup_rvmdk.S</FilePath>
+              <FilePath>.\startup.s</FilePath>
             </File>
             <File>
-              <FileName>uart.c</FileName>
+              <FileName>PeriodicTimer0AInts.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\cc3100\platform\ek-tm4c123gxl\uart.c</FilePath>
+              <FilePath>.\PeriodicTimer0AInts.c</FilePath>
             </File>
             <File>
-              <FileName>uartstdio.c</FileName>
+              <FileName>Timer0A.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\utils\uartstdio.c</FilePath>
+              <FilePath>.\Timer0A.c</FilePath>
             </File>
             <File>
-              <FileName>ustdlib.c</FileName>
+              <FileName>PLL.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\utils\ustdlib.c</FilePath>
-            </File>
-            <File>
-              <FileName>fixed.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\fixed.c</FilePath>
-            </File>
-            <File>
-              <FileName>ST7735.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\ST7735.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Libraries</GroupName>
-          <Files>
-            <File>
-              <FileName>driverlib.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>..\driverlib\rvmdk\driverlib.lib</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Documentation</GroupName>
-          <Files>
-            <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\readme.txt</FilePath>
+              <FilePath>.\PLL.c</FilePath>
             </File>
           </Files>
         </Group>
