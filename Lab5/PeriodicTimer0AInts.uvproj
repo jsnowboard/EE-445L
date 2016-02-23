@@ -449,6 +449,11 @@
               <FileType>1</FileType>
               <FilePath>..\mymodules\PLL.c</FilePath>
             </File>
+            <File>
+              <FileName>switch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\mymodules\switch.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

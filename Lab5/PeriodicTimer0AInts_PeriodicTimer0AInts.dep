@@ -1,15 +1,16 @@
 Dependencies for Project 'PeriodicTimer0AInts', Target 'PeriodicTimer0AInts': (DO NOT MODIFY !)
 F (.\startup.s)(0x56CC7EDD)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary--pd "__UVISION_VERSION SETA 517"--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\PeriodicTimer0AInts.c)(0x56CC9CD6)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\periodictimer0aints.o --omf_browse .\periodictimer0aints.crf --depend .\periodictimer0aints.d)
+F (.\PeriodicTimer0AInts.c)(0x56CCA3DD)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\periodictimer0aints.o --omf_browse .\periodictimer0aints.crf --depend .\periodictimer0aints.d)
 I (..//inc//tm4c123gh6pm.h)(0x56C4895E)
-I (..//mymodules//DAC.h)(0x56CC89DF)
+I (..//mymodules//DAC.h)(0x56CCA39C)
 I (..//mymodules//music.h)(0x56CC89DF)
 I (..//mymodules//portf_init.h)(0x56CC9D46)
 I (..//mymodules//Timer0A.h)(0x56CC9D27)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
 I (..//mymodules//PLL.h)(0x56CC9D19)
+I (..//mymodules//switch.h)(0x56CCA4F3)
 F (..\mymodules\DAC.c)(0x56CC9D46)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\dac.o --omf_browse .\dac.crf --depend .\dac.d)
-I (..\mymodules\DAC.h)(0x56CC89DF)
+I (..\mymodules\DAC.h)(0x56CCA39C)
 F (..\mymodules\music.c)(0x56CC9D46)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\music.o --omf_browse .\music.crf --depend .\music.d)
 I (..\mymodules\music.h)(0x56CC89DF)
 F (..\mymodules\portf_init.c)(0x56CC9CB3)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\portf_init.o --omf_browse .\portf_init.crf --depend .\portf_init.d)
@@ -23,3 +24,5 @@ F (..\mymodules\PLL.c)(0x56CC7EDD)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=int
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBE250)
 I (..\mymodules\PLL.h)(0x56CC9D19)
 I (..\mymodules\../inc/tm4c123gh6pm.h)(0x56C4895E)
+F (..\mymodules\switch.c)(0x56CCA3F7)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\switch.o --omf_browse .\switch.crf --depend .\switch.d)
+I (..\mymodules\switch.h)(0x56CCA4F3)

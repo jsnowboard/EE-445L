@@ -37,6 +37,7 @@
 #include "..//mymodules//portf_init.h"
 #include "..//mymodules//Timer0A.h"
 #include "..//mymodules//PLL.h"
+#include "..//mymodules//switch.h"
 
 #include <stdint.h>
 
