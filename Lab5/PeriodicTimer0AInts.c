@@ -31,10 +31,14 @@
 // the frequency of the Timer0A interrupts.
 
 #include "..//inc//tm4c123gh6pm.h"
-#include <stdint.h>
-#include "PLL.h"
-#include "Timer0A.h"
 
+#include "..//mymodules//DAC.h"
+#include "..//mymodules//music.h"
+#include "..//mymodules//portf_init.h"
+#include "..//mymodules//Timer0A.h"
+#include "..//mymodules//PLL.h"
+
+#include <stdint.h>
 
 #define PF1       (*((volatile uint32_t *)0x40025008))
 #define PF2       (*((volatile uint32_t *)0x40025010))
@@ -63,19 +67,16 @@ void UserTask(void){
 #define F16HZ (50000000/16)
 #define F20KHZ (50000000/20000)
 //debug code
+
+int PortFInPins[3] = {1,2,3};
+int PortFOutPins[1];
+
 int main(void){ 
-  PLL_Init(Bus80MHz);              // bus clock at 50 MHz
-  SYSCTL_RCGCGPIO_R |= 0x20;       // activate port F
-  while((SYSCTL_PRGPIO_R&0x0020) == 0){};// ready?
-  GPIO_PORTF_DIR_R |= 0x0E;        // make PF3-1 output (PF3-1 built-in LEDs)
-  GPIO_PORTF_AFSEL_R &= ~0x0E;     // disable alt funct on PF3-1
-  GPIO_PORTF_DEN_R |= 0x0E;        // enable digital I/O on PF3-1
-                                   // configure PF3-1 as GPIO
-  GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R&0xFFFFF0FF)+0x00000000;
-  GPIO_PORTF_AMSEL_R = 0;          // disable analog functionality on PF
-  LEDS = 0;                        // turn all LEDs off
-//  Timer0A_Init(&UserTask, F20KHZ);     // initialize timer0A (20,000 Hz)
-  Timer0A_Init(&UserTask, F16HZ);  // initialize timer0A (16 Hz)
+  PLL_Init(Bus80MHz);              						// bus clock at 50 MHz
+  PortF_Init(PortFInPins, 3, PortFOutPins, 0); 
+  LEDS = 0;                        						// turn all LEDs off
+//  Timer0A_Init(&UserTask, F20KHZ);     			// initialize timer0A (20,000 Hz)
+  Timer0A_Init(&UserTask, F16HZ);  						// initialize timer0A (16 Hz)
   EnableInterrupts();
 
   while(1){

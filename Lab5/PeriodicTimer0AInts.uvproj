@@ -10,6 +10,7 @@
       <TargetName>PeriodicTimer0AInts</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pCCUsed>5060061::V5.06 update 1 (build 61)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
           <Device>LM4F120H5QR</Device>
@@ -72,6 +73,8 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopB1X>0</nStopB1X>
+            <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
@@ -80,6 +83,8 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopA1X>0</nStopA1X>
+            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
           <SVCSIdString></SVCSIdString>
@@ -128,6 +133,7 @@
             <RestoreFunctions>1</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
+            <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
             <UseTarget>1</UseTarget>
@@ -139,9 +145,10 @@
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>0</RestoreTracepoints>
+            <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>4</TargetSelection>
+          <TargetSelection>3</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -221,6 +228,7 @@
             <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
+            <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
@@ -353,6 +361,12 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
+            <uC99>0</uC99>
+            <useXO>0</useXO>
+            <v6Lang>0</v6Lang>
+            <v6LangP>0</v6LangP>
+            <vShortEn>0</vShortEn>
+            <vShortWch>0</vShortWch>
             <VariousControls>
               <MiscControls>--C99</MiscControls>
               <Define>rvmdk PART_LM4F120H5QR</Define>
@@ -369,6 +383,7 @@
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
+            <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -385,6 +400,7 @@
             <useFile>0</useFile>
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
+            <pXoBase></pXoBase>
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
@@ -409,14 +425,29 @@
               <FilePath>.\PeriodicTimer0AInts.c</FilePath>
             </File>
             <File>
+              <FileName>DAC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\mymodules\DAC.c</FilePath>
+            </File>
+            <File>
+              <FileName>music.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\mymodules\music.c</FilePath>
+            </File>
+            <File>
+              <FileName>portf_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\mymodules\portf_init.c</FilePath>
+            </File>
+            <File>
               <FileName>Timer0A.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Timer0A.c</FilePath>
+              <FilePath>..\mymodules\Timer0A.c</FilePath>
             </File>
             <File>
               <FileName>PLL.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\PLL.c</FilePath>
+              <FilePath>..\mymodules\PLL.c</FilePath>
             </File>
           </Files>
         </Group>
