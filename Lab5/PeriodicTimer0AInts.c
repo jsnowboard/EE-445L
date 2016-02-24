@@ -70,11 +70,11 @@ void UserTask(void){
 //debug code
 
 int PortFInPins[3] = {1,2,3};
-int PortFOutPins[1];
+//int PortFOutPins[1];
 
 int main(void){ 
   PLL_Init(Bus80MHz);              						// bus clock at 50 MHz
-  PortF_Init(PortFInPins, 3, PortFOutPins, 0); 
+  PortF_Init(PortFInPins, 3, 0, 0); 
   LEDS = 0;                        						// turn all LEDs off
 //  Timer0A_Init(&UserTask, F20KHZ);     			// initialize timer0A (20,000 Hz)
   Timer0A_Init(&UserTask, F16HZ);  						// initialize timer0A (16 Hz)

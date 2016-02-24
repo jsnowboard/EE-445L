@@ -9,7 +9,7 @@ License Information: Ty Winkler, University of Texas, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.17
-Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+Toolchain Path:  A:\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 1 (build 61)
 Assembler:       Armasm.exe V5.06 update 1 (build 61)
 Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
@@ -21,24 +21,35 @@ Target DLL:      lmidk-agdi.dll V???
 Dialog DLL:      TCM.DLL V1.14.6.0
  
 <h2>Project:</h2>
-C:\Users\Ty\Github\445L\trunk\Lab5\PeriodicTimer0AInts.uvproj
+A:\Documents\Github\EE 445L 2\trunk\Lab5\PeriodicTimer0AInts.uvproj
 Project File Date:  02/23/2016
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'A:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'PeriodicTimer0AInts'
-compiling DAC.c...
-assembling startup.s...
 compiling music.c...
-compiling PeriodicTimer0AInts.c...
-compiling portf_init.c...
-compiling Timer0A.c...
+assembling startup.s...
 compiling switch.c...
+compiling Timer0A.c...
 compiling PLL.c...
-linking...
-Program Size: Code=1520 RO-data=64 RW-data=24 ZI-data=1120  
-".\PeriodicTimer0AInts.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:03
+compiling portf_init.c...
+compiling DAC.c...
+..\mymodules\DAC.h(16): warning:  #1-D: last line of file ends without a newline
+  void DAC_Out(unsigned int output);
+..\mymodules\DAC.c(11): error:  #147-D: declaration is incompatible with "void DAC_Init(unsigned int)" (declared at line 10 of "..\mymodules\DAC.h")
+  void DAC_Init(unsigned short data){
+..\mymodules\DAC.c(37): error:  #147: declaration is incompatible with "void DAC_Out(unsigned int)" (declared at line 16 of "..\mymodules\DAC.h")
+  unsigned short DAC_Out(unsigned short code){
+..\mymodules\DAC.c(42): warning:  #1-D: last line of file ends without a newline
+  }
+..\mymodules\DAC.c: 2 warnings, 2 errors
+compiling PeriodicTimer0AInts.c...
+..//mymodules//DAC.h(16): warning:  #1-D: last line of file ends without a newline
+  void DAC_Out(unsigned int output);
+PeriodicTimer0AInts.c: 1 warning, 0 errors
+".\PeriodicTimer0AInts.axf" - 2 Error(s), 3 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
