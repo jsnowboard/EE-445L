@@ -69,15 +69,15 @@ void UserTask(void){
 #define F20KHZ (50000000/20000)
 //debug code
 
-int PortFInPins[3] = {1,2,3};
-//int PortFOutPins[1];
+int PortFinput[1];
+int PortFoutput[3] = {1,2,3};
 
 int main(void){ 
   PLL_Init(Bus80MHz);              						// bus clock at 50 MHz
-  PortF_Init(PortFInPins, 3, 0, 0); 
+  PortF_Init(PortFinput, 0, PortFoutput, 3); 
   LEDS = 0;                        						// turn all LEDs off
-//  Timer0A_Init(&UserTask, F20KHZ);     			// initialize timer0A (20,000 Hz)
-  Timer0A_Init(&UserTask, F16HZ);  						// initialize timer0A (16 Hz)
+  Timer0A_Init(&UserTask, F20KHZ);     			  // initialize timer0A (20,000 Hz)
+  //Timer0A_Init(&UserTask, F16HZ);  						// initialize timer0A (16 Hz)
   EnableInterrupts();
 
   while(1){
