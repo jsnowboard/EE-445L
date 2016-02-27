@@ -277,7 +277,6 @@ void Timer1_Init(void){
 }
 
 #define REQUEST "GET /data/2.5/weather?q=Austin%20Texas&units=metric&APPID=955db084d47dd332d35dafe1a3e2881e HTTP/1.1\r\nUser-Agent: Keil\r\nHost:api.openweathermap.org\r\nAccept: */*\r\n\r\n"
-#define SEND "GET /query?city=Austin%20Texas&id=Ty%20Winkler&greet=Voltage%3D1.5V&edxcode=8086 HTTP/1.1\r\nUser-Agent: Keil\r\nHost: embsysmooc.appspot.com\r\n\r\n"
 int main(void){int32_t retVal;  SlSecParams_t secParams;
   char *pConfig = NULL; INT32 ASize = 0; SlSockAddrIn_t  Addr;
 	ADC0_InitSWTriggerSeq3_Ch9();         // allow time to finish activating
