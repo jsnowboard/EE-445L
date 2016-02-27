@@ -4,11 +4,6 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Jeremiah\Programming\EE-445L\Lab4CC3100\getWeather.uvproj
-Project File Date:  02/20/2016
+Project File Date:  02/22/2016
 
 <h2>Output:</h2>
-Load "C:\\Users\\Jeremiah\\Programming\\EE-445L\\Lab4CC3100\\rvmdk\\getWeather.AXF" 
-Connecting: Mode=JTAG, Speed=1000000Hz
-Erase Done.
-Programming Done.
-Verify OK.
