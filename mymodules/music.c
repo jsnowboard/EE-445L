@@ -1,9 +1,10 @@
-// portf_init.c
+// music.c
 // Runs on TM4C123
 // Ty Winkler
 // Feb 23, 2016
 
 #include "music.h"
+<<<<<<< HEAD
 
 typedef struct {
 	int music[10];
@@ -11,3 +12,23 @@ typedef struct {
 }Song;
 Song carolOfTheBells;
 
+=======
+#include "notes.c"
+
+struct song{
+	int music[10];
+	int frequency[10];
+};
+
+void Song_Init(void){
+	struct song carolOfTheBells;
+
+	carolOfTheBells.music[0] = A;
+	carolOfTheBells.music[1] = A;
+	carolOfTheBells.music[2] = A;
+	carolOfTheBells.music[3] = A;
+	carolOfTheBells.music[4] = A;
+	carolOfTheBells.music[5] = A;
+	carolOfTheBells.music[6] = A;
+}
+>>>>>>> 3142de2dc69fdf2512b3aaca967e88a231c5d80a

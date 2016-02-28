@@ -110,6 +110,8 @@ char* itoa (int value, char *result, int base);
 
 int TempArraySize = 5;
 
+static int count = 0;
+
 char myArray[5];
 
 
@@ -261,15 +263,27 @@ void Crash(uint32_t time){
  */
 // 1) change Austin Texas to your city
 // 2) you can change metric to imperial if you want temperature in F
+
+void Timer1_Init(void){
+  volatile uint32_t delay;
+  SYSCTL_RCGCTIMER_R |= 0x02;   // 0) activate TIMER1
+  delay = SYSCTL_RCGCTIMER_R;   // allow time to finish activating
+  TIMER1_CTL_R = 0x00000000;    // 1) disable TIMER1A during setup
+  TIMER1_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
+  TIMER1_TAMR_R = 0x00000002;   // 3) configure for periodic mode, down-count
+	TIMER1_TAILR_R = 0xFFFFFFFF;  // 4) reload value
+  TIMER1_TAPR_R = 0;            // 5) bus clock resolution
+  TIMER1_CTL_R = 0x00000001;    // 10) enable 
+}
+
 #define REQUEST "GET /data/2.5/weather?q=Austin%20Texas&units=metric&APPID=955db084d47dd332d35dafe1a3e2881e HTTP/1.1\r\nUser-Agent: Keil\r\nHost:api.openweathermap.org\r\nAccept: */*\r\n\r\n"
-#define SEND "GET /query?city=Austin%20Texas&id=Ty%20Winkler&greet=Voltage%3D1.5V&edxcode=8086 HTTP/1.1\r\nUser-Agent: Keil\r\nHost: embsysmooc.appspot.com\r\n\r\n"
 int main(void){int32_t retVal;  SlSecParams_t secParams;
   char *pConfig = NULL; INT32 ASize = 0; SlSockAddrIn_t  Addr;
 	ADC0_InitSWTriggerSeq3_Ch9();         // allow time to finish activating
   initClk();        // PLL 50 MHz
 	Output_On();
 	UART_Init();      // Send data to PC, 115200 bps
-
+  Timer1_Init();
   LED_Init();       // initialize LaunchPad I/O 
   UARTprintf("Weather App\n");
   retVal = configureSimpleLinkToDefaultState(pConfig); // set policies
@@ -285,31 +299,38 @@ int main(void){int32_t retVal;  SlSecParams_t secParams;
   }
   UARTprintf("Connected\n");
   while(1){
-    strcpy(HostName,"openweathermap.org");
-    retVal = sl_NetAppDnsGetHostByName(HostName,
-             strlen(HostName),&DestinationIP, SL_AF_INET);
-    if(retVal == 0){
-      Addr.sin_family = SL_AF_INET;
-      Addr.sin_port = sl_Htons(80);
-      Addr.sin_addr.s_addr = sl_Htonl(DestinationIP);// IP to big endian 
-      ASize = sizeof(SlSockAddrIn_t);
-      SockID = sl_Socket(SL_AF_INET,SL_SOCK_STREAM, 0);
-      if( SockID >= 0 ){
-        retVal = sl_Connect(SockID, ( SlSockAddr_t *)&Addr, ASize);
-      }
-      if((SockID >= 0)&&(retVal >= 0)){
-        strcpy(SendBuff,REQUEST); 
-        sl_Send(SockID, SendBuff, strlen(SendBuff), 0);// Send the HTTP GET 
-        sl_Recv(SockID, Recvbuff, MAX_RECV_BUFF_SIZE, 0);// Receive response 
-        sl_Close(SockID);
-        LED_GreenOn();
-        UARTprintf("\r\n\r\n");
-        UARTprintf(Recvbuff);  UARTprintf("\r\n");
-      }
-    }
-    //while(Board_Input()==0){}; // wait for touch
-    LED_GreenOff();
-			
+		int i = 0;
+		while(i < 10){
+			int sendc = 0;
+			strcpy(HostName,"openweathermap.org");
+			retVal = sl_NetAppDnsGetHostByName(HostName,
+							 strlen(HostName),&DestinationIP, SL_AF_INET);
+			if(retVal == 0){
+				Addr.sin_family = SL_AF_INET;
+				Addr.sin_port = sl_Htons(80);
+				Addr.sin_addr.s_addr = sl_Htonl(DestinationIP);// IP to big endian 
+				ASize = sizeof(SlSockAddrIn_t);
+				SockID = sl_Socket(SL_AF_INET,SL_SOCK_STREAM, 0);
+				if( SockID >= 0 ){
+					retVal = sl_Connect(SockID, ( SlSockAddr_t *)&Addr, ASize);
+				}
+				if((SockID >= 0)&&(retVal >= 0)){
+					strcpy(SendBuff,REQUEST); 
+					sl_Send(SockID, SendBuff, strlen(SendBuff), 0);// Send the HTTP GET 
+					sl_Recv(SockID, Recvbuff, MAX_RECV_BUFF_SIZE, 0);// Receive response 
+					sl_Close(SockID);
+					LED_GreenOn();
+					UARTprintf("\r\n\r\n");
+					UARTprintf(Recvbuff);  UARTprintf("\r\n");
+				}
+			}
+			ST7735_OutUDec(sendc);
+			ST7735_OutString("\n");
+			i++;
+		}
+		
+		//while(Board_Input()==0){}; // wait for touch
+		LED_GreenOff();
 		//Temp Part e
 		getTemp(Recvbuff);
 		ST7735_OutChar('T');
@@ -323,7 +344,7 @@ int main(void){int32_t retVal;  SlSecParams_t secParams;
 			ST7735_OutChar(myArray[i]);
 		}
 		ST7735_OutChar('\n');
-		
+
 		//ADC Part f
 		ADC0_SAC_R = ADC_SAC_AVG_64X;    //enable 64 times average before obtaining result
     int voltage = ADC0_InSeq3();
@@ -331,39 +352,40 @@ int main(void){int32_t retVal;  SlSecParams_t secParams;
 		ST7735_sDecOut3(voltage);
 		
 		char* voltageString;
-		char* voltageStringNum;
-		sprintf(voltageStringNum, "%d", voltage);
+		char voltageStringNum[5];
+		sprintf(voltageStringNum, "%.1d.%.3d", voltage/1000, voltage%1000);
+		//ST7735_OutString(voltageStringNum);
 		
 		char* sendString;
-		voltageString = strcat("GET /query?city=Austin%20Texas&id=Ty%20Winkler%20Jeremiah%20Bartlett&greet=Voltage%3D", voltageStringNum);
-		sendString = strcat(voltageString, "&edxcode=8086 HTTP/1.1\r\nUser-Agent: Keil\r\nHost: embsysmooc.appspot.com\r\n\r\n");
-		ST7735_OutString("\n");
-		ST7735_OutString(sendString);
-		ST7735_OutString("\n");
+		char str1[173] = "GET /query?city=Austin%20Texas&id=Ty%20Winkler%20Jeremiah%20Bartlett&greet=Voltage%3D";
+		strcat(str1, voltageStringNum);
+		strcat(str1, "V&edxcode=8086 HTTP/1.1\r\nUser-Agent: Keil\r\nHost: embsysmooc.appspot.com\r\n\r\n");
+		
 		
 		strcpy(HostName,"embsysmooc.appspot.com");
-    retVal = sl_NetAppDnsGetHostByName(HostName,
-             strlen(HostName),&DestinationIP, SL_AF_INET);
+		retVal = sl_NetAppDnsGetHostByName(HostName,
+						 strlen(HostName),&DestinationIP, SL_AF_INET);
 		if(retVal == 0){
-      Addr.sin_family = SL_AF_INET;
-      Addr.sin_port = sl_Htons(80);
-      Addr.sin_addr.s_addr = sl_Htonl(DestinationIP);// IP to big endian 
-      ASize = sizeof(SlSockAddrIn_t);
-      SockID = sl_Socket(SL_AF_INET,SL_SOCK_STREAM, 0);
-      if( SockID >= 0 ){
-        retVal = sl_Connect(SockID, ( SlSockAddr_t *)&Addr, ASize);
-      }
-      if((SockID >= 0)&&(retVal >= 0)){
-        strcpy(SendBuff, sendString); 
-        sl_Send(SockID, SendBuff, strlen(SendBuff), 0);// Send the HTTP GET 
-        sl_Recv(SockID, Recvbuff, MAX_RECV_BUFF_SIZE, 0);// Receive response 
-        sl_Close(SockID);
-        LED_GreenOn();
-        UARTprintf("\r\n\r\n");
-				ST7735_OutString("\n");
-        ST7735_OutString(Recvbuff);  UARTprintf("\r\n");
-      }
-    }
+			Addr.sin_family = SL_AF_INET;
+			Addr.sin_port = sl_Htons(80);
+			Addr.sin_addr.s_addr = sl_Htonl(DestinationIP);// IP to big endian 
+			ASize = sizeof(SlSockAddrIn_t);
+			SockID = sl_Socket(SL_AF_INET,SL_SOCK_STREAM, 0);
+			if( SockID >= 0 ){
+				retVal = sl_Connect(SockID, ( SlSockAddr_t *)&Addr, ASize);
+			}
+			if((SockID >= 0)&&(retVal >= 0)){
+				strcpy(SendBuff, str1);
+				count = 0;					
+				sl_Send(SockID, SendBuff, strlen(SendBuff), 0);// Send the HTTP GET 
+				sl_Recv(SockID, Recvbuff, MAX_RECV_BUFF_SIZE, 0);// Receive response 
+				sl_Close(SockID);
+				LED_GreenOn();
+				UARTprintf("\r\n\r\n");
+				//ST7735_OutString(Recvbuff);  
+				UARTprintf("\r\n");
+			}
+		}
 		while(1);
 	}
 }

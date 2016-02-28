@@ -430,6 +430,11 @@
               <FileType>1</FileType>
               <FilePath>..\mymodules\switch.c</FilePath>
             </File>
+            <File>
+              <FileName>notes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\mymodules\notes.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
