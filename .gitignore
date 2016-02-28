@@ -35,3 +35,18 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Additional Files such as Project Files #
+##########################################
+.uvproj
+.bak
+.axf
+.crf
+.d
+.dep
+.lnp
+.lst
+.plg
+.uvgui
+.tra
+.project

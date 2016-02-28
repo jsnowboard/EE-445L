@@ -4,15 +4,6 @@
 // Feb 23, 2016
 
 #include "music.h"
-<<<<<<< HEAD
-
-typedef struct {
-	int music[10];
-	int frequency[10];
-}Song;
-Song carolOfTheBells;
-
-=======
 #include "notes.c"
 
 struct song{
@@ -31,4 +22,3 @@ void Song_Init(void){
 	carolOfTheBells.music[5] = A;
 	carolOfTheBells.music[6] = A;
 }
->>>>>>> 3142de2dc69fdf2512b3aaca967e88a231c5d80a
