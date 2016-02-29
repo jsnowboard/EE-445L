@@ -36,3 +36,7 @@ unsigned int DAC_Out(unsigned int output){
   while((SSI0_SR_R&SSI_SR_RNE)==0){};		// wait until response
   return SSI0_DR_R;                  		// acknowledge response
 }
+
+unsigned int DAC_Chord(unsigned int wave1, unsigned int wave2){
+	return 1;
+}

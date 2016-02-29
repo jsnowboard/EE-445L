@@ -54,8 +54,8 @@ int current_note = 0;
 int current_sin = 0;
 
 void TimerATask(void){
-  if (current_note < 60 && current_note >= 0){
-		DAC_Out(sinWave[current_sin] * carolOfTheBells[current_note]);
+  if (current_note < 28 && current_note >= 0){
+		DAC_Out(sinWave[current_sin] * MaryHadALittleLamb[current_note]);
 		current_sin++;
 		if (current_sin == 120){
 			current_sin = 0;
@@ -67,6 +67,7 @@ void TimerATask(void){
 
 void TimerBTask(void){
   current_note += next_note;
+	current_sin=0;
 }
 
 // if desired interrupt frequency is f, Timer0A_Init parameter is busfrequency/f

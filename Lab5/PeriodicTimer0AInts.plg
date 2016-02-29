@@ -4,42 +4,242 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Jeremiah\Programming\EE-445L\Lab5\PeriodicTimer0AInts.uvproj
-Project File Date:  02/26/2016
+Project File Date:  02/29/2016
 
 <h2>Output:</h2>
-Rebuild target 'PeriodicTimer0AInts'
-assembling startup.s...
+Build target 'PeriodicTimer0AInts'
 compiling PeriodicTimer0AInts.c...
-compiling DAC.c...
+..//mymodules//DAC.h(23): warning:  #1-D: last line of file ends without a newline
+..//mymodules//music.h(6): error:  #130: expected a "{"
+PeriodicTimer0AInts.c(55): warning:  #12-D: parsing restarts here after previous syntax error
+PeriodicTimer0AInts.c(56): error:  #20: identifier "current_note" is undefined
+PeriodicTimer0AInts.c(57): error:  #20: identifier "carolOfTheBells" is undefined
+PeriodicTimer0AInts.c(61): warning:  #940-D: missing return statement at end of non-void function "DAC_Chord"
+PeriodicTimer0AInts.c(64): error:  #20: identifier "current_note" is undefined
+PeriodicTimer0AInts.c(64): error:  #20: identifier "next_note" is undefined
+PeriodicTimer0AInts.c(76): warning:  #223-D: function "PLL_Init" declared implicitly
+PeriodicTimer0AInts.c(77): warning:  #223-D: function "PortF_Init" declared implicitly
+PeriodicTimer0AInts.c(79): warning:  #223-D: function "Timer0A_Init" declared implicitly
+PeriodicTimer0AInts.c(79): error:  #20: identifier "TimerATask" is undefined
+PeriodicTimer0AInts.c(80): warning:  #223-D: function "Timer0B_Init" declared implicitly
+PeriodicTimer0AInts.c(81): warning:  #223-D: function "Switch_Init" declared implicitly
+PeriodicTimer0AInts.c(82): warning:  #223-D: function "EnableInterrupts" declared implicitly
+PeriodicTimer0AInts.c(85): warning:  #223-D: function "WaitForInterrupt" declared implicitly
 compiling music.c...
-..\mymodules\music.c(7): error:  #169: expected a declaration
-..\mymodules\music.c(12): warning:  #12-D: parsing restarts here after previous syntax error
-..\mymodules\music.c(13): error:  #20: identifier "Song" is undefined
-..\mymodules\music.c(15): error:  #169: expected a declaration
 ..\mymodules\notes.c(6): warning:  #1-D: last line of file ends without a newline
-..\mymodules\music.c(21): warning:  #12-D: parsing restarts here after previous syntax error
-..\mymodules\music.c(24): error:  #70: incomplete type is not allowed
-..\mymodules\music.c(34): error:  #169: expected a declaration
-compiling portf_init.c...
-compiling Timer0A.c...
-compiling PLL.c...
-compiling switch.c...
+..\mymodules\music.c(13): error:  #147: declaration is incompatible with "const unsigned short carolOfTheBells[60]" (declared at line 7 of "..\mymodules\music.h")
+..\mymodules\music.c(14): error:  #20: identifier "Bflat" is undefined
+..\mymodules\music.c(16): error:  #20: identifier "B" is undefined
+..\mymodules\music.c(17): error:  #20: identifier "G" is undefined
+..\mymodules\music.c(68): error:  #20: identifier "D" is undefined
+..\mymodules\music.c(70): error:  #20: identifier "C" is undefined
+..\mymodules\music.c(71): error:  #20: identifier "Eflat" is undefined
+..\mymodules\music.c(101): error:  #20: identifier "F" is undefined
+..\mymodules\music.c(103): error:  #20: identifier "E" is undefined
+..\mymodules\music.c(131): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(131): error:  #147: declaration is incompatible with "const unsigned short carolOfTheBells[500]" (declared at line 13)
+..\mymodules\music.c(131): error:  #65: expected a ";"
+..\mymodules\music.c(132): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(132): error:  #65: expected a ";"
+..\mymodules\music.c(133): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(133): error:  #65: expected a ";"
+..\mymodules\music.c(134): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(134): error:  #65: expected a ";"
+..\mymodules\music.c(135): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(135): error:  #65: expected a ";"
+..\mymodules\music.c(136): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(136): error:  #65: expected a ";"
+..\mymodules\music.c(137): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(137): error:  #65: expected a ";"
+..\mymodules\music.c(141): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(141): error:  #65: expected a ";"
+..\mymodules\music.c(142): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(142): error:  #65: expected a ";"
+..\mymodules\music.c(143): error:  #77-D: this declaration has no storage class or type specifier
+..\mymodules\music.c(143): error:  #65: expected a ";"
+compiling Timer0B.c...
 compiling notes.c...
 ..\mymodules\notes.c(6): warning:  #1-D: last line of file ends without a newline
+compiling switch.c...
+compiling timer_init.c...
+..\mymodules\timer_init.c(6): warning:  #1-D: last line of file ends without a newline
+compiling DAC.c...
+..\mymodules\DAC.h(23): warning:  #1-D: last line of file ends without a newline
+C:\Program Files\Keil\ARM\RV31\Inc\stdint.h(37): error:  #130: expected a "{"
+..\mymodules\DAC.c(11): warning:  #12-D: parsing restarts here after previous syntax error
+..\mymodules\DAC.c(13): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(14): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(15): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(16): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(17): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(18): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(19): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(21): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(21): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(22): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(26): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(26): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(28): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(28): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(29): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(29): error:  #20: identifier "output" is undefined
+..\mymodules\DAC.c(30): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(31): warning:  #940-D: missing return statement at end of non-void function "DAC_Chord"
+..\mymodules\DAC.c(34): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(35): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(36): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(37): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(40): error:  #247: function "DAC_Chord" has already been defined
+..\mymodules\DAC.c(42): warning:  #940-D: missing return statement at end of non-void function "DAC_Chord"
+Target not created
+Build target 'PeriodicTimer0AInts'
+compiling PeriodicTimer0AInts.c...
+..//mymodules//DAC.h(23): warning:  #1-D: last line of file ends without a newline
+..//mymodules//music.h(6): error:  #130: expected a "{"
+PeriodicTimer0AInts.c(56): warning:  #12-D: parsing restarts here after previous syntax error
+PeriodicTimer0AInts.c(57): error:  #20: identifier "current_note" is undefined
+PeriodicTimer0AInts.c(58): error:  #20: identifier "sinWave" is undefined
+PeriodicTimer0AInts.c(58): error:  #20: identifier "current_sin" is undefined
+PeriodicTimer0AInts.c(58): error:  #20: identifier "carolOfTheBells" is undefined
+PeriodicTimer0AInts.c(66): warning:  #940-D: missing return statement at end of non-void function "DAC_Chord"
+PeriodicTimer0AInts.c(69): error:  #20: identifier "current_note" is undefined
+PeriodicTimer0AInts.c(69): error:  #20: identifier "next_note" is undefined
+PeriodicTimer0AInts.c(81): warning:  #223-D: function "PLL_Init" declared implicitly
+PeriodicTimer0AInts.c(82): warning:  #223-D: function "PortF_Init" declared implicitly
+PeriodicTimer0AInts.c(84): warning:  #223-D: function "Timer0A_Init" declared implicitly
+PeriodicTimer0AInts.c(84): error:  #20: identifier "TimerATask" is undefined
+PeriodicTimer0AInts.c(85): warning:  #223-D: function "Timer0B_Init" declared implicitly
+PeriodicTimer0AInts.c(86): warning:  #223-D: function "Switch_Init" declared implicitly
+PeriodicTimer0AInts.c(87): warning:  #223-D: function "EnableInterrupts" declared implicitly
+PeriodicTimer0AInts.c(90): warning:  #223-D: function "WaitForInterrupt" declared implicitly
+compiling music.c...
+..\mymodules\music.c(13): error:  #147: declaration is incompatible with "const unsigned int carolOfTheBells[60]" (declared at line 7 of "..\mymodules\music.h")
+..\mymodules\music.c(14): error:  #20: identifier "Bflat" is undefined
+..\mymodules\music.c(15): error:  #20: identifier "A" is undefined
+..\mymodules\music.c(16): error:  #20: identifier "B" is undefined
+..\mymodules\music.c(17): error:  #20: identifier "G" is undefined
+..\mymodules\music.c(68): error:  #20: identifier "D" is undefined
+..\mymodules\music.c(70): error:  #20: identifier "C" is undefined
+..\mymodules\music.c(71): error:  #20: identifier "Eflat" is undefined
+..\mymodules\music.c(101): error:  #20: identifier "F" is undefined
+..\mymodules\music.c(103): error:  #20: identifier "E" is undefined
+..\mymodules\music.c(188): error:  #65: expected a ";"
+..\mymodules\music.c(201): warning:  #12-D: parsing restarts here after previous syntax error
+compiling notes.c...
+compiling switch.c...
+compiling DAC.c...
+..\mymodules\DAC.h(23): warning:  #1-D: last line of file ends without a newline
+C:\Program Files\Keil\ARM\RV31\Inc\stdint.h(37): error:  #130: expected a "{"
+..\mymodules\DAC.c(11): warning:  #12-D: parsing restarts here after previous syntax error
+..\mymodules\DAC.c(13): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(14): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(15): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(16): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(17): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(18): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(19): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(21): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(21): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(22): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(26): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(26): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(28): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(28): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(29): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(29): error:  #20: identifier "output" is undefined
+..\mymodules\DAC.c(30): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(31): warning:  #940-D: missing return statement at end of non-void function "DAC_Chord"
+..\mymodules\DAC.c(34): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(35): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(36): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(37): error:  #20: identifier "uint32_t" is undefined
+..\mymodules\DAC.c(40): error:  #247: function "DAC_Chord" has already been defined
+..\mymodules\DAC.c(42): warning:  #940-D: missing return statement at end of non-void function "DAC_Chord"
 Target not created
 Rebuild target 'PeriodicTimer0AInts'
 assembling startup.s...
 compiling PeriodicTimer0AInts.c...
-compiling DAC.c...
+..//mymodules//DAC.h(23): warning:  #1-D: last line of file ends without a newline
 compiling music.c...
-..\mymodules\notes.c(6): warning:  #1-D: last line of file ends without a newline
-..\mymodules\music.c(15): warning:  #550-D: variable "carolOfTheBells" was set but never used
+..\mymodules\music.c(13): error:  #147: declaration is incompatible with "const unsigned int carolOfTheBells[60]" (declared at line 7 of "..\mymodules\music.h")
+..\mymodules\music.c(14): error:  #20: identifier "Bflat" is undefined
+..\mymodules\music.c(15): error:  #20: identifier "A" is undefined
+..\mymodules\music.c(16): error:  #20: identifier "B" is undefined
+..\mymodules\music.c(17): error:  #20: identifier "G" is undefined
+..\mymodules\music.c(68): error:  #20: identifier "D" is undefined
+..\mymodules\music.c(70): error:  #20: identifier "C" is undefined
+..\mymodules\music.c(71): error:  #20: identifier "Eflat" is undefined
+..\mymodules\music.c(101): error:  #20: identifier "F" is undefined
+..\mymodules\music.c(103): error:  #20: identifier "E" is undefined
+..\mymodules\music.c(188): error:  #65: expected a ";"
+..\mymodules\music.c(201): warning:  #12-D: parsing restarts here after previous syntax error
 compiling portf_init.c...
 compiling Timer0A.c...
 compiling PLL.c...
-compiling switch.c...
+compiling Timer0B.c...
 compiling notes.c...
-..\mymodules\notes.c(6): warning:  #1-D: last line of file ends without a newline
+compiling switch.c...
+compiling timer_init.c...
+..\mymodules\timer_init.c(6): warning:  #1-D: last line of file ends without a newline
+compiling DAC.c...
+..\mymodules\DAC.h(23): warning:  #1-D: last line of file ends without a newline
+..\mymodules\DAC.c(42): warning:  #940-D: missing return statement at end of non-void function "DAC_Chord"
+Target not created
+Build target 'PeriodicTimer0AInts'
+compiling music.c...
+..\mymodules\music.c(13): error:  #147: declaration is incompatible with "const unsigned int carolOfTheBells[60]" (declared at line 7 of "..\mymodules\music.h")
+..\mymodules\music.c(14): error:  #20: identifier "Bflat" is undefined
+..\mymodules\music.c(15): error:  #20: identifier "A" is undefined
+..\mymodules\music.c(16): error:  #20: identifier "B" is undefined
+..\mymodules\music.c(17): error:  #20: identifier "G" is undefined
+..\mymodules\music.c(68): error:  #20: identifier "D" is undefined
+..\mymodules\music.c(70): error:  #20: identifier "C" is undefined
+..\mymodules\music.c(71): error:  #20: identifier "Eflat" is undefined
+..\mymodules\music.c(101): error:  #20: identifier "F" is undefined
+..\mymodules\music.c(103): error:  #20: identifier "E" is undefined
+..\mymodules\music.c(188): error:  #65: expected a ";"
+..\mymodules\music.c(201): warning:  #12-D: parsing restarts here after previous syntax error
+compiling DAC.c...
+..\mymodules\DAC.h(23): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'PeriodicTimer0AInts'
+compiling PeriodicTimer0AInts.c...
+compiling music.c...
+..\mymodules\music.c(13): error:  #147: declaration is incompatible with "const unsigned int carolOfTheBells[60]" (declared at line 7 of "..\mymodules\music.h")
+..\mymodules\music.c(14): error:  #20: identifier "Bflat" is undefined
+..\mymodules\music.c(15): error:  #20: identifier "A" is undefined
+..\mymodules\music.c(16): error:  #20: identifier "B" is undefined
+..\mymodules\music.c(17): error:  #20: identifier "G" is undefined
+..\mymodules\music.c(68): error:  #20: identifier "D" is undefined
+..\mymodules\music.c(70): error:  #20: identifier "C" is undefined
+..\mymodules\music.c(71): error:  #20: identifier "Eflat" is undefined
+..\mymodules\music.c(101): error:  #20: identifier "F" is undefined
+..\mymodules\music.c(103): error:  #20: identifier "E" is undefined
+..\mymodules\music.c(188): error:  #65: expected a ";"
+..\mymodules\music.c(201): warning:  #12-D: parsing restarts here after previous syntax error
+compiling DAC.c...
+Target not created
+Build target 'PeriodicTimer0AInts'
+compiling PeriodicTimer0AInts.c...
+compiling music.c...
+..\mymodules\music.c(185): error:  #146: too many initializer values
+..\mymodules\music.c(188): error:  #65: expected a ";"
+..\mymodules\music.c(201): warning:  #12-D: parsing restarts here after previous syntax error
+compiling switch.c...
+Target not created
+Build target 'PeriodicTimer0AInts'
+compiling music.c...
+..\mymodules\music.c(157): error:  #147: declaration is incompatible with "const unsigned int MaryHadALittleLamb[27]" (declared at line 8 of "..\mymodules\music.h")
+Target not created
+Build target 'PeriodicTimer0AInts'
+compiling PeriodicTimer0AInts.c...
+compiling music.c...
+compiling switch.c...
 linking...
-Program Size: Code=1536 RO-data=64 RW-data=24 ZI-data=1120  
-"PeriodicTimer0AInts.axf" - 0 Error(s), 3 Warning(s).
+Program Size: Code=2416 RO-data=624 RW-data=32 ZI-data=1120  
+"PeriodicTimer0AInts.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\Jeremiah\\Programming\\EE-445L\\Lab5\\PeriodicTimer0AInts.AXF" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
