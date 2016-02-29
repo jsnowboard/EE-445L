@@ -53,12 +53,15 @@ void WaitForInterrupt(void);  // low power mode
 int current_note = 0;
 
 void TimerATask(void){
-  if (current_note < 100){
-		DAC_Out(current_note);
-		current_note += next_note;
+  if (current_note < 60){
+		DAC_Out(carolOfTheBells[current_note]);
 	} else {
 		current_note = 0;
 	}
+}
+
+void TimerBTask(void){
+  current_note += next_note;
 }
 
 // if desired interrupt frequency is f, Timer0A_Init parameter is busfrequency/f
@@ -73,7 +76,8 @@ int main(void){
   PLL_Init(Bus80MHz);              						  // bus clock at 50 MHz
   PortF_Init(PortFinput, 0, PortFoutput, 1); 
 	DAC_Init(2048);
-  Timer0A_Init(&TimerATask, F20KHZ);     			  // initialize timer0A (20,000 Hz)
+  Timer0A_Init(&TimerATask, F20KHZ);     			  // initialize timer0A (20,000 Hz) Play note every interupt
+  Timer0B_Init(&TimerBTask, F16HZ);  						// initialize timer0B (16 Hz) Go to next note
 	Switch_Init();
   EnableInterrupts();
 
