@@ -36,22 +36,13 @@
 #include "..//mymodules//music.h"
 #include "..//mymodules//portf_init.h"
 #include "..//mymodules//Timer0A.h"
+#include "..//mymodules//Timer0B.h"
 #include "..//mymodules//PLL.h"
 #include "..//mymodules//switch.h"
 
 #include <stdint.h>
 
 #define PF1       (*((volatile uint32_t *)0x40025008))
-#define PF2       (*((volatile uint32_t *)0x40025010))
-#define PF3       (*((volatile uint32_t *)0x40025020))
-#define LEDS      (*((volatile uint32_t *)0x40025038))
-#define RED       0x02
-#define BLUE      0x04
-#define GREEN     0x08
-#define WHEELSIZE 8           // must be an integer multiple of 2
-                              //    red, yellow,    green, light blue, blue, purple,   white,          dark
-const long COLORWHEEL[WHEELSIZE] = {RED, RED+GREEN, GREEN, GREEN+BLUE, BLUE, BLUE+RED, RED+GREEN+BLUE, 0};
-
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
@@ -59,25 +50,29 @@ long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
 
-void UserTask(void){
-  static int i = 0;
-  LEDS = COLORWHEEL[i&(WHEELSIZE-1)];
-  i = i + 1;
+void TimerATask(void){
+  
 }
+
+void TimerBTask(void){
+  
+}
+
 // if desired interrupt frequency is f, Timer0A_Init parameter is busfrequency/f
 #define F16HZ (50000000/16)
 #define F20KHZ (50000000/20000)
 //debug code
 
 int PortFinput[1];
-int PortFoutput[3] = {1,2,3};
+int PortFoutput[1] = {1};
 
 int main(void){ 
-  PLL_Init(Bus80MHz);              						// bus clock at 50 MHz
-  PortF_Init(PortFinput, 0, PortFoutput, 3); 
-  LEDS = 0;                        						// turn all LEDs off
-  Timer0A_Init(&UserTask, F20KHZ);     			  // initialize timer0A (20,000 Hz)
-  //Timer0A_Init(&UserTask, F16HZ);  						// initialize timer0A (16 Hz)
+  PLL_Init(Bus80MHz);              						  // bus clock at 50 MHz
+  PortF_Init(PortFinput, 0, PortFoutput, 1); 
+	DAC_Init(2048);
+  Timer0A_Init(&TimerATask, F20KHZ);     			  // initialize timer0A (20,000 Hz)
+  Timer0B_Init(&TimerBTask, F16HZ);  						// initialize timer0A (16 Hz)
+	Switch_Init();
   EnableInterrupts();
 
   while(1){
