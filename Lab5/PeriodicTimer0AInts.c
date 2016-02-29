@@ -50,12 +50,15 @@ long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
 
-void TimerATask(void){
-  
-}
+int current_note = 0;
 
-void TimerBTask(void){
-  
+void TimerATask(void){
+  if (current_note < 100){
+		DAC_Out(current_note);
+		current_note += next_note;
+	} else {
+		current_note = 0;
+	}
 }
 
 // if desired interrupt frequency is f, Timer0A_Init parameter is busfrequency/f
@@ -71,7 +74,6 @@ int main(void){
   PortF_Init(PortFinput, 0, PortFoutput, 1); 
 	DAC_Init(2048);
   Timer0A_Init(&TimerATask, F20KHZ);     			  // initialize timer0A (20,000 Hz)
-  Timer0B_Init(&TimerBTask, F16HZ);  						// initialize timer0A (16 Hz)
 	Switch_Init();
   EnableInterrupts();
 

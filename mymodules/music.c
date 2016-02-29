@@ -6,6 +6,8 @@
 #include "music.h"
 #include "notes.c"
 
+int next_note = 1;
+
 struct song{
 	int music[10];
 	int frequency[10];
@@ -22,6 +24,7 @@ void Song_Init(void){
 	carolOfTheBells.music[5] = A;
 	carolOfTheBells.music[6] = A;
 }
+/*
 //repeat 8 times
 //Treble cleff
 carolOfTheBells.music[0]=Bflat;
@@ -95,3 +98,4 @@ carolOfTheBells.music[0]=Bflat;//half note
 carolOfTheBells.music[0]=G;
 
 //
+*/
