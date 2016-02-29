@@ -67,6 +67,7 @@ void TimerATask(void){
 
 void TimerBTask(void){
   current_note += next_note;
+	current_sin = 0;
 }
 
 // if desired interrupt frequency is f, Timer0A_Init parameter is busfrequency/f
