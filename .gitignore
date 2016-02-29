@@ -6,6 +6,7 @@
 *.exe
 *.o
 *.so
+*.d
 
 # Packages #
 ############
@@ -49,3 +50,5 @@ Thumbs.db
 *.uvgui
 *.tra
 *.project
+*.map
+*.crf
