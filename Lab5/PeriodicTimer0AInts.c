@@ -51,10 +51,15 @@ void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
 
 int current_note = 0;
+int current_sin = 0;
 
 void TimerATask(void){
-  if (current_note < 60){
-		DAC_Out(carolOfTheBells[current_note]);
+  if (current_note < 60 && current_note >= 0){
+		DAC_Out(sinWave[current_sin] * carolOfTheBells[current_note]);
+		current_sin++;
+		if (current_sin == 120){
+			current_sin = 0;
+		}
 	} else {
 		current_note = 0;
 	}

@@ -4,7 +4,8 @@
 // Feb 23, 2016
 
 extern int next_note;
-extern const unsigned short carolOfTheBells[60];
+extern const unsigned int carolOfTheBells[60];
+extern const unsigned int sinWave[120];
 
 // ***************** Song_Init ****************
 // Initilize a Song struct
