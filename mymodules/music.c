@@ -8,23 +8,10 @@
 
 int next_note = 1;
 
-struct song{
-	int music[10];
-	int frequency[10];
+const unsigned short carolOfTheBells[60] = {   
+  
 };
 
-void Song_Init(void){
-	struct song carolOfTheBells;
-
-	carolOfTheBells.music[0] = A;
-	carolOfTheBells.music[1] = A;
-	carolOfTheBells.music[2] = A;
-	carolOfTheBells.music[3] = A;
-	carolOfTheBells.music[4] = A;
-	carolOfTheBells.music[5] = A;
-	carolOfTheBells.music[6] = A;
-}
-/*
 //repeat 8 times
 //Treble cleff
 carolOfTheBells.music[0]=Bflat;
@@ -98,4 +85,3 @@ carolOfTheBells.music[0]=Bflat;//half note
 carolOfTheBells.music[0]=G;
 
 //
-*/

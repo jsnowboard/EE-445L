@@ -47,12 +47,14 @@ void GPIOPortE_Handler(void){
 void Switch_Handler1(void){
 	GPIO_PORTE_ICR_R = 0x01;
 	TIMER0_CTL_R |= TIMER_CTL_TAEN;
+	TIMER0_CTL_R |= TIMER_CTL_TBEN;
 }
 
 //Stop
 void Switch_Handler2(void){
 	GPIO_PORTE_ICR_R = 0x02;
 	TIMER0_CTL_R &= ~TIMER_CTL_TAEN;
+	TIMER0_CTL_R &= ~TIMER_CTL_TBEN;
 }
 
 void Switch_Handler3(void){
