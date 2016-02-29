@@ -38,7 +38,6 @@ Thumbs.db
 
 # Additional Files such as Project Files #
 ##########################################
-*.uvproj
 *.bak
 *.axf
 *.crf
