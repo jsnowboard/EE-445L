@@ -9,7 +9,7 @@
 #include <stdint.h>
 
 // SSI0Clk (SCLK, pin 4) connected to PA2
-// SSI0Fss (!CS, pin 2) connected to PA3
+// SSI0Fss (FS, pin 2) connected to PA3
 // SSI0Tx (DIN, pin 3) connected to PA5
 
 void DAC_Init(unsigned int output){
