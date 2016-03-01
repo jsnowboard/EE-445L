@@ -62,6 +62,6 @@ void Timer0B_Init(void(*task)(void), uint32_t period){long sr;
 }
 
 void Timer0B_Handler(void){
-  TIMER0_ICR_R = TIMER_ICR_TATOCINT;// acknowledge timer0A timeout
+  TIMER0_ICR_R = TIMER_ICR_TBTOCINT;// acknowledge timer0A timeout
   (*TimerBInitTask)();                // execute user task
 }

@@ -43,6 +43,7 @@
 #include <stdint.h>
 
 #define PF1       (*((volatile uint32_t *)0x40025008))
+	#define PD1       (*((volatile uint32_t *)0x40007008))
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
@@ -54,20 +55,36 @@ int current_note = 0;
 int current_sin = 0;
 
 void TimerATask(void){
-  if (current_note < 28 && current_note >= 0){
-		DAC_Out(sinWave[current_sin] * MaryHadALittleLamb[current_note]);
+  if (current_sin < 64 && current_sin >= 0){
+		DAC_Out(sinWave[current_sin]);
 		current_sin++;
-		if (current_sin == 120){
-			current_sin = 0;
-		}
 	} else {
-		current_note = 0;
+		current_sin = 0;
 	}
 }
 
 void TimerBTask(void){
   current_note += next_note;
-	current_sin = 0;
+	if (current_note < 28 && current_note >= 0){
+		TIMER0_TAILR_R = MaryHadALittleLamb[current_note];
+	} else {
+		current_note = 0;
+	}
+}
+
+void alarmInit(){
+	volatile uint32_t delay;
+	
+  SYSCTL_RCGCGPIO_R |= 0x00000008;  // 1) activate clock for Port D
+  delay = SYSCTL_RCGCGPIO_R;        // allow time for clock to start
+  GPIO_PORTD_CR_R |= 0x02;          // allow changes to PD1
+	GPIO_PORTD_DIR_R |= 0x02;         // make PD1 output
+  GPIO_PORTD_AFSEL_R &= ~0x02;      // disable alt funct on PD1
+  GPIO_PORTD_DEN_R |= 0x02;         // enable digital I/O on PD1
+																		// configure PD1 as GPIO
+  GPIO_PORTD_PCTL_R = (GPIO_PORTE_PCTL_R&0xFFFFFF0F);
+  GPIO_PORTD_AMSEL_R &= ~0x02;
+
 }
 
 // if desired interrupt frequency is f, Timer0A_Init parameter is busfrequency/f
@@ -80,14 +97,14 @@ int PortFoutput[1] = {1};
 
 int main(void){ 
   PLL_Init(Bus80MHz);              						  // bus clock at 50 MHz
-  PortF_Init(PortFinput, 0, PortFoutput, 1); 
+  //PortF_Init(PortFinput, 0, PortFoutput, 1); 
 	DAC_Init(2048);
-  Timer0A_Init(&TimerATask, F20KHZ);     			  // initialize timer0A (20,000 Hz) Play note every interupt
-  Timer0B_Init(&TimerBTask, F16HZ);  						// initialize timer0B (16 Hz) Go to next note
+  Timer0A_Init(&TimerATask, 200);     			  // initialize timer0A (20,000 Hz) Play note every interupt
+  Timer0B_Init(&TimerBTask, 50000);  						// initialize timer0B (16 Hz) Go to next note
 	Switch_Init();
   EnableInterrupts();
 
   while(1){
-    WaitForInterrupt();
+
   }
 }

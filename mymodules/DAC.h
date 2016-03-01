@@ -14,7 +14,7 @@ void DAC_Init(unsigned int output);
 // Send data to TLV5616CP 12-bit DAC
 // inputs:  voltage output
 // outputs: none
-unsigned int DAC_Out(unsigned int output);
+void DAC_Out(unsigned int output);
 
 //********DAC_Chord*****************
 // Create a chord to output via DAC_Out
