@@ -19,7 +19,7 @@ void Switch_Init(void){
   GPIO_PORTE_DIR_R &= ~0x07;        // PE2,1,0 input 
   GPIO_PORTE_AFSEL_R &= ~0x17;      // not alternative
   GPIO_PORTE_AMSEL_R &= ~0x17;      // no analog
-  GPIO_PORTE_PCTL_R &= ~0x000F0FFF; // bits for PE2,PE1,PE0
+  GPIO_PORTE_PCTL_R &= ~0x00000FFF; // bits for PE2,PE1,PE0
   GPIO_PORTE_DEN_R |= 0x07;         // enable PE2,PE1,PE0
 	
 	GPIO_PORTE_IS_R &= ~0x07;     
@@ -27,7 +27,7 @@ void Switch_Init(void){
   GPIO_PORTE_IEV_R &= ~0x07;
 	GPIO_PORTE_ICR_R = 0x07;
 	GPIO_PORTE_IM_R |= 0x07;
-	NVIC_PRI1_R = (NVIC_PRI1_R&0xFF00FFFF)|0x00A00000; // (g) priority 5
+	NVIC_PRI1_R = (NVIC_PRI1_R&0xFFFFFF00F)|0x00000A00; // (g) priority 5
 	NVIC_EN0_R = 0x10;	
 	rewind = 0;
 }
