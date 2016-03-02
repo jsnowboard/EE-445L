@@ -154,22 +154,26 @@ int next_note = 1;
 // // carolOfTheBells.music[0]=G;
 //  };
  
- const unsigned int MaryHadALittleLamb[28] = {
+ const unsigned int MaryHadALittleLamb[35] = {
 	 D5,
+	 B4,//
 	 B4,//1.5 times
 	 A4,//.5 times
 	 G4,
 	 A4,
 	 B4,
 	 B4,
+	 B4,//
 	 B4,//2 times
 	 A4,
 	 A4,
+	 A4,//
 	 A4,//2 times
 	 B4,
 	 E5,
 	 E5,
 	 E5,
+	 B4,//
 	 B4,//1.5 times
 	 A4,//.5 times
 	 G4,
@@ -182,8 +186,49 @@ int next_note = 1;
 	 A4,
 	 B4,
 	 A4,
-	 G4//3 times
+	 G4,
+	 G4,
+	 G4,//3 times
+	 A4
  };
+ 
+const unsigned int MaryHadALittleLambTime[35] = {
+	 2,
+	 2,//
+	 1,//1.5 times
+	 1,//.5 times
+	 2,
+	 2,
+	 2,
+	 2,
+	 2,//
+	 2,//2 times
+	 2,
+	 2,
+	 2,//
+	 2,//2 times
+	 2,
+	 2,
+	 2,
+	 2,
+	 2,
+	 1,//1.5 times
+	 1,//.5 times
+	 2,
+	 2,
+	 2,
+	 2,
+	 2,
+	 2,
+	 2,
+	 2,
+	 2,
+	 2,
+	 2,
+   2,
+   2,	 //3 times
+	 1,
+};
  
 const unsigned int testsong[10] = {
 1000,
@@ -203,5 +248,3 @@ const unsigned int wave[32] = {
   3751,3496,3186,2832,2448,2048,1648,1264,910,600,345,
   156,39,0,39,156,345,600,910,1264,1648
 };
-
-

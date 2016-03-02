@@ -15,6 +15,7 @@
 int count = 0;
 int current_note = 0;
 int time = 0;
+int nexttime = 0;
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
@@ -23,32 +24,36 @@ void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
 
 void playMusic(){
-	if(playing == 1){
-		DAC_Out(wave[count] * 2);
-		count = (count + 1) % 32;
+	DAC_Out(wave[count] * 2);
+	if(count < 32){
+		count++;
+	} else {
+		count = 0;
 	}
 }
 
 void TimerATask(void){
-  playMusic();
-  time++;
-	if(time == 1000){
-		TIMER0_TAILR_R = MaryHadALittleLamb[current_note] - 1;
-		current_note += next_note;
-		if(current_note > 27){
+	if(playing == 1){
+		playMusic();
+		time++;
+		if(current_note > 34){
 			current_note = 0;
 		}
-		time = 0;
+		nexttime = MaryHadALittleLambTime[current_note];
+		if(time == 1000 * nexttime){
+			TIMER0_TAILR_R = (5000000/MaryHadALittleLamb[current_note]) - 1;
+			current_note += next_note;
+			time = 0;
+		}
 	}
 }
 
 int main(void){ 
-  PLL_Init(Bus80MHz);              // bus clock at 50 MHz
+  PLL_Init(Bus80MHz);              // bus clock at 80 MHz
   DAC_Init(1024);
   Switch_Init();
   Timer0A_Init(&TimerATask, C4);  // initialize timer0A (16 Hz)
   EnableInterrupts();
-
   while(1){
     WaitForInterrupt();
   }
