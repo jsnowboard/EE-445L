@@ -183,7 +183,7 @@ int next_note = 1;
 	 B4,
 	 A4,
 	 G4,//3 times
-	 A4
+	 G4
  };
  
 const unsigned int MaryHadALittleLambTime[29] = {
