@@ -16,6 +16,7 @@ int count = 0;
 int current_note = 0;
 int time = 0;
 int nexttime = 0;
+int amplitude=2;
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
@@ -24,6 +25,7 @@ void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
 
 void playMusic(){
+//	DAC_Out(wave[count] * amplitude);
 	DAC_Out(wave[count] * 2);
 	if(count < 32){
 		count++;
@@ -36,10 +38,13 @@ void TimerATask(void){
 	if(playing == 1){
 		playMusic();
 		time++;
-		if(current_note > 34){
+		if(current_note > 28){
 			current_note = 0;
 		}
 		nexttime = MaryHadALittleLambTime[current_note];
+//		if(time==500*nexttime){
+//			amplitude=amplitude/2;
+//		}
 		if(time == 1000 * nexttime){
 			TIMER0_TAILR_R = (5000000/MaryHadALittleLamb[current_note]) - 1;
 			current_note += next_note;

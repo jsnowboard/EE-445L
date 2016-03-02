@@ -5,8 +5,8 @@
 
 extern int next_note;
 extern const unsigned int carolOfTheBells[60];
-extern const unsigned int MaryHadALittleLamb[35];
-extern const unsigned int MaryHadALittleLambTime[35];
+extern const unsigned int MaryHadALittleLamb[29];
+extern const unsigned int MaryHadALittleLambTime[29];
 extern const unsigned int wave[32];
 extern const unsigned int testsong[10];
 
