@@ -10,6 +10,7 @@
 #include <stdint.h>
 
 int rewind = 0;
+int playing = 1;
 
 void Switch_Init(void){
 	volatile unsigned long delay;
@@ -46,15 +47,15 @@ void GPIOPortE_Handler(void){
 //Play
 void Switch_Handler1(void){
 	GPIO_PORTE_ICR_R = 0x01;
-	TIMER0_CTL_R |= TIMER_CTL_TAEN;
-	TIMER0_CTL_R |= TIMER_CTL_TBEN;
+	//TIMER0_CTL_R |= TIMER_CTL_TAEN;
+  playing = 1;
 }
 
 //Stop
 void Switch_Handler2(void){
 	GPIO_PORTE_ICR_R = 0x02;
-	TIMER0_CTL_R &= ~TIMER_CTL_TAEN;
-	TIMER0_CTL_R &= ~TIMER_CTL_TBEN;
+	//TIMER0_CTL_R &= ~TIMER_CTL_TAEN;
+	playing = 0;
 }
 
 void Switch_Handler3(void){

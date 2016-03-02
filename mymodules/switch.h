@@ -3,6 +3,9 @@
 // Ty Winkler
 // Feb 23, 2016
 
+extern int rewind;
+extern int playing;
+
 // ***************** Switch_Init ****************
 // Initilize a Switch with different functions
 // Inputs: none
