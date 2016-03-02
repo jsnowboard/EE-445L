@@ -40,7 +40,6 @@ Thumbs.db
 # Additional Files such as Project Files #
 ##########################################
 *.bak
-*.axf
 *.crf
 *.d
 *.dep
