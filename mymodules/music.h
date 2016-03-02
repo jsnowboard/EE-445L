@@ -6,7 +6,7 @@
 extern int next_note;
 extern const unsigned int carolOfTheBells[60];
 extern const unsigned int MaryHadALittleLamb[28];
-extern const unsigned int sinWave[64];
+extern const unsigned int SineWave[16];
 
 // ***************** Song_Init ****************
 // Initilize a Song struct

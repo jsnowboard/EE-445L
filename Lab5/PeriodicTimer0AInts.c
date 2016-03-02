@@ -55,8 +55,14 @@ int current_note = 0;
 int current_sin = 0;
 
 void TimerATask(void){
-  if (current_sin < 64 && current_sin >= 0){
-		DAC_Out(sinWave[current_sin]);
+//	current_note += next_note;
+//	if (current_note < 28 && current_note >= 0){
+//		//TIMER0_TAILR_R = MaryHadALittleLamb[current_note];
+//	} else {
+//		current_note = 0;
+//	}
+  if (current_sin < 16 && current_sin >= 0){
+//		DAC_Out(SineWave[current_sin] * 100);
 		current_sin++;
 	} else {
 		current_sin = 0;
@@ -65,11 +71,11 @@ void TimerATask(void){
 
 void TimerBTask(void){
   current_note += next_note;
-	if (current_note < 28 && current_note >= 0){
-		TIMER0_TAILR_R = MaryHadALittleLamb[current_note];
-	} else {
-		current_note = 0;
-	}
+//	if (current_note < 28 && current_note >= 0){
+//		TIMER0_TAILR_R = MaryHadALittleLamb[current_note];
+//	} else {
+//		current_note = 0;
+//	}
 }
 
 void alarmInit(){
@@ -99,12 +105,12 @@ int main(void){
   PLL_Init(Bus80MHz);              						  // bus clock at 50 MHz
   //PortF_Init(PortFinput, 0, PortFoutput, 1); 
 	DAC_Init(2048);
-  Timer0A_Init(&TimerATask, 200);     			  // initialize timer0A (20,000 Hz) Play note every interupt
-  Timer0B_Init(&TimerBTask, 50000);  						// initialize timer0B (16 Hz) Go to next note
+  Timer0A_Init(&TimerATask, 70000);     			  // initialize timer0A (20,000 Hz) Play note every interupt
+  //Timer0B_Init(&TimerBTask, 1000);  						// initialize timer0B (16 Hz) Go to next note
 	Switch_Init();
   EnableInterrupts();
 
   while(1){
-
-  }
+		DAC_Out(SineWave[current_sin] * 100);
+	}
 }
