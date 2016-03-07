@@ -1,0 +1,35 @@
+inner space
+4650 50
+2418 26
+1488 14
+
+outer space
+4836 52 
+2604 28
+1674 18
+
+box volume
+5394 58
+3162 34
+1674 18
+
+Top Front slot
+Top Back slot
+Bottom Front slot
+Bottom Back slot
+930 10
+93   1 
+
+Top Right slot
+Top Left slot
+Bottom Right slot
+Bottom Left slot
+1674 12
+93    1
+
+Front Right slot
+Front Left slot
+Back Right slot
+Back Left slot
+558   6
+93    1

@@ -1,1 +1,1 @@
-notes.o: ..\mymodules\notes.c
+.\notes.o: ..\mymodules\notes.c

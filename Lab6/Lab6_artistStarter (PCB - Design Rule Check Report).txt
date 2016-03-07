@@ -2,12 +2,12 @@ Design Rule Check Report
 ------------------------
 
 Report File:        C:\Users\Jeremiah\Programming\EE-445L\Lab6\Lab6_artistStarter (PCB - Design Rule Check Report).txt
-Report Written:     Sunday, March 06, 2016
+Report Written:     Monday, March 07, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Lab6\Lab6_artistStarter.pcb
 Design Title:       
 Created:            1/28/2013 11:01:41 PM
-Last Saved:         3/6/2016 7:22:49 PM
-Editing Time:       794 min
+Last Saved:         3/7/2016 10:06:38 AM
+Editing Time:       1683 min
 Units:              mil (precision 0)
 
 

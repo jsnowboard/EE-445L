@@ -2,12 +2,12 @@ Unconnected Pins Report
 -----------------------
 
 Report File:        C:\Users\Jeremiah\Programming\EE-445L\Lab6\Lab6_artistStarter (SCH - Unconnected Pins Report).txt
-Report Written:     Sunday, March 06, 2016
+Report Written:     Monday, March 07, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Lab6\Lab6_artistStarter.sch
 Design Title:       
 Created:            
 Last Saved:         3/6/2016 6:15:30 PM
-Editing Time:       3932 min
+Editing Time:       4887 min
 Units:              mil (precision 0)
 
 Component J3 Pin J3-16 (Chan0)

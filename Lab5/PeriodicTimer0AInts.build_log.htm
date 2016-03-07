@@ -3,52 +3,61 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.17.0.0
-Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Ty Winkler, University of Texas, LIC=----
+IDE-Version: µVision V5.18.0.0
+Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Jeremiah Bartlett, University of Texas at Austin, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.17
+Toolchain:       MDK-Lite  Version: 5.18
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 1 (build 61)
 Assembler:       Armasm.exe V5.06 update 1 (build 61)
 Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
 Library Manager: ArmAr.exe V5.06 update 1 (build 61)
 Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
-CPU DLL:         SARMCM3.DLL V5.17
-Dialog DLL:      DCM.DLL V1.13.4.0
+CPU DLL:         SARMCM3.DLL V5.18
+Dialog DLL:      DCM.DLL V1.13.6.0
 Target DLL:      lmidk-agdi.dll V???
-Dialog DLL:      TCM.DLL V1.14.6.0
+Dialog DLL:      TCM.DLL V1.14.8.0
  
 <h2>Project:</h2>
-C:\Users\Ty\Github\445L\trunk\Lab5\PeriodicTimer0AInts.uvproj
-Project File Date:  02/24/2016
+C:\Users\Jeremiah\Programming\EE-445L\Lab5\PeriodicTimer0AInts.uvprojx
+Project File Date:  03/01/2016
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'PeriodicTimer0AInts'
-assembling startup.s...
 compiling music.c...
-..\mymodules\music.h(4): warning:  #1-D: last line of file ends without a newline
-  // Feb 23, 2016
-..\mymodules\music.c(17): error:  #20: identifier "A" is undefined
-  	carolOfTheBells.music[0] = A;
-..\mymodules\music.c(15): warning:  #550-D: variable "carolOfTheBells" was set but never used
-  	struct song carolOfTheBells;
-..\mymodules\music.c: 2 warnings, 1 error
-compiling DAC.c...
-compiling PeriodicTimer0AInts.c...
-..//mymodules//music.h(4): warning:  #1-D: last line of file ends without a newline
-  // Feb 23, 2016
-PeriodicTimer0AInts.c: 1 warning, 0 errors
-compiling portf_init.c...
-compiling PLL.c...
-compiling Timer0A.c...
+assembling startup.s...
 compiling notes.c...
+compiling timer_init.c...
+compiling Timer0A.c...
+compiling PeriodicTimer0AInts.c...
+compiling PLL.c...
+compiling portf_init.c...
 compiling switch.c...
-".\PeriodicTimer0AInts.axf" - 1 Error(s), 3 Warning(s).
-Target not created.
-Build Time Elapsed:  00:00:04
+compiling DAC.c...
+linking...
+Program Size: Code=2096 RO-data=432 RW-data=40 ZI-data=1120  
+".\PeriodicTimer0AInts.axf" - 0 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Jeremiah\Programming\EE-445L\Lab5\RTE
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
+  C:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

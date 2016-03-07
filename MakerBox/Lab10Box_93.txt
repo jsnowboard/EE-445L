@@ -1,0 +1,39 @@
+Box inside 2.9 wide 
+by 5.5 tall 
+by 0.8 in high
+
+inner space
+4650 50  5580 60
+2418 26  2976 32
+1488 14   930 10
+
+outer space
+4836 52  5766 62 
+2604 28  3162 34
+1674 18  1116 12
+
+box volume
+5394 58  6324 68
+3162 34  3720 40
+1674 18  1116 12
+
+Top Front slot
+Top Back slot
+Bottom Front slot
+Bottom Back slot
+930 10
+93   1 
+
+Top Right slot
+Top Left slot
+Bottom Right slot
+Bottom Left slot
+1674 12
+93    1
+
+Front Right slot
+Front Left slot
+Back Right slot
+Back Left slot
+558   6
+93    1

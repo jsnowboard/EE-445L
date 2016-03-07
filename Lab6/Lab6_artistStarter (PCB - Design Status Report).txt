@@ -1,0 +1,106 @@
+Design Status Report
+--------------------
+
+Report File:        C:\Users\Jeremiah\Programming\EE-445L\Lab6\Lab6_artistStarter (PCB - Design Status Report).txt
+Report Written:     Monday, March 07, 2016
+Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Lab6\Lab6_artistStarter.pcb
+Design Title:       
+Created:            1/28/2013 11:01:41 PM
+Last Saved:         3/7/2016 12:31:53 AM
+Editing Time:       1106 min
+Units:              mil (precision 0)
+
+
+Board Area
+==========
+
+    8184375 mil squared
+
+
+Board Extents
+=============
+
+    X:3638 mil Y:2250 mil
+Layers
+======
+
+Name               Type          Side   Net
+--------------------------------------------------
+Top Silkscreen     Silk Screen   Top
+Top Copper         Electrical    Top
+Top Solder Mask    Solder Mask   Top
+Documentation1     Documentation Top
+Top Paste Mask     Paste Mask    Top
+Bottom Silkscreen  Silk Screen   Bottom
+Bottom Copper      Electrical    Bottom
+Bottom Solder Mask Solder Mask   Bottom
+Documentation2     Documentation Bottom
+
+Components
+==========
+
+Component      Package  Components Top Bottom Pins
+------------------------------------------------------------
+0.25Wresistor  DIP               1   1      0    2
+0.125Wresistor DIL               2   2      0    4
+1N914          MISC              1   1      0    2
+2N2222         TO92              1   1      0    3
+B3F-1050       DIP               5   1      4   20
+Ceramic        C                11  11      0   22
+Header2        SIP               1   1      0    2
+Header5        SIP               1   1      0    5
+LM2937ET-3.3   TO220             1   1      0    3
+LogicAnalyzer  DIP               1   1      0   16
+Speaker        DIP               1   1      0    2
+ST7735         LCD               1   0      1   10
+tantalum       C                 1   1      0    2
+testpoint      BIG               3   3      0    3
+testpoint      SIP               2   2      0    2
+TM4C123GH6PM   LQFP              1   1      0   64
+XTAL           NX5032            1   1      0    2
+------------------------------------------------------------
+Total:                          35  30      5  164
+------------------------------------------------------------
+
+Total Pin Count
+===============
+
+Free Pads:                             4
+Total PinCount:                        168
+
+
+Net List
+========
+
+Net Class Nets  Track Length Vias Connections Connection Length
+-------------------------------------------------------------------------
+Signal    125          16648    1           0                 0
+Power     10           11244    2           0                 0
+Ground    1             9022    8           0                 0
+-------------------------------------------------------------------------
+Total:    136          36913   11           0                 0
+-------------------------------------------------------------------------
+
+Drill List
+==========
+
+Drill Diameter  Number of holes
+---------------------------------
+15                           11
+29                           35
+33                            9
+35                           16
+40                           30
+42                            3
+43                            2
+60                            3
+125                           4
+---------------------------------
+Total:                      113
+---------------------------------
+Total number of free pads 4.
+
+
+
+
+End Of Report.
