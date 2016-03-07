@@ -2,15 +2,30 @@ Forward Design Changes Report
 -----------------------------
 
 Report File:        C:\Users\Jeremiah\Programming\EE-445L\Lab6\Lab6_artistStarter (PCB - Forward Design Changes Report).txt
-Report Written:     Wednesday, March 02, 2016
+Report Written:     Sunday, March 06, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Lab6\Lab6_artistStarter.pcb
 Design Title:       
 Created:            1/28/2013 11:01:41 PM
-Last Saved:         3/2/2016 1:37:11 AM
-Editing Time:       680 min
+Last Saved:         3/6/2016 7:19:43 PM
+Editing Time:       792 min
 Units:              mil (precision 0)
 
-The designs are the same, so no design changes to forward.
+Disconnected pin "U1-7" from net "N0011".
+Disconnected pin "U1-8" from net "N0011".
+Disconnected pin "Mode-4" from net "+3.3".
+Disconnected pin "Hours-1" from net "N0011".
+Disconnected pin "Hours-4" from net "+3.3".
+Disconnected pin "Minutes-1" from net "N0011".
+
+Deleted net "N0011".
+
+Added component reference "TP2" of component "testpoint", package "BIG".
+
+Connected pin "U1-7" to net "PE2".
+Connected pin "U1-8" to net "PE1".
+Connected pin "Hours-1" to net "PE1".
+Connected pin "Minutes-1" to net "PE2".
+Connected pin "TP2-1" to net "Speaker-".
 
 
 End Of Report.
