@@ -1,0 +1,30 @@
+Forward Design Changes Report
+-----------------------------
+
+Report File:        C:\Users\Jeremiah\Programming\EE-445L\Lab7\Lab7_TM4C123starter (PCB - Forward Design Changes Report).txt
+Report Written:     Wednesday, March 09, 2016
+Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Lab7\Lab7_TM4C123starter.pcb
+Design Title:       
+Created:            1/28/2013 11:01:41 PM
+Last Saved:         3/9/2016 3:00:06 AM
+Editing Time:       683 min
+Units:              mil (precision 0)
+
+Disconnected pin "U2-6" from net "PE3".
+Disconnected pin "U2-7" from net "PE2".
+Disconnected pin "U2-8" from net "PE1".
+Disconnected pin "U2-9" from net "PE0".
+Disconnected pin "U2-59" from net "PE4".
+Disconnected pin "U2-60" from net "PE5".
+
+Deleted component reference "U2".
+
+Connected pin "U1-60" to net "PE5".
+Connected pin "U1-59" to net "PE4".
+Connected pin "U1-6" to net "PE3".
+Connected pin "U1-7" to net "PE2".
+Connected pin "U1-8" to net "PE1".
+Connected pin "U1-9" to net "PE0".
+
+
+End Of Report.

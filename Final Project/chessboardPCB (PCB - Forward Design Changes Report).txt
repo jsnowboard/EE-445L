@@ -1,0 +1,85 @@
+Forward Design Changes Report
+-----------------------------
+
+Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB (PCB - Forward Design Changes Report).txt
+Report Written:     Monday, March 21, 2016
+Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
+Design Title:       
+Created:            3/21/2016 1:36:09 AM
+Last Saved:         3/21/2016 1:51:28 AM
+Editing Time:       15 min
+Units:              mil (precision 0)
+
+Disconnected pin "U1-17" from net "PA0".
+Disconnected pin "U1-19" from net "PA2".
+Disconnected pin "U1-20" from net "PA3".
+Disconnected pin "U1-21" from net "PA4".
+Disconnected pin "U1-22" from net "PA5".
+Disconnected pin "U1-23" from net "PA6".
+Disconnected pin "U1-24" from net "PA7".
+Disconnected pin "J4-1" from net "GND".
+Disconnected pin "J4-2" from net "+5V".
+Disconnected pin "J4-3" from net "PA7".
+Disconnected pin "J4-4" from net "PA6".
+Disconnected pin "J4-5" from net "PA0".
+Disconnected pin "J4-6" from net "PA3".
+Disconnected pin "J4-7" from net "PA5".
+Disconnected pin "J4-8" from net "PA2".
+Disconnected pin "J4-9" from net "PA4".
+Disconnected pin "J4-10" from net "+5V".
+Disconnected pin "U2-8" from net "GND".
+Disconnected pin "U5-8" from net "GND".
+Disconnected pin "U6-8" from net "GND".
+Disconnected pin "U7-8" from net "GND".
+Disconnected pin "U8-8" from net "GND".
+Disconnected pin "U9-8" from net "GND".
+Disconnected pin "U10-8" from net "GND".
+Disconnected pin "U11-8" from net "GND".
+
+Deleted component reference "J4".
+
+Added net "N0977".
+Added net "N0978".
+Added net "N0979".
+Added net "N0980".
+Added net "N0981".
+Added net "N0982".
+Added net "N0983".
+Added net "N0984".
+
+Added component reference "C15" of component "Capacitor", package "C".
+Added component reference "C16" of component "Capacitor", package "C".
+Added component reference "C17" of component "Capacitor", package "C".
+Added component reference "C18" of component "Capacitor", package "C".
+Added component reference "C19" of component "Capacitor", package "C".
+Added component reference "C20" of component "Capacitor", package "C".
+Added component reference "C21" of component "Capacitor", package "C".
+Added component reference "C22" of component "Capacitor", package "C".
+
+Connected pin "U2-8" to net "N0977".
+Connected pin "U5-8" to net "N0978".
+Connected pin "U6-8" to net "N0979".
+Connected pin "U7-8" to net "N0980".
+Connected pin "U8-8" to net "N0981".
+Connected pin "U9-8" to net "N0982".
+Connected pin "U10-8" to net "N0983".
+Connected pin "U11-8" to net "N0984".
+Connected pin "C15-1" to net "GND".
+Connected pin "C15-2" to net "N0982".
+Connected pin "C16-1" to net "GND".
+Connected pin "C16-2" to net "N0983".
+Connected pin "C17-1" to net "GND".
+Connected pin "C17-2" to net "N0984".
+Connected pin "C18-1" to net "GND".
+Connected pin "C18-2" to net "N0981".
+Connected pin "C19-1" to net "GND".
+Connected pin "C19-2" to net "N0980".
+Connected pin "C20-1" to net "GND".
+Connected pin "C20-2" to net "N0979".
+Connected pin "C21-1" to net "GND".
+Connected pin "C21-2" to net "N0978".
+Connected pin "C22-1" to net "GND".
+Connected pin "C22-2" to net "N0977".
+
+
+End Of Report.
