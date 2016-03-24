@@ -1,0 +1,113 @@
+Update Components Report
+------------------------
+
+Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB (PCB - Update Components Report).txt
+Report Written:     Monday, March 21, 2016
+Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
+Design Title:       
+Created:            3/21/2016 1:36:09 AM
+Last Saved:         3/21/2016 5:58:29 PM
+Editing Time:       570 min
+Units:              mil (precision 0)
+
+
+Library Files:
+==============
+
+C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\Jeremiah.cml
+
+Selected items to be updated:
+=============================
+
+
+Components:
+===========
+
+    (None) 
+
+Symbols:
+========
+
+    (None) 
+
+Additional items to be updated:
+===============================
+
+
+Components:
+===========
+
+    (None) 
+
+Symbols:
+========
+
+    (None) 
+
+Selected items not to be updated  (Same version as library)
+===========================================================
+
+
+Components:
+===========
+
+0.125Wresistor C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+74HC595        C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\Jeremiah.cml
+B3F-1050       C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+Capacitor      C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+Ceramic        C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+Header2        C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+Header5        C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+Header66       C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\Jeremiah.cml
+LEDT1.75       C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+LM2937-5       C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+LogicAnalyzer  C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+tantalum       C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+testpoint      C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+TM4C123GH6PM   C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+XTAL           C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L.cml
+
+Symbols:
+========
+
+0.1inCeramic    C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+0.2incap        C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+0.125watt       C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+2pinHeader      C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+5pinHeader      C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+74HC595         C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\Jeremiah_PCB_symbols.psl
+B3F-1050        C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+ceramic         C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+DIP-16          C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+Header66        C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\Jeremiah_PCB_symbols.psl
+LED-T175        C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+LQFP-64         C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+NX5032GAcrystal C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+testpoint       C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+TO220-2         C:\Users\Jeremiah\Programming\EE-445L\PCBArtistLibrary\EE345L_pcb_symbols.psl
+
+
+
+Update Components Summary
+=========================
+
+Updating all components.
+Update component values
+Keep component value positions
+(Remove pad style exceptions on updated components)
+
+	Selected for update:			  15  Components
+						  15  Symbols
+
+	Selected items to be updated:		   0  Components
+						   0  Symbols
+
+	Additional items to be updated:		   0  Components
+						   0  Symbols
+
+	Selected items NOT to be updated:	  15  Components
+	  (Same version as library)		  15  Symbols
+
+
+End Of Report.
