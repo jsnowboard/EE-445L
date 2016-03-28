@@ -1,0 +1,619 @@
+Design Rule Check Report
+------------------------
+
+Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB (PCB - Design Rule Check Report).txt
+Report Written:     Monday, March 28, 2016
+Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
+Design Title:       
+Created:            3/21/2016 1:36:09 AM
+Last Saved:         3/28/2016 10:33:28 AM
+Editing Time:       3327 min
+Units:              inches (precision 4)
+
+
+Results
+=======
+
+Gap in Net "+3.3V" between (11.6000,9.6500) and (11.8500,9.7000) 
+    +3.3V.
+Gap in Net "+3.3V" between (11.8500,9.7000) and (11.9500,9.6750) 
+    +3.3V.
+Gap in Net "+3.3V" between (10.2000,9.1000) and (10.4657,9.1189) 
+    +3.3V.
+Gap in Net "+3.3V" between (10.4657,9.1189) and (10.4657,9.0205) 
+    +3.3V.
+Gap in Net "+3.3V" between (10.4657,9.1189) and (10.6705,9.2843) 
+    +3.3V.
+Gap in Net "+3.3V" between (10.4657,9.0205) and (10.6508,8.8157) 
+    +3.3V.
+Gap in Net "+3.3V" between (10.6508,8.8157) and (10.9343,8.9220) 
+    +3.3V.
+Gap in Net "+3.3V" between (10.9343,8.9220) and (10.9343,9.0992) 
+    +3.3V.
+Gap in Net "+3.3V" between (11.6750,8.6750) and (11.6000,8.3750) 
+    +3.3V.
+Gap in Net "+3.3V" between (11.6000,8.3750) and (11.6000,8.1750) 
+    +3.3V.
+Gap in Net "+3.3V" between (11.6000,8.1750) and (11.6000,7.9750) 
+    +3.3V.
+Gap in Net "+3.3V" between (11.6000,7.9750) and (11.6000,7.7750) 
+    +3.3V.
+Gap in Net "+3.3V" between (11.6000,7.7750) and (11.6000,7.5750) 
+    +3.3V.
+Gap in Net "+3.3V" between (11.6000,7.5750) and (11.6000,7.3750) 
+    +3.3V.
+Gap in Net "+3.3V" between (11.6000,7.3750) and (11.7000,7.1500) 
+    +3.3V.
+Gap in Net "+3.3V" between (9.7450,9.8900) and (10.0300,9.6650) 
+    +3.3V.
+Gap in Net "+3.3V" between (10.6705,9.2843) and (10.8300,9.6650) 
+    +3.3V.
+Gap in Net "a1" between (12.9000,9.6500) and (12.0850,9.5800) 
+    a1.
+Gap in Net "a2" between (12.9000,9.5500) and (12.0350,9.3600) 
+    a2.
+Gap in Net "a3" between (12.9000,9.4500) and (12.0850,9.3600) 
+    a3.
+Gap in Net "a4" between (12.9000,9.3500) and (12.1350,9.3600) 
+    a4.
+Gap in Net "a5" between (12.9000,9.2500) and (12.1850,9.3600) 
+    a5.
+Gap in Net "a6" between (12.9000,9.1500) and (12.2350,9.3600) 
+    a6.
+Gap in Net "a7" between (12.9000,9.0500) and (12.2850,9.3600) 
+    a7.
+Gap in Net "a8" between (12.9000,8.9500) and (12.3350,9.3600) 
+    a8.
+Gap in Net "b1" between (12.9000,8.8500) and (12.0850,8.6300) 
+    b1.
+Gap in Net "b2" between (12.9000,8.7500) and (12.0350,8.4100) 
+    b2.
+Gap in Net "b3" between (12.9000,8.6500) and (12.0850,8.4100) 
+    b3.
+Gap in Net "b4" between (12.9000,8.5500) and (12.1350,8.4100) 
+    b4.
+Gap in Net "b5" between (12.9000,8.4500) and (12.1850,8.4100) 
+    b5.
+Gap in Net "b6" between (12.9000,8.3500) and (12.2350,8.4100) 
+    b6.
+Gap in Net "b7" between (12.9000,8.2500) and (12.2850,8.4100) 
+    b7.
+Gap in Net "b8" between (12.9000,8.1500) and (12.3350,8.4100) 
+    b8.
+Gap in Net "Battery" between (11.3500,9.9500) and (11.1500,9.9000) 
+    Battery.
+Gap in Net "Battery" between (11.3500,9.9500) and (11.4000,9.6500) 
+    Battery.
+Gap in Net "Battery" between (11.4000,9.6500) and (11.3000,9.5000) 
+    Battery.
+Gap in Net "c1" between (12.9000,8.0500) and (12.0850,7.7300) 
+    c1.
+Gap in Net "c2" between (12.9000,7.9500) and (12.0350,7.5100) 
+    c2.
+Gap in Net "c3" between (12.9000,7.8500) and (12.0850,7.5100) 
+    c3.
+Gap in Net "c4" between (12.9000,7.7500) and (12.1350,7.5100) 
+    c4.
+Gap in Net "c5" between (12.9000,7.6500) and (12.1850,7.5100) 
+    c5.
+Gap in Net "c6" between (12.9000,7.5500) and (12.2350,7.5100) 
+    c6.
+Gap in Net "c7" between (12.9000,7.4500) and (12.2850,7.5100) 
+    c7.
+Gap in Net "c8" between (12.9000,7.3500) and (12.3350,7.5100) 
+    c8.
+Gap in Net "clock" between (10.9343,9.0205) and (12.2350,8.6300) 
+    clock.
+Gap in Net "clock" between (12.2350,8.6300) and (12.4350,8.1800) 
+    clock.
+Gap in Net "clock" between (12.4350,8.1800) and (12.2350,7.7300) 
+    clock.
+Gap in Net "clock" between (12.2350,8.6300) and (12.4850,9.1300) 
+    clock.
+Gap in Net "clock" between (12.4850,9.1300) and (12.2350,9.5800) 
+    clock.
+Gap in Net "clock" between (12.2350,9.5800) and (12.4850,9.9800) 
+    clock.
+Gap in Net "clock" between (12.2350,7.7300) and (12.4850,7.1800) 
+    clock.
+Gap in Net "clock" between (12.4850,7.1800) and (12.1850,6.7300) 
+    clock.
+Gap in Net "clock" between (12.1850,6.7300) and (11.0500,6.0500) 
+    clock.
+Gap in Net "clock_in" between (10.8083,8.8157) and (9.6950,8.3050) 
+    clock_in.
+Gap in Net "clock_in" between (9.6950,8.3050) and (9.2950,7.9050) 
+    clock_in.
+Gap in Net "clock_in" between (9.6950,8.3050) and (9.3450,8.7550) 
+    clock_in.
+Gap in Net "clock_in" between (9.3450,8.7550) and (9.6450,9.2050) 
+    clock_in.
+Gap in Net "clock_in" between (9.2950,7.9050) and (9.3450,7.1550) 
+    clock_in.
+Gap in Net "clock_in" between (9.3450,7.1550) and (9.7950,7.1550) 
+    clock_in.
+Gap in Net "clock_in" between (9.7950,7.1550) and (9.7450,6.6550) 
+    clock_in.
+Gap in Net "clock_in" between (9.7450,6.6550) and (9.6944,6.6550) 
+    clock_in.
+Gap in Net "clock_in" between (9.6944,6.6550) and (9.3450,6.3050) 
+    clock_in.
+Gap in Net "clock_in" between (9.7450,6.6550) and (11.2500,6.0500) 
+    clock_in.
+Gap in Net "d1" between (12.9000,7.2500) and (12.3350,7.1800) 
+    d1.
+Gap in Net "d2" between (12.2850,6.9600) and (12.9000,7.1500) 
+    d2.
+Gap in Net "d3" between (12.3350,6.9600) and (12.9000,7.0500) 
+    d3.
+Gap in Net "d4" between (12.3850,6.9600) and (12.9000,6.9500) 
+    d4.
+Gap in Net "d5" between (12.9000,6.8500) and (12.4350,6.9600) 
+    d5.
+Gap in Net "d6" between (12.9000,6.7500) and (12.4850,6.9600) 
+    d6.
+Gap in Net "d7" between (12.9000,6.6500) and (12.5350,6.9600) 
+    d7.
+Gap in Net "d8" between (12.9000,6.5500) and (12.5850,6.9600) 
+    d8.
+Gap in Net "e1" between (12.9000,6.4500) and (12.3350,9.9800) 
+    e1.
+Gap in Net "e2" between (13.0000,9.6500) and (12.2850,9.7600) 
+    e2.
+Gap in Net "e3" between (13.0000,9.5500) and (12.3350,9.7600) 
+    e3.
+Gap in Net "e4" between (13.0000,9.4500) and (12.3850,9.7600) 
+    e4.
+Gap in Net "e5" between (13.0000,9.3500) and (12.4350,9.7600) 
+    e5.
+Gap in Net "e6" between (13.0000,9.2500) and (12.4850,9.7600) 
+    e6.
+Gap in Net "e7" between (13.0000,9.1500) and (12.5350,9.7600) 
+    e7.
+Gap in Net "e8" between (13.0000,9.0500) and (12.5850,9.7600) 
+    e8.
+Gap in Net "f1" between (13.0000,8.9500) and (12.3350,9.1300) 
+    f1.
+Gap in Net "f2" between (13.0000,8.8500) and (12.2850,8.9100) 
+    f2.
+Gap in Net "f3" between (13.0000,8.7500) and (12.3350,8.9100) 
+    f3.
+Gap in Net "f4" between (13.0000,8.6500) and (12.3850,8.9100) 
+    f4.
+Gap in Net "f5" between (13.0000,8.5500) and (12.4350,8.9100) 
+    f5.
+Gap in Net "f6" between (13.0000,8.4500) and (12.4850,8.9100) 
+    f6.
+Gap in Net "f7" between (13.0000,8.3500) and (12.5350,8.9100) 
+    f7.
+Gap in Net "f8" between (13.0000,8.2500) and (12.5850,8.9100) 
+    f8.
+Gap in Net "g1" between (13.0000,8.1500) and (12.2850,8.1800) 
+    g1.
+Gap in Net "g2" between (13.0000,8.0500) and (12.2350,7.9600) 
+    g2.
+Gap in Net "g3" between (13.0000,7.9500) and (12.2850,7.9600) 
+    g3.
+Gap in Net "g4" between (13.0000,7.8500) and (12.3350,7.9600) 
+    g4.
+Gap in Net "g5" between (13.0000,7.7500) and (12.3850,7.9600) 
+    g5.
+Gap in Net "g6" between (13.0000,7.6500) and (12.4350,7.9600) 
+    g6.
+Gap in Net "g7" between (13.0000,7.5500) and (12.4850,7.9600) 
+    g7.
+Gap in Net "g8" between (13.0000,7.4500) and (12.5350,7.9600) 
+    g8.
+Gap in Net "GND" between (10.6705,8.8157) and (10.9343,8.9417) 
+    GND.
+Gap in Net "GND" between (10.9343,8.9417) and (10.9343,9.1189) 
+    GND.
+Gap in Net "GND" between (10.9343,9.1189) and (10.6508,9.2843) 
+    GND.
+Gap in Net "GND" between (10.6508,9.2843) and (10.4657,9.1780) 
+    GND.
+Gap in Net "GND" between (10.4657,9.1780) and (10.4657,9.1583) 
+    GND.
+Gap in Net "GND" between (10.4657,9.1583) and (10.4657,9.0795) 
+    GND.
+Gap in Net "GND" between (10.9343,9.1189) and (11.1000,9.6000) 
+    GND.
+Gap in Net "GND" between (11.1000,9.6000) and (11.5000,9.6500) 
+    GND.
+Gap in Net "GND" between (11.5000,9.6500) and (11.5000,9.5000) 
+    GND.
+Gap in Net "GND" between (11.5000,9.6500) and (11.4500,9.9500) 
+    GND.
+Gap in Net "GND" between (10.4657,9.1780) and (9.8950,9.4000) 
+    GND.
+Gap in Net "GND" between (9.8950,9.4000) and (9.9300,9.6650) 
+    GND.
+Gap in Net "GND" between (9.8950,9.4000) and (9.3500,9.4000) 
+    GND.
+Gap in Net "GND" between (9.3500,9.2500) and (8.9500,9.2500) 
+    GND.
+Gap in Net "GND" between (8.9500,9.2500) and (8.9500,9.1500) 
+    GND.
+Gap in Net "GND" between (9.3500,9.2500) and (9.4500,8.4500) 
+    GND.
+Gap in Net "GND" between (9.4500,8.3000) and (9.5000,7.7000) 
+    GND.
+Gap in Net "GND" between (9.5000,7.5500) and (9.5000,6.8500) 
+    GND.
+Gap in Net "GND" between (11.5000,9.5000) and (12.5000,9.5500) 
+    GND.
+Gap in Net "GND" between (12.5000,9.5500) and (12.5000,9.4000) 
+    GND.
+Gap in Net "GND" between (12.5000,9.4000) and (12.5000,8.6000) 
+    GND.
+Gap in Net "GND" between (12.5000,8.6000) and (12.5000,8.4500) 
+    GND.
+Gap in Net "GND" between (12.5000,8.4500) and (12.5000,7.7000) 
+    GND.
+Gap in Net "GND" between (12.5000,7.7000) and (12.5000,7.5000) 
+    GND.
+Gap in Net "GND" between (12.5000,7.5000) and (12.4500,6.7000) 
+    GND.
+Gap in Net "GND" between (12.4500,6.7000) and (12.4500,6.5500) 
+    GND.
+Gap in Net "GND" between (12.4500,6.5500) and (13.0000,6.5500) 
+    GND.
+Gap in Net "GND" between (13.0000,6.5500) and (13.0000,6.4500) 
+    GND.
+Gap in Net "GND" between (12.4500,6.5500) and (11.6500,5.9500) 
+    GND.
+Gap in Net "GND" between (11.6500,5.9500) and (11.5500,5.9500) 
+    GND.
+Gap in Net "GND" between (11.5500,5.9500) and (11.4500,5.9500) 
+    GND.
+Gap in Net "GND" between (11.4500,5.9500) and (11.3500,5.9500) 
+    GND.
+Gap in Net "GND" between (11.3500,5.9500) and (11.2500,5.9500) 
+    GND.
+Gap in Net "GND" between (11.2500,5.9500) and (11.1500,5.9500) 
+    GND.
+Gap in Net "GND" between (11.1500,5.9500) and (11.0500,5.9500) 
+    GND.
+Gap in Net "GND" between (11.0500,5.9500) and (10.9500,5.9500) 
+    GND.
+Gap in Net "GND" between (10.9500,5.9500) and (10.5000,5.9500) 
+    GND.
+Gap in Net "h1" between (13.0000,7.3500) and (12.0350,6.7300) 
+    h1.
+Gap in Net "h2" between (13.0000,7.2500) and (11.9850,6.5100) 
+    h2.
+Gap in Net "h3" between (12.0350,6.5100) and (13.0000,7.1500) 
+    h3.
+Gap in Net "h4" between (12.0850,6.5100) and (13.0000,7.0500) 
+    h4.
+Gap in Net "h5" between (13.0000,6.9500) and (12.1350,6.5100) 
+    h5.
+Gap in Net "h6" between (13.0000,6.8500) and (12.1850,6.5100) 
+    h6.
+Gap in Net "h7" between (13.0000,6.7500) and (12.2350,6.5100) 
+    h7.
+Gap in Net "h8" between (13.0000,6.6500) and (12.2850,6.5100) 
+    h8.
+Gap in Net "InA1" between (9.5450,6.5000) and (9.0500,6.0500) 
+    InA1.
+Gap in Net "InA2" between (9.4950,6.5000) and (9.0500,6.1500) 
+    InA2.
+Gap in Net "InA3" between (9.4450,6.5000) and (9.0500,6.2500) 
+    InA3.
+Gap in Net "InA4" between (9.3950,6.5000) and (9.0500,6.3500) 
+    InA4.
+Gap in Net "InA5" between (9.3950,6.3050) and (9.0500,6.4500) 
+    InA5.
+Gap in Net "InA6" between (9.4450,6.3050) and (9.0500,6.5500) 
+    InA6.
+Gap in Net "InA7" between (9.4950,6.3050) and (9.0500,6.6500) 
+    InA7.
+Gap in Net "InA8" between (9.5450,6.3049) and (9.0500,6.7500) 
+    InA8.
+Gap in Net "InB1" between (9.5450,7.3500) and (9.0500,6.8500) 
+    InB1.
+Gap in Net "InB2" between (9.4950,7.3500) and (9.0500,6.9500) 
+    InB2.
+Gap in Net "InB3" between (9.4450,7.3500) and (9.0500,7.0500) 
+    InB3.
+Gap in Net "InB4" between (9.3950,7.3500) and (9.0500,7.1500) 
+    InB4.
+Gap in Net "InB5" between (9.3950,7.1550) and (9.0500,7.2500) 
+    InB5.
+Gap in Net "InB6" between (9.4450,7.1550) and (9.0500,7.3500) 
+    InB6.
+Gap in Net "InB7" between (9.4950,7.1550) and (9.0500,7.4500) 
+    InB7.
+Gap in Net "InB8" between (9.5450,7.1549) and (9.0500,7.5500) 
+    InB8.
+Gap in Net "InC1" between (9.4950,8.1000) and (9.0500,7.6500) 
+    InC1.
+Gap in Net "InC2" between (9.4450,8.1000) and (9.0500,7.7500) 
+    InC2.
+Gap in Net "InC3" between (9.3950,8.1000) and (9.0500,7.8500) 
+    InC3.
+Gap in Net "InC4" between (9.3450,8.1000) and (9.0500,7.9500) 
+    InC4.
+Gap in Net "InC5" between (9.3450,7.9050) and (9.0500,8.0500) 
+    InC5.
+Gap in Net "InC6" between (9.3950,7.9050) and (9.0500,8.1500) 
+    InC6.
+Gap in Net "InC7" between (9.4450,7.9050) and (9.0500,8.2500) 
+    InC7.
+Gap in Net "InC8" between (9.4950,7.9049) and (9.0500,8.3500) 
+    InC8.
+Gap in Net "InD1" between (9.5450,8.9500) and (9.0500,8.4500) 
+    InD1.
+Gap in Net "InD2" between (9.4950,8.9500) and (9.0500,8.5500) 
+    InD2.
+Gap in Net "InD3" between (9.4450,8.9500) and (9.0500,8.6500) 
+    InD3.
+Gap in Net "InD4" between (9.3950,8.9500) and (9.0500,8.7500) 
+    InD4.
+Gap in Net "InD5" between (9.3950,8.7550) and (9.0500,8.8500) 
+    InD5.
+Gap in Net "InD6" between (9.4450,8.7550) and (9.0500,8.9500) 
+    InD6.
+Gap in Net "InD7" between (9.4950,8.7550) and (9.0500,9.0500) 
+    InD7.
+Gap in Net "InD8" between (9.5450,8.7549) and (9.0500,9.1500) 
+    InD8.
+Gap in Net "InE1" between (9.9450,6.8500) and (9.0500,9.2500) 
+    InE1.
+Gap in Net "InE2" between (9.8950,6.8500) and (8.9500,6.0500) 
+    InE2.
+Gap in Net "InE3" between (9.8450,6.8500) and (8.9500,6.1500) 
+    InE3.
+Gap in Net "InE4" between (9.7950,6.8500) and (8.9500,6.2500) 
+    InE4.
+Gap in Net "InE5" between (9.7950,6.6550) and (8.9500,6.3500) 
+    InE5.
+Gap in Net "InE6" between (9.8450,6.6550) and (8.9500,6.4500) 
+    InE6.
+Gap in Net "InE7" between (9.8950,6.6550) and (8.9500,6.5500) 
+    InE7.
+Gap in Net "InE8" between (9.9450,6.6549) and (8.9500,6.6500) 
+    InE8.
+Gap in Net "InF1" between (9.9950,7.3500) and (8.9500,6.7500) 
+    InF1.
+Gap in Net "InF2" between (9.9450,7.3500) and (8.9500,6.8500) 
+    InF2.
+Gap in Net "InF3" between (9.8950,7.3500) and (8.9500,6.9500) 
+    InF3.
+Gap in Net "InF4" between (9.8450,7.3500) and (8.9500,7.0500) 
+    InF4.
+Gap in Net "InF5" between (9.8450,7.1550) and (8.9500,7.1500) 
+    InF5.
+Gap in Net "InF6" between (9.8950,7.1550) and (8.9500,7.2500) 
+    InF6.
+Gap in Net "InF7" between (9.9450,7.1550) and (8.9500,7.3500) 
+    InF7.
+Gap in Net "InF8" between (9.9950,7.1549) and (8.9500,7.4500) 
+    InF8.
+Gap in Net "InG1" between (9.8950,8.5000) and (8.9500,7.5500) 
+    InG1.
+Gap in Net "InG2" between (9.8450,8.5000) and (8.9500,7.6500) 
+    InG2.
+Gap in Net "InG3" between (9.7950,8.5000) and (8.9500,7.7500) 
+    InG3.
+Gap in Net "InG4" between (9.7450,8.5000) and (8.9500,7.8500) 
+    InG4.
+Gap in Net "InG5" between (9.7450,8.3050) and (8.9500,7.9500) 
+    InG5.
+Gap in Net "InG6" between (9.7950,8.3050) and (8.9500,8.0500) 
+    InG6.
+Gap in Net "InG7" between (9.8450,8.3050) and (8.9500,8.1500) 
+    InG7.
+Gap in Net "InG8" between (9.8950,8.3049) and (8.9500,8.2500) 
+    InG8.
+Gap in Net "InH1" between (9.8450,9.4000) and (8.9500,8.3500) 
+    InH1.
+Gap in Net "InH2" between (9.7950,9.4000) and (8.9500,8.4500) 
+    InH2.
+Gap in Net "InH3" between (9.7450,9.4000) and (8.9500,8.5500) 
+    InH3.
+Gap in Net "InH4" between (9.6950,9.4000) and (8.9500,8.6500) 
+    InH4.
+Gap in Net "InH5" between (9.6950,9.2050) and (8.9500,8.7500) 
+    InH5.
+Gap in Net "InH6" between (9.7450,9.2050) and (8.9500,8.8500) 
+    InH6.
+Gap in Net "InH7" between (9.7950,9.2050) and (8.9500,8.9500) 
+    InH7.
+Gap in Net "InH8" between (9.8450,9.2049) and (8.9500,9.0500) 
+    InH8.
+Gap in Net "latch" between (10.9343,9.0402) and (12.2850,8.6300) 
+    latch.
+Gap in Net "latch" between (12.2850,8.6300) and (12.4850,8.1800) 
+    latch.
+Gap in Net "latch" between (12.4850,8.1800) and (12.2850,7.7300) 
+    latch.
+Gap in Net "latch" between (12.2850,8.6300) and (12.5350,9.1300) 
+    latch.
+Gap in Net "latch" between (12.5350,9.1300) and (12.2850,9.5800) 
+    latch.
+Gap in Net "latch" between (12.2850,9.5800) and (12.5350,9.9800) 
+    latch.
+Gap in Net "latch" between (12.2850,7.7300) and (12.5350,7.1800) 
+    latch.
+Gap in Net "latch" between (12.5350,7.1800) and (12.2350,6.7300) 
+    latch.
+Gap in Net "LDO" between (10.6902,8.8157) and (10.6902,9.2843) 
+    LDO.
+Gap in Net "Output_Enable" between (10.9343,9.0598) and (12.1850,8.6300) 
+    Output_Enable.
+Gap in Net "Output_Enable" between (12.1850,8.6300) and (12.3850,8.1800) 
+    Output_Enable.
+Gap in Net "Output_Enable" between (12.3850,8.1800) and (12.1850,7.7300) 
+    Output_Enable.
+Gap in Net "Output_Enable" between (12.1850,8.6300) and (12.4350,9.1300) 
+    Output_Enable.
+Gap in Net "Output_Enable" between (12.4350,9.1300) and (12.1850,9.5800) 
+    Output_Enable.
+Gap in Net "Output_Enable" between (12.1850,9.5800) and (12.4350,9.9800) 
+    Output_Enable.
+Gap in Net "Output_Enable" between (12.1850,7.7300) and (12.4350,7.1800) 
+    Output_Enable.
+Gap in Net "Output_Enable" between (12.4350,7.1800) and (12.1350,6.7300) 
+    Output_Enable.
+Gap in Net "PA3" between (10.7886,9.2843) and (10.4300,9.6650) 
+    PA3.
+Gap in Net "PA4" between (10.7689,9.2843) and (10.7300,9.6650) 
+    PA4.
+Gap in Net "PC4" between (10.9343,9.1976) and (9.9500,9.9000) 
+    PC4.
+Gap in Net "PC5" between (10.9343,9.1780) and (10.1500,9.9000) 
+    PC5.
+Gap in Net "PC6" between (10.9343,9.1583) and (10.3500,9.9000) 
+    PC6.
+Gap in Net "PC7" between (10.9343,9.1386) and (10.5500,9.9000) 
+    PC7.
+Gap in Net "PD6" between (10.6311,8.8157) and (11.1300,8.0500) 
+    PD6.
+Gap in Net "PD7" between (10.9343,9.0795) and (11.1500,9.3500) 
+    PD7.
+Gap in Net "PE4" between (10.7492,8.8157) and (11.2000,8.6500) 
+    PE4.
+Gap in Net "PE5" between (10.7689,8.8157) and (11.2000,8.8500) 
+    PE5.
+Gap in Net "PF0" between (10.6311,9.2843) and (8.8000,9.6125) 
+    PF0.
+Gap in Net "PF2" between (10.5917,9.2843) and (8.8250,9.4500) 
+    PF2.
+Gap in Net "PF3" between (10.5720,9.2843) and (9.3500,9.7500) 
+    PF3.
+Gap in Net "PF4" between (10.9343,8.9811) and (11.2000,9.1000) 
+    PF4.
+Gap in Net "PowerLED" between (11.4250,8.8750) and (11.2000,9.6000) 
+    PowerLED.
+Gap in Net "RST" between (10.2900,7.7400) and (10.4657,9.0992) 
+    RST.
+Gap in Net "Serial_In" between (10.9343,9.0008) and (12.1350,9.5800) 
+    Serial_In.
+Gap in Net "Serial_In" between (10.9343,9.0008) and (10.9500,6.0500) 
+    Serial_In.
+Gap in Net "ser_8to16" between (12.3850,9.5800) and (12.1350,8.6300) 
+    ser_8to16.
+Gap in Net "ser_16to24" between (12.3850,8.6300) and (12.1350,7.7300) 
+    ser_16to24.
+Gap in Net "ser_24to32" between (12.3850,7.7300) and (12.3850,7.1800) 
+    ser_24to32.
+Gap in Net "ser_32to40" between (12.6350,7.1800) and (12.3850,9.9800) 
+    ser_32to40.
+Gap in Net "ser_40to48" between (12.6350,9.9800) and (12.3850,9.1300) 
+    ser_40to48.
+Gap in Net "ser_48to56" between (12.6350,9.1300) and (12.3350,8.1800) 
+    ser_48to56.
+Gap in Net "ser_56to64" between (12.5850,8.1800) and (12.0850,6.7300) 
+    ser_56to64.
+Gap in Net "ser_in_1" between (10.7886,8.8157) and (9.6450,6.5000) 
+    ser_in_1.
+Gap in Net "ser_in_1" between (9.6450,6.5000) and (11.1500,6.0500) 
+    ser_in_1.
+Gap in Net "ser_in_2" between (9.5950,6.5000) and (9.6450,7.3500) 
+    ser_in_2.
+Gap in Net "ser_in_3" between (9.5950,7.3500) and (9.5950,8.1000) 
+    ser_in_3.
+Gap in Net "ser_in_4" between (9.5450,8.1000) and (9.6450,8.9500) 
+    ser_in_4.
+Gap in Net "ser_in_5" between (9.5950,8.9500) and (10.0450,6.8500) 
+    ser_in_5.
+Gap in Net "ser_in_6" between (10.0950,7.3500) and (9.9950,6.8500) 
+    ser_in_6.
+Gap in Net "ser_in_7" between (10.0450,7.3500) and (9.9950,8.5000) 
+    ser_in_7.
+Gap in Net "ser_in_8" between (9.9450,8.5000) and (9.9450,9.4000) 
+    ser_in_8.
+Gap in Net "Shift_Load" between (10.8280,8.8157) and (9.6444,8.3050) 
+    Shift_Load.
+Gap in Net "Shift_Load" between (9.6444,8.3050) and (9.2444,7.9050) 
+    Shift_Load.
+Gap in Net "Shift_Load" between (9.6444,8.3050) and (9.2944,8.7550) 
+    Shift_Load.
+Gap in Net "Shift_Load" between (9.2944,8.7550) and (9.5944,9.2050) 
+    Shift_Load.
+Gap in Net "Shift_Load" between (9.2444,7.9050) and (9.2944,7.1550) 
+    Shift_Load.
+Gap in Net "Shift_Load" between (9.2944,7.1550) and (9.7444,7.1550) 
+    Shift_Load.
+Gap in Net "Shift_Load" between (9.2944,7.1550) and (9.2944,6.3050) 
+    Shift_Load.
+Gap in Net "srbc1" between (12.6000,9.4000) and (12.3850,9.3600) 
+    srbc1.
+Gap in Net "srbc2" between (12.6000,8.4500) and (12.3850,8.4100) 
+    srbc2.
+Gap in Net "srbc3" between (12.6000,7.5000) and (12.3850,7.5100) 
+    srbc3.
+Gap in Net "srbc4" between (12.5500,6.7000) and (12.6350,6.9600) 
+    srbc4.
+Gap in Net "srbc5" between (12.6000,9.5500) and (12.6350,9.7600) 
+    srbc5.
+Gap in Net "srbc6" between (12.6000,8.6000) and (12.6350,8.9100) 
+    srbc6.
+Gap in Net "srbc7" between (12.6000,7.7000) and (12.5850,7.9600) 
+    srbc7.
+Gap in Net "srbc8" between (12.5500,6.5500) and (12.3350,6.5100) 
+    srbc8.
+Gap in Net "srbc9" between (9.6444,6.3049) and (9.6000,6.8500) 
+    srbc9.
+Gap in Net "srbc10" between (9.6444,7.1549) and (9.6000,7.7000) 
+    srbc10.
+Gap in Net "srbc11" between (9.5944,7.9049) and (9.5500,8.4500) 
+    srbc11.
+Gap in Net "srbc12" between (9.6444,8.7549) and (9.4500,9.4000) 
+    srbc12.
+Gap in Net "srbc13" between (10.0444,6.6549) and (9.6000,6.7000) 
+    srbc13.
+Gap in Net "srbc14" between (10.0944,7.1549) and (9.6000,7.5500) 
+    srbc14.
+Gap in Net "srbc15" between (9.9944,8.3049) and (9.5500,8.3000) 
+    srbc15.
+Gap in Net "srbc16" between (9.9444,9.2049) and (9.4500,9.2500) 
+    srbc16.
+Gap in Net "Wake" between (11.4250,8.6750) and (10.5524,9.2843) 
+    Wake.
+
+Number of errors found : 279
+
+
+Settings
+========
+
+
+Spacings
+
+=========
+
+Tracks        No
+Pads and Vias No
+Shapes        No
+Text          No
+Board         No
+Drills        No
+Components    No
+
+
+Manufacturing
+
+==============
+
+Min Drill Hole Size  No
+Min Track Width      No
+Min Annular Ring     No
+Copper Text In Board No
+Mirrored Text        No
+Routing Areas        No
+Drill Breakout       No
+
+
+Nets
+
+=====
+
+Net Completion               Yes
+Dangling Tracks              Yes
+Net Track Length Differences No
+
+
+
+End Of Report.

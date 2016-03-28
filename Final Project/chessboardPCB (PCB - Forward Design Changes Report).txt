@@ -2,18 +2,16 @@ Forward Design Changes Report
 -----------------------------
 
 Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB (PCB - Forward Design Changes Report).txt
-Report Written:     Friday, March 25, 2016
+Report Written:     Monday, March 28, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
 Design Title:       
 Created:            3/21/2016 1:36:09 AM
-Last Saved:         3/25/2016 8:46:19 AM
-Editing Time:       1889 min
-Units:              mil (precision 0)
+Last Saved:         3/28/2016 11:56:43 AM
+Editing Time:       3408 min
+Units:              inches (precision 4)
 
-Connected pin "U12-56" to net "GND".
-Connected pin "U12-66" to net "GND".
-
-Net "GND" changed from net class "Power" to net class "Ground".
+Connected pin "U13-10" to net "ser_in_2".
+Connected pin "U14-9" to net "ser_in_2".
 
 
 End Of Report.
