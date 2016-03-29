@@ -1,13 +1,13 @@
 Design Rule Check Report
 ------------------------
 
-Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB (PCB - Design Rule Check Report).txt
+Report File:        C:\Users\Ty\Github\445L\trunk\Final Project\chessboardPCB (PCB - Design Rule Check Report).txt
 Report Written:     Tuesday, March 29, 2016
-Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
+Design Path:        C:\Users\Ty\Github\445L\trunk\Final Project\chessboardPCB.pcb
 Design Title:       
 Created:            3/21/2016 1:36:09 AM
-Last Saved:         3/29/2016 2:07:59 AM
-Editing Time:       3833 min
+Last Saved:         3/29/2016 10:38:33 AM
+Editing Time:       4256 min
 Units:              inches (precision 4)
 
 
@@ -22,8 +22,8 @@ Track to Pad Error (T-P) between (11.4618 8.8890) and (11.4618 8.8997) on Layer 
     Error between Component Pad C8.2 (Net 'GND') and Track (Net 'clock'), Gap is 0.0057 needs to be 0.0070.
 Track to Pad Error (T-P) between (10.9343 8.9283) and (10.9343 8.9417) on Layer "Top Copper".
     Error between Component Pad U1.2 (Net '+3.3V') and Track (Net 'GND'), Gap is 0.0059 needs to be 0.0070.
-Track to Pad Error (T-P) between (10.9106 8.9551) and (10.9106 8.9446) on Layer "Top Copper".
-    Error between Component Pad U1.4 and Track (Net 'GND'), Gap is 0.0030 needs to be 0.0070.
+Track to Pad Error (T-P) between (10.9106 8.9551) and (10.9106 8.9534) on Layer "Top Copper".
+    Error between Component Pad U1.4 and Track (Net 'GND'), Gap is 0.0000 needs to be 0.0070.
 Track to Pad Error (T-P) between (10.9579 8.9677) and (10.9619 8.9717) on Layer "Top Copper".
     Error between Component Pad U1.4 and Track (Net 'PF4'), Gap is 0.0016 needs to be 0.0070.
 Track to Pad Error (T-P) between (10.6374 9.2606) and (10.6470 9.2606) on Layer "Top Copper".
@@ -36,50 +36,8 @@ Track to Pad Error (T-P) between (10.4421 9.0268) and (10.4352 9.0337) on Layer 
     Error between Component Pad U1.42 (Net '+3.3V') and Track (Net 'OSC1'), Gap is 0.0058 needs to be 0.0070.
 Track to Pad Error (T-P) between (10.4657 9.0071) and (10.4657 9.0120) on Layer "Top Copper".
     Error between Component Pad U1.43 and Track (Net '+3.3V'), Gap is 0.0009 needs to be 0.0070.
-Track to Pad Error (T-P) between (10.6051 8.7921) and (10.5949 8.7921) on Layer "Top Copper".
-    Error between Component Pad U1.52 (Net 'PC0') and Track (Net 'PC1'), Gap is 0.0063 needs to be 0.0070.
 Track to Pad Error (T-P) between (10.8020 8.7921) and (10.7945 8.7846) on Layer "Top Copper".
     Error between Component Pad U1.62 (Net 'clock_in') and Track (Net 'ser_in_1'), Gap is 0.0066 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9313 9.6500) and (12.9421 9.6500) on Layer "Bottom Copper".
-    Error between Component Pad U3.1 (Net 'a1') and Track (Net 'e8'), Gap is 0.0058 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9313 9.5500) and (12.9421 9.5500) on Layer "Bottom Copper".
-    Error between Component Pad U3.3 (Net 'a2') and Track (Net 'e8'), Gap is 0.0058 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9313 9.4500) and (12.9421 9.4500) on Layer "Bottom Copper".
-    Error between Component Pad U3.5 (Net 'a3') and Track (Net 'e8'), Gap is 0.0058 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9313 9.3500) and (12.9421 9.3500) on Layer "Bottom Copper".
-    Error between Component Pad U3.7 (Net 'a4') and Track (Net 'e8'), Gap is 0.0058 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9313 9.2500) and (12.9421 9.2500) on Layer "Bottom Copper".
-    Error between Component Pad U3.9 (Net 'a5') and Track (Net 'e8'), Gap is 0.0058 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9313 9.1500) and (12.9421 9.1500) on Layer "Bottom Copper".
-    Error between Component Pad U3.11 (Net 'a6') and Track (Net 'e8'), Gap is 0.0058 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9000 8.8187) and (12.9000 8.8074) on Layer "Top Copper".
-    Error between Component Pad U3.17 (Net 'b1') and Track (Net 'f3'), Gap is 0.0063 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9000 8.6187) and (12.9000 8.6077) on Layer "Top Copper".
-    Error between Component Pad U3.21 (Net 'b3') and Track (Net 'f5'), Gap is 0.0060 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9000 8.4187) and (12.9000 8.4080) on Layer "Top Copper".
-    Error between Component Pad U3.25 (Net 'b5') and Track (Net 'f7'), Gap is 0.0057 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9000 8.0813) and (12.9000 8.0922) on Layer "Top Copper".
-    Error between Component Pad U3.33 (Net 'c1') and Track (Net 'g2'), Gap is 0.0059 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9687 9.4500) and (12.9571 9.4500) on Layer "Bottom Copper".
-    Error between Component Pad U3.6 (Net 'e4') and Track (Net 'e5'), Gap is 0.0066 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9687 9.5500) and (12.9571 9.5500) on Layer "Bottom Copper".
-    Error between Component Pad U3.4 (Net 'e3') and Track (Net 'e5'), Gap is 0.0066 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.9687 9.6500) and (12.9571 9.6500) on Layer "Bottom Copper".
-    Error between Component Pad U3.2 (Net 'e2') and Track (Net 'e5'), Gap is 0.0066 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.2782 9.3200) and (12.2740 9.3157) on Layer "Top Copper".
-    Error between Component Pad U2.9 (Net 'a7') and Track (Net 'a6'), Gap is 0.0010 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.2032 9.5400) and (12.2114 9.5319) on Layer "Top Copper".
-    Error between Component Pad U2.12 (Net 'Output_Enable') and Track (Net 'clock'), Gap is 0.0065 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.3725 9.9400) and (12.3725 9.9281) on Layer "Top Copper".
-    Error between Component Pad U8.4 (Net 'ser_32to40') and Track (Net 'Output_Enable'), Gap is 0.0069 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.3225 9.9400) and (12.3225 9.9281) on Layer "Top Copper".
-    Error between Component Pad U8.5 (Net 'e1') and Track (Net 'Output_Enable'), Gap is 0.0069 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.2725 9.9400) and (12.2725 9.9281) on Layer "Top Copper".
-    Error between Component Pad U8.6 (Net '+3.3V') and Track (Net 'Output_Enable'), Gap is 0.0069 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.6475 8.9500) and (12.6475 8.9609) on Layer "Top Copper".
-    Error between Component Pad U9.14 (Net 'srbc6') and Track (Net 'f8'), Gap is 0.0059 needs to be 0.0070.
-Track to Pad Error (T-P) between (12.5000 8.4124) and (12.5000 8.4005) on Layer "Top Copper".
-    Error between Component Pad C21.1 (Net 'GND') and Track (Net 'srbc2'), Gap is 0.0019 needs to be 0.0070.
 Track to Pad Error (T-P) between (9.4275 6.3136) and (9.4337 6.3074) on Layer "Top Copper".
     Error between Component Pad U13.5 (Net 'InA7') and Track (Net 'InA8'), Gap is 0.0038 needs to be 0.0070.
 Track to Pad Error (T-P) between (9.6225 6.2136) and (9.6298 6.2136) on Layer "Top Copper".
@@ -92,8 +50,6 @@ Track to Pad Error (T-P) between (9.4400 7.5756) and (9.4482 7.5674) on Layer "T
     Error between Component Pad U14.3 (Net 'InB5') and Track (Net 'InB6'), Gap is 0.0066 needs to be 0.0070.
 Track to Pad Error (T-P) between (9.4399 7.3263) and (9.4477 7.3185) on Layer "Top Copper".
     Error between Component Pad U14.8 (Net 'srbc10') and Track (Net 'InB4'), Gap is 0.0060 needs to be 0.0070.
-Track to Pad Error (T-P) between (9.3613 7.8742) and (9.3678 7.8676) on Layer "Top Copper".
-    Error between Component Pad U15.8 (Net 'srbc11') and Track (Net 'InC4'), Gap is 0.0042 needs to be 0.0070.
 Track to Pad Error (T-P) between (10.2115 6.6892) and (10.2041 6.6818) on Layer "Top Copper".
     Error between Component Pad U20.10 (Net 'ser_in_6') and Track (Net 'ser_in_5'), Gap is 0.0055 needs to be 0.0070.
 Track to Pad Error (T-P) between (10.2615 6.8142) and (10.2678 6.8205) on Layer "Top Copper".
@@ -104,8 +60,8 @@ Track to Pad Error (T-P) between (9.0500 6.4187) and (9.0500 6.4148) on Layer "B
     Error between Component Pad U12.9 (Net 'InA5') and Track (Net 'InE7'), Gap is 0.0000 needs to be 0.0070.
 Track to Pad Error (T-P) between (9.0500 7.5813) and (9.0500 7.5918) on Layer "Bottom Copper".
     Error between Component Pad U12.31 (Net 'InB8') and Track (Net 'InG1'), Gap is 0.0055 needs to be 0.0070.
-Track to Pad Error (T-P) between (9.0500 8.0187) and (9.0500 8.0161) on Layer "Bottom Copper".
-    Error between Component Pad U12.41 (Net 'InC5') and Track (Net 'InG5'), Gap is 0.0000 needs to be 0.0070.
+Track to Pad Error (T-P) between (9.0721 8.2279) and (9.0806 8.2194) on Layer "Top Copper".
+    Error between Component Pad U12.45 (Net 'InC7') and Track (Net 'InC6'), Gap is 0.0069 needs to be 0.0070.
 Track to Pad error (T-P) at (8.9648 6.4224) on layer "Bottom Copper".
     Error between Component Pad U12.10 (Net 'InE6') and Track (Net 'InE7'), Gap is 0.0000 needs to be 0.0070.
 Track to Pad Error (T-P) between (8.9721 6.3722) and (8.9735 6.3736) on Layer "Bottom Copper".
@@ -118,32 +74,10 @@ Track to Pad error (T-P) at (9.8216 8.6222) on layer "Bottom Copper".
     Error between Component Pad C23.2 (Net 'srbc16') and Track (Net 'InG4'), Gap is 0.0000 needs to be 0.0070.
 Track to Pad Error (T-P) between (9.8273 8.6537) and (9.8264 8.6545) on Layer "Bottom Copper".
     Error between Component Pad C23.2 (Net 'srbc16') and Track (Net 'InG5'), Gap is 0.0000 needs to be 0.0070.
-Track to Track error (T-T) at (12.7112 8.9921) on layer "Top Copper".
-    Error between Track (Net 'GND') and Track (Net 'f6'), Gap is 0.0000 needs to be 0.0070.
-Track to Track Error (T-T) between (12.7112 8.9758) and (12.7037 8.9758) on Layer "Top Copper".
-    Error between Track (Net 'GND') and Track (Net 'f7'), Gap is 0.0000 needs to be 0.0070.
-Track to Track error (T-T) at (12.7112 8.9247) on layer "Top Copper".
-    Error between Track (Net 'GND') and Track (Net 'f8'), Gap is 0.0000 needs to be 0.0070.
-Track to Track error (T-T) at (12.7112 9.0719) on layer "Top Copper".
-    Error between Track (Net 'GND') and Track (Net 'f1'), Gap is 0.0000 needs to be 0.0070.
-Track to Track error (T-T) at (12.7112 9.0557) on layer "Top Copper".
-    Error between Track (Net 'GND') and Track (Net 'f2'), Gap is 0.0000 needs to be 0.0070.
-Track to Track error (T-T) at (12.7112 9.0395) on layer "Top Copper".
-    Error between Track (Net 'GND') and Track (Net 'f3'), Gap is 0.0000 needs to be 0.0070.
-Track to Track error (T-T) at (12.7112 9.0258) on layer "Top Copper".
-    Error between Track (Net 'GND') and Track (Net 'f4'), Gap is 0.0000 needs to be 0.0070.
-Track to Track error (T-T) at (12.7112 9.0095) on layer "Top Copper".
-    Error between Track (Net 'GND') and Track (Net 'f5'), Gap is 0.0000 needs to be 0.0070.
 Track to Track Error (T-T) between (9.7409 9.1281) and (9.7596 9.1281) on Layer "Top Copper".
     Error between Track (Net 'GND') and Track (Net 'InG8'), Gap is 0.0037 needs to be 0.0070.
 Track to Track Error (T-T) between (9.7409 9.1281) and (9.7409 9.1106) on Layer "Bottom Copper".
     Error between Track (Net 'GND') and Track (Net 'Shift_Load'), Gap is 0.0025 needs to be 0.0070.
-Track to Via Error (T-V) between (10.8454 8.9321) and (10.8454 8.9220) on Layer "Top Copper".
-    Error between Via (Net 'GND') and Track (Net '+3.3V'), Gap is 0.0061 needs to be 0.0070.
-Track to Via Error (T-V) between (12.7237 8.8261) and (12.7324 8.8261) on Layer "Top Copper".
-    Error between Via (Net 'GND') and Track (Net 'f8'), Gap is 0.0037 needs to be 0.0070.
-Track to Via Error (T-V) between (10.6794 8.8847) and (10.6794 8.8748) on Layer "Bottom Copper".
-    Error between Via (Net 'GND') and Track (Net 'Shift_Load'), Gap is 0.0060 needs to be 0.0070.
 Track to Via Error (T-V) between (9.7409 9.1156) and (9.7409 9.1106) on Layer "Bottom Copper".
     Error between Via (Net 'GND') and Track (Net 'Shift_Load'), Gap is 0.0000 needs to be 0.0070.
 Track to Via Error (T-V) between (9.7534 9.1281) and (9.7596 9.1281) on Layer "Top Copper".
@@ -160,10 +94,6 @@ Track to Via Error (T-V) between (10.8066 8.7236) and (10.7992 8.7163) on Layer 
     Error between Via (Net 'PE5') and Track (Net 'PE4'), Gap is 0.0064 needs to be 0.0070.
 Track to Via Error (T-V) between (10.9140 8.6950) and (10.9140 8.6851) on Layer "Bottom Copper".
     Error between Track (Net 'PE4') and Via (Net 'ser_in_1'), Gap is 0.0050 needs to be 0.0070.
-Track to Via Error (T-V) between (12.7686 7.6367) and (12.7574 7.6367) on Layer "Top Copper".
-    Error between Track (Net 'g8') and Via (Net 'c4'), Gap is 0.0062 needs to be 0.0070.
-Track to Track Error (T-T) between (12.7686 7.8713) and (12.7848 7.8713) on Layer "Top Copper".
-    Error between Track (Net 'g8') and Track (Net 'g7'), Gap is 0.0062 needs to be 0.0070.
 Track to Track Error (T-T) between (11.9850 6.5100) and (11.9850 6.5222) on Layer "Bottom Copper".
     Error between Track (Net 'h2') and Track (Net 'clock'), Gap is 0.0022 needs to be 0.0070.
 Track to Via error (T-V) at (11.9877 6.5222) on layer "Bottom Copper".
@@ -182,110 +112,40 @@ Track to Via error (T-V) at (12.1377 6.5222) on layer "Bottom Copper".
     Error between Via (Net 'h5') and Track (Net 'clock'), Gap is 0.0000 needs to be 0.0070.
 Track to Via Error (T-V) between (12.1762 6.5188) and (12.1705 6.5245) on Layer "Bottom Copper".
     Error between Via (Net 'h6') and Track (Net 'clock'), Gap is 0.0029 needs to be 0.0070.
-Track to Track Error (T-T) between (12.5502 8.9921) and (12.5502 8.9758) on Layer "Top Copper".
-    Error between Track (Net 'f6') and Track (Net 'f7'), Gap is 0.0062 needs to be 0.0070.
-Track to Track Error (T-T) between (12.6114 8.9758) and (12.6114 8.9609) on Layer "Top Copper".
-    Error between Track (Net 'f7') and Track (Net 'f8'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (12.2869 8.1060) and (12.2869 8.0922) on Layer "Top Copper".
-    Error between Track (Net 'g1') and Track (Net 'g2'), Gap is 0.0037 needs to be 0.0070.
-Track to Track Error (T-T) between (12.2969 8.0922) and (12.2969 8.0773) on Layer "Top Copper".
-    Error between Track (Net 'g2') and Track (Net 'g3'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (12.3368 8.0773) and (12.3368 8.0623) on Layer "Top Copper".
-    Error between Track (Net 'g3') and Track (Net 'g4'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (12.3817 8.0623) and (12.3817 8.0461) on Layer "Top Copper".
-    Error between Track (Net 'g4') and Track (Net 'g5'), Gap is 0.0062 needs to be 0.0070.
-Track to Track Error (T-T) between (12.4366 8.0461) and (12.4366 8.0298) on Layer "Top Copper".
-    Error between Track (Net 'g5') and Track (Net 'g6'), Gap is 0.0062 needs to be 0.0070.
-Track to Via Error (T-V) between (12.4391 10.1165) and (12.4391 10.1091) on Layer "Top Copper".
-    Error between Track (Net 'e1') and Via (Net 'ser_32to40'), Gap is 0.0025 needs to be 0.0070.
-Track to Track Error (T-T) between (12.3605 9.8832) and (12.3605 9.8694) on Layer "Top Copper".
-    Error between Track (Net 'e2') and Track (Net 'e3'), Gap is 0.0037 needs to be 0.0070.
-Track to Track Error (T-T) between (12.3043 9.8832) and (12.3043 9.8956) on Layer "Top Copper".
-    Error between Track (Net 'e2') and Track (Net 'latch'), Gap is 0.0025 needs to be 0.0070.
-Track to Via Error (T-V) between (13.1380 9.6499) and (13.1278 9.6499) on Layer "Top Copper".
-    Error between Via (Net 'e2') and Track (Net 'e3'), Gap is 0.0052 needs to be 0.0070.
-Track to Track Error (T-T) between (13.0656 9.8694) and (13.0656 9.8557) on Layer "Top Copper".
-    Error between Track (Net 'e3') and Track (Net 'e4'), Gap is 0.0037 needs to be 0.0070.
-Track to Track Error (T-T) between (12.4603 9.8557) and (12.4603 9.8395) on Layer "Top Copper".
-    Error between Track (Net 'e4') and Track (Net 'e5'), Gap is 0.0062 needs to be 0.0070.
-Track to Track Error (T-T) between (12.9571 9.3967) and (12.9421 9.3967) on Layer "Bottom Copper".
-    Error between Track (Net 'e5') and Track (Net 'e8'), Gap is 0.0050 needs to be 0.0070.
-Track to Via Error (T-V) between (12.9571 9.6847) and (12.9546 9.6847) on Layer "Bottom Copper".
-    Error between Track (Net 'e5') and Via (Net 'e8'), Gap is 0.0000 needs to be 0.0070.
-Track to Via Error (T-V) between (12.9571 9.8033) and (12.9571 9.8145) on Layer "Bottom Copper".
-    Error between Via (Net 'e5') and Track (Net 'e7'), Gap is 0.0062 needs to be 0.0070.
-Track to Track Error (T-T) between (12.3493 9.0719) and (12.3493 9.0557) on Layer "Top Copper".
-    Error between Track (Net 'f1') and Track (Net 'f2'), Gap is 0.0062 needs to be 0.0070.
 Track to Track Error (T-T) between (12.3705 7.1001) and (12.3705 7.0838) on Layer "Top Copper".
     Error between Track (Net 'd2') and Track (Net 'd3'), Gap is 0.0062 needs to be 0.0070.
 Track to Track Error (T-T) between (12.4579 7.0664) and (12.4579 7.0514) on Layer "Top Copper".
     Error between Track (Net 'd4') and Track (Net 'd5'), Gap is 0.0050 needs to be 0.0070.
 Track to Track Error (T-T) between (12.5577 7.0327) and (12.5577 7.0164) on Layer "Top Copper".
     Error between Track (Net 'd6') and Track (Net 'd7'), Gap is 0.0062 needs to be 0.0070.
-Track to Track Error (T-T) between (12.1583 8.5315) and (12.1583 8.5166) on Layer "Top Copper".
-    Error between Track (Net 'b3') and Track (Net 'b4'), Gap is 0.0050 needs to be 0.0070.
-Track to Via Error (T-V) between (12.6850 8.5765) and (12.6940 8.5693) on Layer "Top Copper".
-    Error between Track (Net 'b3') and Via (Net 'b4'), Gap is 0.0065 needs to be 0.0070.
-Track to Track Error (T-T) between (12.2245 8.5166) and (12.2245 8.5003) on Layer "Top Copper".
-    Error between Track (Net 'b4') and Track (Net 'b5'), Gap is 0.0062 needs to be 0.0070.
-Track to Via Error (T-V) between (12.4529 8.3219) and (12.4529 8.3104) on Layer "Top Copper".
-    Error between Track (Net 'b7') and Via (Net 'ser_48to56'), Gap is 0.0065 needs to be 0.0070.
-Track to Via Error (T-V) between (12.6164 7.6554) and (12.6164 7.6454) on Layer "Top Copper".
-    Error between Via (Net 'c2') and Track (Net 'c3'), Gap is 0.0050 needs to be 0.0070.
-Track to Via Error (T-V) between (12.6954 7.6329) and (12.6954 7.6230) on Layer "Top Copper".
-    Error between Via (Net 'c3') and Track (Net 'c4'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (12.1633 9.4451) and (12.1633 9.4301) on Layer "Top Copper".
-    Error between Track (Net 'a3') and Track (Net 'a4'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (12.2145 9.4301) and (12.2145 9.4151) on Layer "Top Copper".
-    Error between Track (Net 'a4') and Track (Net 'a5'), Gap is 0.0050 needs to be 0.0070.
-Track to Via Error (T-V) between (12.6875 9.2641) and (12.6875 9.2729) on Layer "Top Copper".
-    Error between Track (Net 'a6') and Via (Net 'a7'), Gap is 0.0037 needs to be 0.0070.
-Track to Via Error (T-V) between (12.7661 9.2641) and (12.7661 9.2579) on Layer "Top Copper".
-    Error between Track (Net 'a6') and Via (Net 'ser_40to48'), Gap is 0.0012 needs to be 0.0070.
-Track to Via Error (T-V) between (12.5327 9.2641) and (12.5327 9.2567) on Layer "Top Copper".
-    Error between Track (Net 'a6') and Via (Net 'ser_40to48'), Gap is 0.0025 needs to be 0.0070.
-Track to Via Error (T-V) between (12.6301 9.2854) and (12.6301 9.2928) on Layer "Top Copper".
-    Error between Track (Net 'a7') and Via (Net 'a8'), Gap is 0.0025 needs to be 0.0070.
-Track to Track error (T-T) at (12.4529 8.7924) on layer "Bottom Copper".
-    Error between Track (Net 'b1') and Track (Net 'ser_48to56'), Gap is 0.0000 needs to be 0.0070.
+Track to Track Error (T-T) between (12.6245 8.5365) and (12.6245 8.5528) on Layer "Top Copper".
+    Error between Track (Net 'b3') and Track (Net 'b2'), Gap is 0.0063 needs to be 0.0070.
 Track to Via Error (T-V) between (11.0004 9.0008) and (11.0004 9.0080) on Layer "Top Copper".
     Error between Track (Net 'Serial_In') and Via (Net 'clock'), Gap is 0.0032 needs to be 0.0070.
-Track to Via Error (T-V) between (11.9349 9.1481) and (11.9423 9.1407) on Layer "Top Copper".
-    Error between Track (Net 'Serial_In') and Via (Net '+3.3V'), Gap is 0.0054 needs to be 0.0070.
-Track to Track Error (T-T) between (12.4067 9.0632) and (12.4067 9.0470) on Layer "Bottom Copper".
-    Error between Track (Net 'Output_Enable') and Track (Net 'clock'), Gap is 0.0062 needs to be 0.0070.
 Track to Via Error (T-V) between (11.0319 9.0598) and (11.0319 9.0527) on Layer "Top Copper".
     Error between Track (Net 'Output_Enable') and Via (Net 'latch'), Gap is 0.0032 needs to be 0.0070.
-Track to Track Error (T-T) between (12.4728 9.8956) and (12.4728 9.9094) on Layer "Top Copper".
-    Error between Track (Net 'latch') and Track (Net 'clock'), Gap is 0.0037 needs to be 0.0070.
-Track to Track Error (T-T) between (12.0111 9.2854) and (12.0004 9.2747) on Layer "Top Copper".
-    Error between Track (Net 'latch') and Track (Net 'clock'), Gap is 0.0050 needs to be 0.0070.
 Track to Via Error (T-V) between (11.0004 9.0402) and (11.0004 9.0330) on Layer "Top Copper".
     Error between Track (Net 'latch') and Via (Net 'clock'), Gap is 0.0032 needs to be 0.0070.
 Drill Hole to Drill Hole Error (D-D) between (12.1850 6.7319) and (12.1850 6.7300) on Layer "[All]".
     Error between Via (Net 'clock') and Via (Net 'clock'), Gap is 0.0000.
 Track to Track Error (T-T) between (10.1428 9.2130) and (10.1428 9.2005) on Layer "Top Copper".
     Error between Track (Net 'Shift_Load') and Track (Net 'clock_in'), Gap is 0.0025 needs to be 0.0070.
-Track to Track Error (T-T) between (9.2641 7.3035) and (9.2542 7.3135) on Layer "Bottom Copper".
-    Error between Track (Net 'Shift_Load') and Track (Net 'clock_in'), Gap is 0.0041 needs to be 0.0070.
-Track to Via Error (T-V) between (9.3167 7.3561) and (9.3252 7.3476) on Layer "Bottom Copper".
-    Error between Track (Net 'Shift_Load') and Via (Net 'srbc10'), Gap is 0.0070 needs to be 0.0070.
+Track to Track Error (T-T) between (10.7069 8.8685) and (10.7069 8.8548) on Layer "Bottom Copper".
+    Error between Track (Net 'Shift_Load') and Track (Net 'clock_in'), Gap is 0.0047 needs to be 0.0070.
+Track to Track Error (T-T) between (9.2641 7.2972) and (9.2566 7.2972) on Layer "Bottom Copper".
+    Error between Track (Net 'Shift_Load') and Track (Net 'clock_in'), Gap is 0.0000 needs to be 0.0070.
 Track to Via Error (T-V) between (9.8663 6.7363) and (9.8583 6.7443) on Layer "Top Copper".
     Error between Track (Net 'Shift_Load') and Via (Net 'InE8'), Gap is 0.0063 needs to be 0.0070.
 Track to Via Error (T-V) between (10.8017 8.9172) and (10.8017 8.9220) on Layer "Top Copper".
     Error between Via (Net 'Shift_Load') and Track (Net '+3.3V'), Gap is 0.0008 needs to be 0.0070.
-Track to Via Error (T-V) between (9.2521 7.9542) and (9.2666 7.9487) on Layer "Bottom Copper".
-    Error between Via (Net 'Shift_Load') and Track (Net 'srbc11'), Gap is 0.0055 needs to be 0.0070.
 Track to Via Error (T-V) between (9.3053 6.5497) and (9.3053 6.5559) on Layer "Top Copper".
     Error between Via (Net 'Shift_Load') and Track (Net 'InA5'), Gap is 0.0012 needs to be 0.0070.
-Track to Via Error (T-V) between (9.2791 7.1286) and (9.2791 7.1400) on Layer "Top Copper".
+Track to Via Error (T-V) between (9.2903 7.1286) and (9.2903 7.1400) on Layer "Top Copper".
     Error between Via (Net 'Shift_Load') and Track (Net 'clock_in'), Gap is 0.0064 needs to be 0.0070.
 Track to Via Error (T-V) between (9.3727 9.3166) and (9.3864 9.3166) on Layer "Bottom Copper".
     Error between Via (Net 'clock_in') and Track (Net 'srbc12'), Gap is 0.0037 needs to be 0.0070.
 Track to Via Error (T-V) between (9.3727 8.8512) and (9.3864 8.8512) on Layer "Bottom Copper".
     Error between Via (Net 'clock_in') and Track (Net 'srbc12'), Gap is 0.0037 needs to be 0.0070.
-Track to Via Error (T-V) between (9.2367 7.1400) and (9.2292 7.1400) on Layer "Bottom Copper".
-    Error between Via (Net 'clock_in') and Track (Net 'InF8'), Gap is 0.0025 needs to be 0.0070.
 Track to Via Error (T-V) between (9.9730 6.9341) and (9.9568 6.9341) on Layer "Bottom Copper".
     Error between Via (Net 'clock_in') and Track (Net '+3.3V'), Gap is 0.0062 needs to be 0.0070.
 Track to Track Error (T-T) between (9.7047 7.7116) and (9.6897 7.7116) on Layer "Top Copper".
@@ -308,22 +168,16 @@ Track to Via Error (T-V) between (9.6279 6.9397) and (9.6199 6.9317) on Layer "T
     Error between Track (Net 'ser_in_2') and Via (Net 'InF1'), Gap is 0.0063 needs to be 0.0070.
 Track to Track error (T-T) at (9.6100 7.1864) on layer "Top Copper".
     Error between Track (Net 'ser_in_2') and Track (Net '+3.3V'), Gap is 0.0000 needs to be 0.0070.
-Track to Track Error (T-T) between (9.2800 7.8867) and (9.2657 7.8723) on Layer "Top Copper".
-    Error between Track (Net 'srbc11') and Track (Net 'InC4'), Gap is 0.0053 needs to be 0.0070.
-Track to Via Error (T-V) between (9.2578 7.8912) and (9.2523 7.8857) on Layer "Top Copper".
-    Error between Via (Net 'srbc11') and Track (Net 'InC4'), Gap is 0.0028 needs to be 0.0070.
-Track to Track Error (T-T) between (9.2978 6.1768) and (9.2908 6.1698) on Layer "Top Copper".
-    Error between Track (Net 'srbc9') and Track (Net 'InA4'), Gap is 0.0000 needs to be 0.0070.
-Track to Track Error (T-T) between (9.3895 6.0405) and (9.3799 6.0501) on Layer "Top Copper".
-    Error between Track (Net 'InA1') and Track (Net 'InA2'), Gap is 0.0036 needs to be 0.0070.
-Track to Track Error (T-T) between (9.4757 6.1458) and (9.4663 6.1552) on Layer "Top Copper".
-    Error between Track (Net 'InA2') and Track (Net 'InA3'), Gap is 0.0032 needs to be 0.0070.
-Track to Track Error (T-T) between (9.3329 6.1153) and (9.3329 6.1277) on Layer "Top Copper".
-    Error between Track (Net 'InA3') and Track (Net 'InA4'), Gap is 0.0025 needs to be 0.0070.
+Track to Track Error (T-T) between (9.7546 9.5835) and (9.7546 9.5712) on Layer "Top Copper".
+    Error between Track (Net 'PF2') and Track (Net 'InG6'), Gap is 0.0023 needs to be 0.0070.
+Track to Track Error (T-T) between (9.5088 6.2787) and (9.4981 6.2894) on Layer "Top Copper".
+    Error between Track (Net 'InA2') and Track (Net 'InA3'), Gap is 0.0051 needs to be 0.0070.
+Track to Track Error (T-T) between (9.5549 6.4111) and (9.5424 6.4161) on Layer "Top Copper".
+    Error between Track (Net 'InA4') and Track (Net 'InA8'), Gap is 0.0034 needs to be 0.0070.
 Track to Track Error (T-T) between (9.4888 6.4447) and (9.5038 6.4447) on Layer "Top Copper".
     Error between Track (Net 'InA5') and Track (Net 'InA6'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (9.4651 6.5884) and (9.4651 6.6033) on Layer "Top Copper".
-    Error between Track (Net 'InA7') and Track (Net 'InA8'), Gap is 0.0050 needs to be 0.0070.
+Track to Track Error (T-T) between (9.4651 6.5884) and (9.4651 6.5964) on Layer "Top Copper".
+    Error between Track (Net 'InA7') and Track (Net 'InA8'), Gap is 0.0000 needs to be 0.0070.
 Track to Track Error (T-T) between (9.2829 7.2274) and (9.2710 7.2392) on Layer "Top Copper".
     Error between Track (Net 'InB1') and Track (Net 'InB2'), Gap is 0.0068 needs to be 0.0070.
 Track to Track Error (T-T) between (9.4164 7.2486) and (9.4164 7.2635) on Layer "Top Copper".
@@ -338,18 +192,14 @@ Track to Track Error (T-T) between (9.4538 7.7615) and (9.4632 7.7709) on Layer 
     Error between Track (Net 'InB6') and Track (Net 'InB7'), Gap is 0.0032 needs to be 0.0070.
 Track to Track Error (T-T) between (9.3702 7.7752) and (9.3702 7.7865) on Layer "Top Copper".
     Error between Track (Net 'InB7') and Track (Net 'InB8'), Gap is 0.0012 needs to be 0.0070.
-Track to Track Error (T-T) between (9.3602 7.7865) and (9.3602 7.8027) on Layer "Top Copper".
-    Error between Track (Net 'InB8') and Track (Net 'InC1'), Gap is 0.0062 needs to be 0.0070.
-Track to Track Error (T-T) between (9.1852 7.8027) and (9.1852 7.8177) on Layer "Top Copper".
-    Error between Track (Net 'InC1') and Track (Net 'InC2'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (9.4264 7.9712) and (9.4195 7.9780) on Layer "Top Copper".
+Track to Track Error (T-T) between (9.3602 7.7865) and (9.3602 7.8002) on Layer "Top Copper".
+    Error between Track (Net 'InB8') and Track (Net 'InC1'), Gap is 0.0037 needs to be 0.0070.
+Track to Track Error (T-T) between (9.4464 7.9911) and (9.4395 7.9980) on Layer "Top Copper".
     Error between Track (Net 'InC2') and Track (Net 'InC3'), Gap is 0.0000 needs to be 0.0070.
-Track to Track Error (T-T) between (9.3503 7.8364) and (9.3503 7.8501) on Layer "Top Copper".
-    Error between Track (Net 'InC3') and Track (Net 'InC4'), Gap is 0.0037 needs to be 0.0070.
-Track to Track Error (T-T) between (9.3932 7.9766) and (9.3838 7.9860) on Layer "Top Copper".
+Track to Track Error (T-T) between (9.4688 8.0598) and (9.4526 8.0598) on Layer "Top Copper".
+    Error between Track (Net 'InC3') and Track (Net 'InC4'), Gap is 0.0062 needs to be 0.0070.
+Track to Track Error (T-T) between (9.4039 7.9874) and (9.3946 7.9968) on Layer "Top Copper".
     Error between Track (Net 'InC4') and Track (Net 'InC8'), Gap is 0.0032 needs to be 0.0070.
-Track to Track Error (T-T) between (9.3552 8.2919) and (9.3552 8.3081) on Layer "Top Copper".
-    Error between Track (Net 'InC5') and Track (Net 'InC6'), Gap is 0.0062 needs to be 0.0070.
 Track to Track Error (T-T) between (9.5830 8.4810) and (9.5724 8.4916) on Layer "Top Copper".
     Error between Track (Net 'InD1') and Track (Net 'InD2'), Gap is 0.0050 needs to be 0.0070.
 Track to Track Error (T-T) between (9.2928 8.4342) and (9.2928 8.4467) on Layer "Top Copper".
@@ -368,28 +218,28 @@ Track to Track Error (T-T) between (10.1428 6.8380) and (10.1265 6.8380) on Laye
     Error between Track (Net 'InE5') and Track (Net 'InE6'), Gap is 0.0062 needs to be 0.0070.
 Track to Track error (T-T) at (8.9500 6.4372) on layer "Bottom Copper".
     Error between Track (Net 'InE6') and Track (Net 'InE7'), Gap is 0.0000 needs to be 0.0070.
+Track to Track Error (T-T) between (9.4950 6.6545) and (9.4950 6.6707) on Layer "Bottom Copper".
+    Error between Track (Net 'InE8') and Track (Net 'InF1'), Gap is 0.0062 needs to be 0.0070.
 Track to Track Error (T-T) between (9.8346 6.7530) and (9.8345 6.7693) on Layer "Top Copper".
     Error between Track (Net 'InE8') and Track (Net 'srbc14'), Gap is 0.0063 needs to be 0.0070.
 Track to Via Error (T-V) between (9.8410 6.7623) and (9.8345 6.7693) on Layer "Top Copper".
     Error between Via (Net 'InE8') and Track (Net 'srbc14'), Gap is 0.0046 needs to be 0.0070.
-Track to Track Error (T-T) between (9.3964 6.6957) and (9.3964 6.7119) on Layer "Bottom Copper".
+Track to Track Error (T-T) between (9.4038 6.6707) and (9.4038 6.6870) on Layer "Bottom Copper".
     Error between Track (Net 'InF1') and Track (Net 'InF2'), Gap is 0.0062 needs to be 0.0070.
-Track to Track Error (T-T) between (9.3864 6.7119) and (9.3864 6.7256) on Layer "Bottom Copper".
+Track to Track Error (T-T) between (9.1281 6.7968) and (9.1418 6.7968) on Layer "Bottom Copper".
     Error between Track (Net 'InF2') and Track (Net 'InF3'), Gap is 0.0037 needs to be 0.0070.
-Track to Via Error (T-V) between (9.4900 6.9840) and (9.4800 6.9840) on Layer "Bottom Copper".
-    Error between Via (Net 'InF2') and Track (Net 'InF3'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (9.3765 6.7256) and (9.3765 6.7369) on Layer "Bottom Copper".
-    Error between Track (Net 'InF3') and Track (Net 'InF4'), Gap is 0.0012 needs to be 0.0070.
-Track to Track Error (T-T) between (9.2361 6.7425) and (9.2417 6.7481) on Layer "Bottom Copper".
-    Error between Track (Net 'InF4') and Track (Net 'InF5'), Gap is 0.0000 needs to be 0.0070.
-Track to Track Error (T-T) between (9.4401 6.8180) and (9.4339 6.8242) on Layer "Bottom Copper".
-    Error between Track (Net 'InF5') and Track (Net 'InF6'), Gap is 0.0000 needs to be 0.0070.
-Track to Track Error (T-T) between (9.4339 6.9565) and (9.4189 6.9565) on Layer "Bottom Copper".
-    Error between Track (Net 'InF6') and Track (Net 'InF7'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (9.4127 6.8255) and (9.4052 6.8330) on Layer "Bottom Copper".
-    Error between Track (Net 'InF7') and Track (Net 'InF8'), Gap is 0.0006 needs to be 0.0070.
-Track to Via Error (T-V) between (9.4189 6.9341) and (9.4089 6.9341) on Layer "Bottom Copper".
-    Error between Track (Net 'InF7') and Via (Net 'InF8'), Gap is 0.0050 needs to be 0.0070.
+Track to Via Error (T-V) between (9.4975 6.9840) and (9.4925 6.9840) on Layer "Bottom Copper".
+    Error between Via (Net 'InF2') and Track (Net 'InF3'), Gap is 0.0000 needs to be 0.0070.
+Track to Track Error (T-T) between (9.1418 6.8080) and (9.1568 6.8080) on Layer "Bottom Copper".
+    Error between Track (Net 'InF3') and Track (Net 'InF4'), Gap is 0.0050 needs to be 0.0070.
+Track to Track Error (T-T) between (9.4726 7.0377) and (9.4588 7.0377) on Layer "Bottom Copper".
+    Error between Track (Net 'InF4') and Track (Net 'InF5'), Gap is 0.0037 needs to be 0.0070.
+Track to Track Error (T-T) between (9.4588 7.0027) and (9.4451 7.0027) on Layer "Bottom Copper".
+    Error between Track (Net 'InF5') and Track (Net 'InF6'), Gap is 0.0037 needs to be 0.0070.
+Track to Track Error (T-T) between (9.4376 6.8217) and (9.4276 6.8317) on Layer "Bottom Copper".
+    Error between Track (Net 'InF6') and Track (Net 'InF7'), Gap is 0.0041 needs to be 0.0070.
+Track to Track Error (T-T) between (9.4189 6.8230) and (9.4089 6.8330) on Layer "Bottom Copper".
+    Error between Track (Net 'InF7') and Track (Net 'InF8'), Gap is 0.0041 needs to be 0.0070.
 Track to Track Error (T-T) between (9.5980 8.3237) and (9.5886 8.3331) on Layer "Bottom Copper".
     Error between Track (Net 'InG1') and Track (Net 'InG2'), Gap is 0.0032 needs to be 0.0070.
 Track to Track Error (T-T) between (9.5063 8.3331) and (9.5063 8.3481) on Layer "Bottom Copper".
@@ -398,18 +248,10 @@ Track to Via Error (T-V) between (10.0042 8.9109) and (9.9955 8.9109) on Layer "
     Error between Via (Net 'InG2') and Track (Net 'InG3'), Gap is 0.0037 needs to be 0.0070.
 Track to Via Error (T-V) between (9.9830 8.9534) and (9.9743 8.9534) on Layer "Bottom Copper".
     Error between Via (Net 'InG3') and Track (Net 'InG4'), Gap is 0.0037 needs to be 0.0070.
-Track to Track Error (T-T) between (8.8473 9.5237) and (8.8585 9.5125) on Layer "Top Copper".
-    Error between Track (Net 'InG7') and Track (Net 'InG8'), Gap is 0.0059 needs to be 0.0070.
 Track to Track Error (T-T) between (9.7365 9.2211) and (9.7259 9.2317) on Layer "Top Copper".
     Error between Track (Net 'InH2') and Track (Net 'InH3'), Gap is 0.0050 needs to be 0.0070.
 Track to Via Error (T-V) between (9.6824 9.4451) and (9.6824 9.4351) on Layer "Top Copper".
     Error between Track (Net 'InH3') and Via (Net '+3.3V'), Gap is 0.0050 needs to be 0.0070.
-Track to Track Error (T-T) between (12.3630 9.0557) and (12.3630 9.0395) on Layer "Top Copper".
-    Error between Track (Net 'f2') and Track (Net 'f3'), Gap is 0.0062 needs to be 0.0070.
-Track to Track Error (T-T) between (12.4129 9.0395) and (12.4129 9.0258) on Layer "Top Copper".
-    Error between Track (Net 'f3') and Track (Net 'f4'), Gap is 0.0037 needs to be 0.0070.
-Track to Track Error (T-T) between (12.4666 9.0258) and (12.4666 9.0095) on Layer "Top Copper".
-    Error between Track (Net 'f4') and Track (Net 'f5'), Gap is 0.0062 needs to be 0.0070.
 Gap in Net "+3.3V" between (10.4657,9.1189) and (10.4657,9.0205) 
     +3.3V.
 Gap in Net "+3.3V" between (10.6705,9.2843) and (10.8300,9.6650) 
@@ -441,7 +283,7 @@ Gap in Net "PC7" between (10.9343,9.1386) and (10.5500,9.9000)
 Gap in Net "Wake" between (11.3694,9.1705) and (10.5524,9.2843) 
     Wake.
 
-Number of errors found : 213
+Number of errors found : 134
 
 
 Settings
