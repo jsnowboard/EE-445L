@@ -6,15 +6,13 @@ Report Written:     Wednesday, March 30, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
 Design Title:       
 Created:            3/21/2016 1:36:09 AM
-Last Saved:         3/29/2016 8:42:27 PM
-Editing Time:       4573 min
+Last Saved:         3/30/2016 10:16:34 AM
+Editing Time:       4607 min
 Units:              mil (precision 0)
 
 
 Checking integrity of Schematic "C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.sch" with PCB "C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb"
 ========================================================================================================================================================================================
-
-The designs are the same.
 
 
 End Of Report.

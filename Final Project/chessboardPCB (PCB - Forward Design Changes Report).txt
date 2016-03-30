@@ -2,15 +2,26 @@ Forward Design Changes Report
 -----------------------------
 
 Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB (PCB - Forward Design Changes Report).txt
-Report Written:     Tuesday, March 29, 2016
+Report Written:     Wednesday, March 30, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
 Design Title:       
 Created:            3/21/2016 1:36:09 AM
-Last Saved:         3/29/2016 8:39:23 PM
-Editing Time:       4568 min
+Last Saved:         3/30/2016 10:16:34 AM
+Editing Time:       4607 min
 Units:              mil (precision 0)
 
-The designs are the same, so no design changes to forward.
+Added net "N1296".
+Added net "N1298".
+
+Added component reference "J5" of component "PowerJack", package "MISC".
+Added component reference "PS3v" of component "testpoint", package "BIG".
+Added component reference "PSGnd" of component "testpoint", package "BIG".
+
+Connected pin "J5-1" to net "N1296".
+Connected pin "J5-2" to net "N1298".
+Connected pin "J5-3" to net "N1298".
+Connected pin "PS3v-1" to net "N1296".
+Connected pin "PSGnd-1" to net "N1298".
 
 
 End Of Report.

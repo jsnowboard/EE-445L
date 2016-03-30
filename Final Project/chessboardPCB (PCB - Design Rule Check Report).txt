@@ -6,8 +6,8 @@ Report Written:     Wednesday, March 30, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
 Design Title:       
 Created:            3/21/2016 1:36:09 AM
-Last Saved:         3/30/2016 10:16:15 AM
-Editing Time:       4607 min
+Last Saved:         3/30/2016 10:46:00 AM
+Editing Time:       4623 min
 Units:              mil (precision 0)
 
 
