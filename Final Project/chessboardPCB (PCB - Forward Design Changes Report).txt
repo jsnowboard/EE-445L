@@ -6,13 +6,11 @@ Report Written:     Tuesday, March 29, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
 Design Title:       
 Created:            3/21/2016 1:36:09 AM
-Last Saved:         3/29/2016 12:39:46 AM
-Editing Time:       3744 min
+Last Saved:         3/29/2016 12:46:21 PM
+Editing Time:       4271 min
 Units:              inches (precision 4)
 
-Disconnected pin "U20-1" from net "clock_in".
-
-Connected pin "U20-1" to net "Shift_Load".
+The designs are the same, so no design changes to forward.
 
 
 End Of Report.
