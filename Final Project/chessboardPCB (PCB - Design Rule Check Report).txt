@@ -1,13 +1,13 @@
 Design Rule Check Report
 ------------------------
 
-Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB (PCB - Design Rule Check Report).txt
-Report Written:     Wednesday, March 30, 2016
-Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB.pcb
+Report File:        A:\Documents\Github\EE 445L Fixed\trunk\Final Project\chessboardPCB (PCB - Design Rule Check Report).txt
+Report Written:     Thursday, March 31, 2016
+Design Path:        A:\Documents\Github\EE 445L Fixed\trunk\Final Project\chessboardPCB.pcb
 Design Title:       
 Created:            3/21/2016 1:36:09 AM
-Last Saved:         3/30/2016 10:46:00 AM
-Editing Time:       4623 min
+Last Saved:         3/31/2016 1:44:42 AM
+Editing Time:       4645 min
 Units:              mil (precision 0)
 
 
