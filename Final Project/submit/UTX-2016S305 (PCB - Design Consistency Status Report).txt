@@ -1,0 +1,20 @@
+Design Consistency Status Report
+--------------------------------
+
+Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\submit\UTX-2016S305 (PCB - Design Consistency Status Report).txt
+Report Written:     Thursday, March 31, 2016
+Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\submit\UTX-2016S305.pcb
+Design Title:       
+Created:            3/21/2016 1:36:09 AM
+Last Saved:         3/31/2016 9:35:21 AM
+Editing Time:       4672 min
+Units:              mil (precision 0)
+
+
+Checking integrity of Schematic "C:\Users\Jeremiah\Programming\EE-445L\Final Project\submit\UTX-2016S305.sch" with PCB "C:\Users\Jeremiah\Programming\EE-445L\Final Project\submit\UTX-2016S305.pcb"
+====================================================================================================================================================================================================
+
+The designs are the same.
+
+
+End Of Report.
