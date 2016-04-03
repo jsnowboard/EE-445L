@@ -441,6 +441,16 @@
               <FileType>5</FileType>
               <FilePath>.\Constants.h</FilePath>
             </File>
+            <File>
+              <FileName>74HC165.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\74HC165.c</FilePath>
+            </File>
+            <File>
+              <FileName>74HC595.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\74HC595.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -10,6 +10,8 @@
 #include "..//mymodules//PLL.h"
 #include "..//mymodules//Timer0A.h"
 #include "constants.h"
+#include "74HC165.h"
+#include "74HC595.h"
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
