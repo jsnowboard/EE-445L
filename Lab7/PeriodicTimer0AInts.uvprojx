@@ -436,6 +436,11 @@
               <FileType>1</FileType>
               <FilePath>..\mymodules\PLL.c</FilePath>
             </File>
+            <File>
+              <FileName>Constants.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Constants.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
