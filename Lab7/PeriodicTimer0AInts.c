@@ -34,6 +34,11 @@ void TimerATask(void){
 
 }
 
+int canMove(int piece, int x, int y){
+	
+	return 0;
+}
+
 void showMoves(int piece, int x, int y){
 	lightArray[lightArrayCount] = 8 * y + x;
 	lightArrayCount++;
@@ -367,7 +372,6 @@ void showMoves(int piece, int x, int y){
 			}
 		}
 	}
-
 	else if(piece == PAWN){
 		if(y == 1){
 			for(int count = 1; count < 2; count++){
@@ -430,29 +434,74 @@ int main(void){
 			for(int x = 0; x < 8; x++){
 				for(int y = 0; y < 8; y++){
 					if(chessboard[x][y] > 0){
-						//showMoves(chessboard[x][y], x, y);
+						if(canMove(chessboard[x][y], x, y) == 1){
+							lightArray[lightArrayCount] = 8 * (y+1) + (x+1);
+							lightArrayCount++;
+						}
 					}
 				}
 			}
 			toggleLightsOn();
 		} else if(currentState == P1TURN){
+			//The handler will put into p1 turn
 			
 		} else if(currentState == P1CAPTURE){
+			//The handler will put into p1 capture
 			
-		} else if(currentState == P1ENDTURN){
-			
+			int endGame = 0;
+			for(int x = 0; x < 8; x++){
+				for(int y = 0; y < 8; y++){
+					if(chessboard[x][y] < 0){
+						endGame = 1;
+					}
+				}
+			}
+			if(endGame == 1){
+				currentState = P1ENDTURN;
+			} else {
+				currentState = ENDGAME;
+			}
+		} else if(currentState == P1ENDTURN){			
+			currentState = P2STARTTURN;
 		} else if(currentState == P1PROMOTE){
 			
+			currentState = P2STARTTURN;
 		} else if(currentState == P2STARTTURN){
-			
+			for(int x = 0; x < 8; x++){
+				for(int y = 0; y < 8; y++){
+					if(chessboard[x][y] < 0){
+						if(canMove(chessboard[x][y], x, y) == 1){
+							lightArray[lightArrayCount] = 8 * (y+1) + (x+1);
+							lightArrayCount++;
+						}
+					}
+				}
+			}
+			toggleLightsOn();
 		} else if(currentState == P2TURN){
+			//The hundler will put into p2 turn
 			
-		} else if(currentState == P2CAPUTER){
+		} else if(currentState == P2CAPTURE){
+			//The handler will put into p2 capture
 			
+			int endGame = 0;
+			for(int x = 0; x < 8; x++){
+				for(int y = 0; y < 8; y++){
+					if(chessboard[x][y] > 0){
+						endGame = 1;
+					}
+				}
+			}
+			if(endGame == 1){
+				currentState = P2ENDTURN;
+			} else {
+				currentState = ENDGAME;
+			}
 		} else if(currentState == P2ENDTURN){
-			
+			currentState = P1STARTTURN;
 		} else if(currentState == P2PROMOTE){
 			
+			currentState = P1STARTTURN;
 		} else if(currentState == ENDGAME){
 			
 		} 
