@@ -22,6 +22,7 @@ void WaitForInterrupt(void);  // low power mode
 int playerTurn = 1; //1 for player 1 or -1 for player 2
 int pieceMoving = 0;
 int pieceMoving2 = 0;
+int promote = 0;
 
 int chessboard[8][8];
 
@@ -431,7 +432,8 @@ int main(void){
 				}
 			}
 			currentState = P1STARTTURN;
-		} else if(currentState == P1STARTTURN){
+		} 
+		else if(currentState == P1STARTTURN){
 			for(int x = 0; x < 8; x++){
 				for(int y = 0; y < 8; y++){
 					if(chessboard[x][y] > 0){
@@ -445,14 +447,16 @@ int main(void){
 			toggleLightsOn();
 			while(pieceMoving == 0){} //Wait for a piece to move
 			currentState = P1TURN;
-		} else if(currentState == P1TURN){
+		} 
+		else if(currentState == P1TURN){
 			if(pieceMoving2 == 1){
 				currentState = P1CAPTURE;
 			}
 			if(pieceMoving == 0){
 				currentState = P1ENDTURN;
 			}
-		} else if(currentState == P1CAPTURE){
+		} 
+		else if(currentState == P1CAPTURE){
 			while(pieceMoving2 == 1){} //Wait for P1 to put the piece in its new spot
 			int endGame = 0;
 			for(int x = 0; x < 8; x++){
@@ -467,14 +471,31 @@ int main(void){
 			} else {
 				currentState = ENDGAME;
 			}
-		} else if(currentState == P1ENDTURN){
+		} 
+		else if(currentState == P1ENDTURN){
 			pieceMoving = 0;
 			pieceMoving2 = 0;
+			for(int x = 0; 0 < 8; x++){
+				if(chessboard[x][7] == 1){
+					promote = 1;
+				}
+			}
+			if(promote == 1){
+				promote = 0;
+				currentState = P1PROMOTE;
+			} else {
+				currentState = P2STARTTURN;
+			}
+		} 
+		else if(currentState == P1PROMOTE){
+			for(int x = 0; x < 8; x++){
+				if(chessboard[x][7] == 1){
+					chessboard[x][7] = 5; //Needs to be changed to allow custom promotion
+				}
+			}
 			currentState = P2STARTTURN;
-		} else if(currentState == P1PROMOTE){
-			
-			currentState = P2STARTTURN;
-		} else if(currentState == P2STARTTURN){
+		} 
+		else if(currentState == P2STARTTURN){
 			for(int x = 0; x < 8; x++){
 				for(int y = 0; y < 8; y++){
 					if(chessboard[x][y] < 0){
@@ -486,14 +507,16 @@ int main(void){
 				}
 			}
 			toggleLightsOn();
-		} else if(currentState == P2TURN){
+		} 
+		else if(currentState == P2TURN){
 			if(pieceMoving2 == 1){
 				currentState = P2CAPTURE;
 			}
 			if(pieceMoving == 0){
 				currentState = P2ENDTURN;
 			}
-		} else if(currentState == P2CAPTURE){
+		} 
+		else if(currentState == P2CAPTURE){
 			while(pieceMoving2 == 1){} //Wait for P2 to put the piece in its new spot
 			int endGame = 0;
 			for(int x = 0; x < 8; x++){
@@ -508,14 +531,31 @@ int main(void){
 			} else {
 				currentState = ENDGAME;
 			}
-		} else if(currentState == P2ENDTURN){
+		} 
+		else if(currentState == P2ENDTURN){
 			pieceMoving = 0;
 			pieceMoving2 = 0;
+			for(int x = 0; 0 < 8; x++){
+				if(chessboard[x][0] == -1){
+					promote = 1;
+				}
+			}
+			if(promote == 1){
+				promote = 0;
+				currentState = P2PROMOTE;
+			} else {
+				currentState = P1STARTTURN;
+			}
+		} 
+		else if(currentState == P2PROMOTE){
+			for(int x = 0; x < 8; x++){
+				if(chessboard[x][0] == -1){
+					chessboard[x][0] = -5; //Needs to be changed to allow custom promotion
+				}
+			}
 			currentState = P1STARTTURN;
-		} else if(currentState == P2PROMOTE){
-			
-			currentState = P1STARTTURN;
-		} else if(currentState == ENDGAME){
+		} 
+		else if(currentState == ENDGAME){
 			
 		} 
   }
