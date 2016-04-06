@@ -21,6 +21,7 @@ void WaitForInterrupt(void);  // low power mode
 
 int playerTurn = 1; //1 for player 1 or -1 for player 2
 int pieceMoving = 0;
+int pieceMoving2 = 0;
 
 int chessboard[8][8];
 
@@ -442,12 +443,17 @@ int main(void){
 				}
 			}
 			toggleLightsOn();
+			while(pieceMoving == 0){} //Wait for a piece to move
+			currentState = P1TURN;
 		} else if(currentState == P1TURN){
-			//The handler will put into p1 turn
-			
+			if(pieceMoving2 == 1){
+				currentState = P1CAPTURE;
+			}
+			if(pieceMoving == 0){
+				currentState = P1ENDTURN;
+			}
 		} else if(currentState == P1CAPTURE){
-			//The handler will put into p1 capture
-			
+			while(pieceMoving2 == 1){} //Wait for P1 to put the piece in its new spot
 			int endGame = 0;
 			for(int x = 0; x < 8; x++){
 				for(int y = 0; y < 8; y++){
@@ -461,7 +467,9 @@ int main(void){
 			} else {
 				currentState = ENDGAME;
 			}
-		} else if(currentState == P1ENDTURN){			
+		} else if(currentState == P1ENDTURN){
+			pieceMoving = 0;
+			pieceMoving2 = 0;
 			currentState = P2STARTTURN;
 		} else if(currentState == P1PROMOTE){
 			
@@ -479,11 +487,14 @@ int main(void){
 			}
 			toggleLightsOn();
 		} else if(currentState == P2TURN){
-			//The hundler will put into p2 turn
-			
+			if(pieceMoving2 == 1){
+				currentState = P2CAPTURE;
+			}
+			if(pieceMoving == 0){
+				currentState = P2ENDTURN;
+			}
 		} else if(currentState == P2CAPTURE){
-			//The handler will put into p2 capture
-			
+			while(pieceMoving2 == 1){} //Wait for P2 to put the piece in its new spot
 			int endGame = 0;
 			for(int x = 0; x < 8; x++){
 				for(int y = 0; y < 8; y++){
@@ -498,6 +509,8 @@ int main(void){
 				currentState = ENDGAME;
 			}
 		} else if(currentState == P2ENDTURN){
+			pieceMoving = 0;
+			pieceMoving2 = 0;
 			currentState = P1STARTTURN;
 		} else if(currentState == P2PROMOTE){
 			
