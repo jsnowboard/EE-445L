@@ -1,0 +1,40 @@
+Forward Design Changes Report
+-----------------------------
+
+Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\submit\UTX-2016S305 (PCB - Forward Design Changes Report).txt
+Report Written:     Saturday, April 02, 2016
+Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\submit\UTX-2016S305.pcb
+Design Title:       
+Created:            3/21/2016 1:36:09 AM
+Last Saved:         3/31/2016 10:37:45 AM
+Editing Time:       4753 min
+Units:              inches (precision 3)
+
+Disconnected pin "U1-59" from net "PE4".
+Disconnected pin "PE4-1" from net "PE4".
+
+Deleted net "PE4".
+
+Added net "SRClear".
+Added net "CLKInhibit".
+
+Connected pin "U1-64" to net "CLKInhibit".
+Connected pin "U1-59" to net "SRClear".
+Connected pin "U2-16" to net "SRClear".
+Connected pin "U5-16" to net "SRClear".
+Connected pin "U6-16" to net "SRClear".
+Connected pin "U7-16" to net "SRClear".
+Connected pin "U8-16" to net "SRClear".
+Connected pin "U9-16" to net "SRClear".
+Connected pin "U11-16" to net "SRClear".
+Connected pin "U13-15" to net "CLKInhibit".
+Connected pin "U14-15" to net "CLKInhibit".
+Connected pin "U16-15" to net "CLKInhibit".
+Connected pin "U17-15" to net "CLKInhibit".
+Connected pin "U18-15" to net "CLKInhibit".
+Connected pin "U19-15" to net "CLKInhibit".
+Connected pin "U20-15" to net "CLKInhibit".
+Connected pin "PE4-1" to net "SRClear".
+
+
+End Of Report.

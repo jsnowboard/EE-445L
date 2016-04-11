@@ -1,0 +1,61 @@
+Design Rule Check Report
+------------------------
+
+Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB_rewrite (PCB - Design Rule Check Report).txt
+Report Written:     Sunday, April 10, 2016
+Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB_rewrite.pcb
+Design Title:       
+Created:            4/6/2016 10:57:20 AM
+Last Saved:         4/10/2016 6:30:23 PM
+Editing Time:       2393 min
+Units:              mil (precision 0)
+
+
+Results
+=======
+
+
+No errors found
+
+
+Settings
+========
+
+
+Spacings
+
+=========
+
+Tracks        Yes
+Pads and Vias Yes
+Shapes        Yes
+Text          Yes
+Board         Yes
+Drills        Yes
+Components    No
+
+
+Manufacturing
+
+==============
+
+Min Drill Hole Size  Yes
+Min Track Width      Yes
+Min Annular Ring     Yes
+Copper Text In Board Yes
+Mirrored Text        Yes
+Routing Areas        Yes
+Drill Breakout       Yes
+
+
+Nets
+
+=====
+
+Net Completion               No
+Dangling Tracks              No
+Net Track Length Differences No
+
+
+
+End Of Report.
