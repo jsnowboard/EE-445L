@@ -1,3 +1,10 @@
+//1. Poll the ADC periodicly updtaing the ADC value
+// This will be concluded after avery timer interupt
+//2. Poll the ADC manually in software as needed
+// This will be concluded after the instruction is run
+//3. Poll the ADC bassed on interupts
+// This will be concluded every time the thermistor resistance changes
+
 // PeriodicTimer0AInts.c
 // Runs on LM4F120/TM4C123
 // Use Timer0A in periodic mode to request interrupts at a particular
@@ -55,11 +62,17 @@ void EnableInterrupts(void);  // Enable interrupts
 long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
+int ADCvalue;
+int i = 0;
+
+int voltageArray[100];
 
 void UserTask(void){
-  static int i = 0;
-  LEDS = COLORWHEEL[i&(WHEELSIZE-1)];
-  i = i + 1;
+	while(i < 100){
+		ADCvalue = ADC0_SSFIFO3_R;  // 12-bit result
+		voltageArray[i] = ADCvalue;
+		i++;
+	}
 }
 // if desired interrupt frequency is f, Timer0A_Init parameter is busfrequency/f
 #define F16HZ (50000000/16)
@@ -69,7 +82,7 @@ int main(void){
   PLL_Init(Bus80MHz);              // bus clock at 50 MHz
   Output_Init();
 	SYSCTL_RCGCGPIO_R |= 0x20;       // activate port F
-	ADC0_InitTimer0ATriggerSeq3(0, 5000000); // ADC channel 0, 10 Hz sampling
+	ADC0_InitTimer0ATriggerSeq3(0, 50000); // ADC channel 0, 1000 Hz sampling
   while((SYSCTL_PRGPIO_R&0x0020) == 0){};// ready?
   GPIO_PORTF_DIR_R |= 0x0E;        // make PF3-1 output (PF3-1 built-in LEDs)
   GPIO_PORTF_AFSEL_R &= ~0x0E;     // disable alt funct on PF3-1
@@ -78,11 +91,15 @@ int main(void){
   GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R&0xFFFFF0FF)+0x00000000;
   GPIO_PORTF_AMSEL_R = 0;          // disable analog functionality on PF
   LEDS = 0;                        // turn all LEDs off
-//  Timer0A_Init(&UserTask, F20KHZ);     // initialize timer0A (20,000 Hz)
-  Timer0A_Init(&UserTask, F16HZ);  // initialize timer0A (16 Hz)
+  Timer0A_Init(&UserTask, F20KHZ/2);     // initialize timer0A (10,000 Hz)
+//  Timer0A_Init(&UserTask, F16HZ);  // initialize timer0A (16 Hz)
   EnableInterrupts();
-
-  while(1){
-    WaitForInterrupt();
-  }
-}
+	
+	while(i < 100){}
+		
+	for(int i = 0; i < 100; i++){
+		ST7735_OutUDec(voltageArray[i]);
+		ST7735_OutString("\n");
+	}
+	
+}		
