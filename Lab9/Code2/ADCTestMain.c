@@ -108,6 +108,7 @@ int main(void){
   while(1){
     PF1 ^= 0x02;  // toggles when running in main
 		temperature = adcToTemp(ADCvalue);
+		Output_Clear();
 		ST7735_sDecOut3(temperature);
 		printf(" C\n");
 		ST7735_sDecOut3(ADCvalue);
