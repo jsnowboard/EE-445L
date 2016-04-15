@@ -1,0 +1,30 @@
+Dependencies for Project 'ADCSWTrigger', Target 'ADCSWTrigger': (DO NOT MODIFY !)
+F (.\startup.s)(0x56DCEA21)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork -I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary--pd "__UVISION_VERSION SETA 517"--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\ADCTestMain.c)(0x571070CA)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\adctestmain.o --omf_browse .\adctestmain.crf --depend .\adctestmain.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (A:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (Lab2.h)(0x56DCEA21)
+I (fixed.h)(0x56DCEA21)
+I (ST7735.h)(0x56DCEA21)
+I (temperature.h)(0x57103956)
+I (..\../inc/tm4c123gh6pm.h)(0x56DCEA27)
+I (PLL.h)(0x56DCEA21)
+F (.\PLL.c)(0x56DCEA21)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\pll.o --omf_browse .\pll.crf --depend .\pll.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (PLL.h)(0x56DCEA21)
+I (..\../inc/tm4c123gh6pm.h)(0x56DCEA27)
+F (.\Lab2.c)(0x56DCEA21)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\lab2.o --omf_browse .\lab2.crf --depend .\lab2.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (..\../inc/tm4c123gh6pm.h)(0x56DCEA27)
+F (.\fixed.c)(0x571070F7)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\fixed.o --omf_browse .\fixed.crf --depend .\fixed.d)
+I (fixed.h)(0x56DCEA21)
+I (A:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (ST7735.h)(0x56DCEA21)
+F (.\ST7735.c)(0x56DCEA21)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\st7735.o --omf_browse .\st7735.crf --depend .\st7735.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (ST7735.h)(0x56DCEA21)
+I (..\../inc/tm4c123gh6pm.h)(0x56DCEA27)
+F (.\temperature.c)(0x57104049)(-c --cpu Cortex-M4 -D__EVAL -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --c99-I A:\Keil_v5\ARM\RV31\INC-I A:\Keil_v5\ARM\CMSIS\Include-I A:\Keil_v5\ARM\Inc\Luminary-D__UVISION_VERSION="517" -Drvmdk -DPART_LM4F120H5QR-o .\temperature.o --omf_browse .\temperature.crf --depend .\temperature.d)
+I (temperature.h)(0x57103956)

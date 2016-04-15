@@ -1,0 +1,9 @@
+.\adctestmain.o: ADCTestMain.c
+.\adctestmain.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\adctestmain.o: A:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\adctestmain.o: Lab2.h
+.\adctestmain.o: fixed.h
+.\adctestmain.o: ST7735.h
+.\adctestmain.o: temperature.h
+.\adctestmain.o: ..\../inc/tm4c123gh6pm.h
+.\adctestmain.o: PLL.h
