@@ -40,66 +40,52 @@
 #include "..//inc//tm4c123gh6pm.h"
 #include <stdint.h>
 #include "PLL.h"
+#include "fixed.h"
 #include "Timer0A.h"
 #include "ADCT0ATrigger.h"
+#include "Lab2.h"
 #include "ST7735.h"
-
-
-#define PF1       (*((volatile uint32_t *)0x40025008))
-#define PF2       (*((volatile uint32_t *)0x40025010))
-#define PF3       (*((volatile uint32_t *)0x40025020))
-#define LEDS      (*((volatile uint32_t *)0x40025038))
-#define RED       0x02
-#define BLUE      0x04
-#define GREEN     0x08
-#define WHEELSIZE 8           // must be an integer multiple of 2
-                              //    red, yellow,    green, light blue, blue, purple,   white,          dark
-const long COLORWHEEL[WHEELSIZE] = {RED, RED+GREEN, GREEN, GREEN+BLUE, BLUE, BLUE+RED, RED+GREEN+BLUE, 0};
-
+#include "temperature.h"
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
 long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
-int ADCvalue;
+
+unsigned long temperature;
+volatile unsigned long ADCvalue;
+
 int i = 0;
 
-int voltageArray[100];
-
-void UserTask(void){
-	while(i < 100){
-		ADCvalue = ADC0_SSFIFO3_R;  // 12-bit result
-		voltageArray[i] = ADCvalue;
-		i++;
-	}
-}
 // if desired interrupt frequency is f, Timer0A_Init parameter is busfrequency/f
 #define F16HZ (50000000/16)
+#define F20HZ (50000000/20)
 #define F20KHZ (50000000/20000)
 //debug code
-int main(void){ 
+int main(void){
+  Output_Init();	
   PLL_Init(Bus80MHz);              // bus clock at 50 MHz
-  Output_Init();
 	SYSCTL_RCGCGPIO_R |= 0x20;       // activate port F
-	ADC0_InitTimer0ATriggerSeq3(0, 50000); // ADC channel 0, 1000 Hz sampling
-  while((SYSCTL_PRGPIO_R&0x0020) == 0){};// ready?
-  GPIO_PORTF_DIR_R |= 0x0E;        // make PF3-1 output (PF3-1 built-in LEDs)
-  GPIO_PORTF_AFSEL_R &= ~0x0E;     // disable alt funct on PF3-1
-  GPIO_PORTF_DEN_R |= 0x0E;        // enable digital I/O on PF3-1
+	ADC0_InitTimer0ATriggerSeq3(0, F20HZ); // ADC channel 0, 1000 Hz sampling
+  //ADC0_InitSWTriggerSeq3_Ch9();
+	while((SYSCTL_PRGPIO_R&0x0020) == 0){};// ready?
+  GPIO_PORTF_DIR_R |= 0x02;        // make PF3-1 output (PF3-1 built-in LEDs)
+  GPIO_PORTF_AFSEL_R &= ~0x02;     // disable alt funct on PF3-1
+  GPIO_PORTF_DEN_R |= 0x02;        // enable digital I/O on PF3-1
                                    // configure PF3-1 as GPIO
   GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R&0xFFFFF0FF)+0x00000000;
   GPIO_PORTF_AMSEL_R = 0;          // disable analog functionality on PF
-  LEDS = 0;                        // turn all LEDs off
-  Timer0A_Init(&UserTask, F20KHZ/2);     // initialize timer0A (10,000 Hz)
-//  Timer0A_Init(&UserTask, F16HZ);  // initialize timer0A (16 Hz)
   EnableInterrupts();
 	
-	while(i < 100){}
-		
-	for(int i = 0; i < 100; i++){
-		ST7735_OutUDec(voltageArray[i]);
-		ST7735_OutString("\n");
+	while(1){
+		GPIO_PORTF_DATA_R ^= 0x02;           // toggle LED
+		//ADCvalue = ADC0_InSeq3();
+		temperature = adcToTemp(ADCvalue);
+		ST7735_sDecOut3(temperature);
+		printf(" C\n");
+		ST7735_sDecOut3(ADCvalue);
+		printf(" ADC\n");
 	}
 	
-}		
+}

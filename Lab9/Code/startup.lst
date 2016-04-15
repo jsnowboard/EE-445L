@@ -1090,11 +1090,10 @@ ARM Macro Assembler    Page 17
               00000400 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
-erwork --depend=.\startup.d -o.\startup.o -IC:\Users\Jeremiah\Programming\EE-44
-5L\Lab9\Code\RTE -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include -IC:\Keil_
-v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include --predefine="__EVAL SETA 1" --pr
-edefine="__UVISION_VERSION SETA 518" --predefine="_RTE_ SETA 1" --predefine="LM
-4F120 SETA 1" --list=.\startup.lst startup.s
+erwork --depend=.\startup.d -o.\startup.o -I"A:\Documents\Github\EE 445L Fixed\
+trunk\Lab9\Code\RTE" -IA:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include -
+IA:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__UVISIO
+N_VERSION SETA 517" --predefine="LM4F120 SETA 1" --list=.\startup.lst startup.s
 
 
 
@@ -2541,4 +2540,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 2 symbols
-484 symbols in table
+483 symbols in table

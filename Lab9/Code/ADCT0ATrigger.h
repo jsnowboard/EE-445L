@@ -41,3 +41,5 @@
 // SS3 interrupts: enabled and promoted to controller
 // channelNum must be 0-11 (inclusive) corresponding to Ain0 through Ain11
 void ADC0_InitTimer0ATriggerSeq3(uint8_t channelNum, uint32_t period);
+
+extern volatile unsigned long ADCvalue;
