@@ -422,7 +422,9 @@ int main(void){
   PLL_Init(Bus80MHz);              // bus clock at 80 MHz
   Timer0A_Init(&TimerATask, 50000);  // initialize timer0A
   EnableInterrupts();
+	Port_OutInit();
 	currentState = 0;
+	/*
   while(1){
 		if(currentState == GAMESTART){
 			lightState = LIGHTSON;
@@ -559,4 +561,11 @@ int main(void){
 			
 		} 
   }
+	*/
+	while(1){
+		for(int i = 0; i<64; i++){
+			Port_Out(64-i);
+			for(int k = 0; k<1000; k++){}
+		}
+	}
 }
