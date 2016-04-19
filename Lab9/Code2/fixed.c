@@ -76,6 +76,32 @@ void ST7735_sDecOut3(int32_t n){
 	}
 }
 
+void ST7735_sDecOut2(int32_t n){
+	int negative = 0;
+	if (n < 0) {
+		negative = 1;
+		n = n*-1;
+	}
+	int firstDigit = n/1000;
+	int secondDigit = (n/100)%10;
+	int thirdDigit = (n/10)%10;
+	int fourthDigit = n%10;
+	if (n > 9999 || n < -9999){
+		printf(" *.***\n");
+	} else {
+		if (negative){
+			printf("-");
+		} else {
+			printf(" ");
+		}
+		printf("%d",firstDigit);
+		printf("%d",secondDigit);
+		printf(".");
+		printf("%d",thirdDigit);
+		printf("%d\n",fourthDigit);
+	}
+}
+
 /**************ST7735_uBinOut8***************
  unsigned 32-bit binary fixed-point with a resolution of 1/256. 
  The full-scale range is from 0 to 999.99. 

@@ -27,6 +27,8 @@ Parameter LCD display
  */ 
 void ST7735_sDecOut3(int32_t n);
 
+void ST7735_sDecOut2(int32_t n);
+
 
 /**************ST7735_uBinOut8***************
  unsigned 32-bit binary fixed-point with a resolution of 1/256. 

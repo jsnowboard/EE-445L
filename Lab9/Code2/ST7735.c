@@ -748,7 +748,8 @@ void static commonInit(const uint8_t *cmdList) {
                   SSI_CR0_SPO);         // SPO = 0
                                         // FRF = Freescale format
   SSI0_CR0_R = (SSI0_CR0_R&~SSI_CR0_FRF_M)+SSI_CR0_FRF_MOTO;
-                                        // DSS = 8-bit data
+                                  
+																	// DSS = 8-bit data
   SSI0_CR0_R = (SSI0_CR0_R&~SSI_CR0_DSS_M)+SSI_CR0_DSS_8;
   SSI0_CR1_R |= SSI_CR1_SSE;            // enable SSI
 

@@ -1,7 +1,11 @@
 // filename ******** fixed.h ************** 
 // Jeremiah Bartlett -- JJB2954
 // Ty Winkler -- TAW2328
-// 1/25/2016
+// Lab 1
+// TA: Ryan Chow
+// Initial Creation: 1/25/2016
+// Last Revision: 1/31/2016
+// Lab Number: 16325
 
 #include <stdio.h>
 #include <stdint.h>
@@ -22,6 +26,8 @@ Parameter LCD display
 -12345    " *.***"
  */ 
 void ST7735_sDecOut3(int32_t n);
+
+void ST7735_sDecOut2(int32_t n);
 
 
 /**************ST7735_uBinOut8***************
@@ -77,6 +83,21 @@ Inputs: none
 Outputs: none
 */
 void BookExamples(void);
+
+//************* ST7735_Line********************************************
+//  Draws one line on the ST7735 color LCD
+//  Inputs: (x1,y1) is the start point
+//          (x2,y2) is the end point
+// x1,x2 are horizontal positions, columns from the left edge
+//               must be less than 128
+//               0 is on the left, 126 is near the right
+// y1,y2 are vertical positions, rows from the top edge
+//               must be less than 160
+//               159 is near the wires, 0 is the side opposite the wires
+//        color 16-bit color, which can be produced by ST7735_Color565() 
+// Output: none
+void ST7735_Line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
+
 
 
 

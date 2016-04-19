@@ -51,6 +51,8 @@
 #define PF2             (*((volatile uint32_t *)0x40025010))
 #define PF1             (*((volatile uint32_t *)0x40025008))
 #define F20HZ (50000000/20)
+#define F20KHZ (50000000/20000)
+#define F50KHZ (50000000/50000)
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
 long StartCritical (void);    // previous I bit, disable interrupts
@@ -73,7 +75,7 @@ void Timer0A_Init100HzInt(void){
   // **** timer0A initialization ****
                                    // configure for periodic mode
   TIMER0_TAMR_R = TIMER_TAMR_TAMR_PERIOD;
-  TIMER0_TAILR_R = F20HZ;         // start value for 100 Hz interrupts
+  TIMER0_TAILR_R = F50KHZ;         // start value for 100 Hz interrupts
   TIMER0_IMR_R |= TIMER_IMR_TATOIM;// enable timeout (rollover) interrupt
   TIMER0_ICR_R = TIMER_ICR_TATOCINT;// clear timer0A timeout flag
   TIMER0_CTL_R |= TIMER_CTL_TAEN;  // enable timer0A 32-b, periodic, interrupts
@@ -92,7 +94,6 @@ void Timer0A_Handler(void){
 int main(void){
 	Output_Init();
 //	ST7735_XYplotInit("Temp", 0, 100, 0, 100);
-	
   PLL_Init(Bus80MHz);                   // 80 MHz
   SYSCTL_RCGCGPIO_R |= 0x20;            // activate port F
   ADC0_InitSWTriggerSeq3_Ch9();         // allow time to finish activating
@@ -105,14 +106,17 @@ int main(void){
   GPIO_PORTF_AMSEL_R = 0;               // disable analog functionality on PF
   PF2 = 0;                      // turn off LED
 	EnableInterrupts();
+	ST7735_SetCursor(6,0);
+	printf("C");
+	ST7735_SetCursor(13,0);
+	printf("ADC");
   while(1){
     PF1 ^= 0x02;  // toggles when running in main
 		temperature = adcToTemp(ADCvalue);
-		Output_Clear();
-		ST7735_sDecOut3(temperature);
-		printf(" C\n");
-		ST7735_sDecOut3(ADCvalue);
-		printf(" ADC\n");
-  }
+		ST7735_SetCursor(0,0);
+		ST7735_sDecOut2(temperature);
+		ST7735_SetCursor(9,0);
+		ST7735_OutUDec(ADCvalue);
+  }	
 }
 
