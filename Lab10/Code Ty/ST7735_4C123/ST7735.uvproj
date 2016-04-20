@@ -449,6 +449,16 @@
               <FileType>1</FileType>
               <FilePath>.\PeriodMeasure.c</FilePath>
             </File>
+            <File>
+              <FileName>Switch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Switch.c</FilePath>
+            </File>
+            <File>
+              <FileName>SysTick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SysTick.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

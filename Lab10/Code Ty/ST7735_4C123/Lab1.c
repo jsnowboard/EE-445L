@@ -26,9 +26,18 @@
 #include "ST7735.h"
 #include "fixed.h"
 #include "PLL.h"
+#include "Switch.h"
+#include "SysTick.h"
 #include "PWM.h"
 #include "../../inc/tm4c123gh6pm.h"
 #include "PeriodMeasure.h"
+
+#define PF0       (*((volatile uint32_t *)0x40025004))
+#define PF4       (*((volatile uint32_t *)0x40025040))
+#define SWITCHES  (*((volatile uint32_t *)0x40025044))
+#define SW1       0x10                      // on the left side of the Launchpad board
+#define SW2       0x01                      // on the right side of the Launchpad board
+#define DELAY10MS 160
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
@@ -36,23 +45,58 @@ long StartCritical (void);    // previous I bit, disable interrupts
 void EndCritical(long sr);    // restore I bit to previous value
 void WaitForInterrupt(void);  // low power mode
 
+void plotInit(void){
+	ST7735_SetCursor(0,0); 
+	ST7735_OutString("Current Duty");
+	ST7735_PlotClear(0,900000);  // range from 0 to 4095
+	ST7735_SetCursor(0,2); 
+	ST7735_OutString("RPS"); 
+}
+
+int Period;
+int startPeriod = 10000;
+int currentDuty = 9000;
+int change = 1000;
+
+int j = 0;
+int N = 1;
+void plotPoint(void){
+	ST7735_PlotPoints(Period,500000);  // Measured temperature
+	if((j&(N-1))==0){          // fs sampling, fs/N samples plotted per second
+		ST7735_PlotNextErase();  // overwrites N points on same line
+	}
+	j++;                       // counts the number of samples
+}
+
 //PB6 - PWM_In (To the OPA2350)
 //PB7 - PWM_Out (To the TIP120)
 int main(void){
+	int status;
 	Output_Init();
+	status = Switch_Input(); // 0x00 or 0x20
+  status = Switch_Input(); // 0x00 or 0x20	
+	Board_Init();
   PLL_Init(Bus80MHz);               // bus clock at 80 MHz
-  PeriodMeasure_Init();            // initialize 24-bit timer0A in capture mode
+  PeriodMeasure_Init();             // initialize 24-bit timer0A in capture mode
   EnableInterrupts();	
-	PWM0B_Init(1000, 900);         // initialize PWM0, 1000 Hz, 25% duty
-//  PWM0B_Duty(4000);    // 10%
-//  PWM0B_Duty(10000);   // 25%
-//  PWM0B_Duty(30000);   // 75%
-	
-//  PWM0B_Init(4000, 2000);         // initialize PWM0, 10000 Hz, 50% duty
-//  PWM0B_Init(1000, 900);          // initialize PWM0, 40000 Hz, 90% duty
-//  PWM0B_Init(1000, 100);          // initialize PWM0, 40000 Hz, 10% duty
-//  PWM0B_Init(40, 20);             // initialize PWM0, 1 MHz, 50% duty
+	plotInit();
+	PWM0B_Init(startPeriod, currentDuty);         // initialize PWM0, 1000 Hz, 25% duty
+
 	while(1){
-    WaitForInterrupt();
+    plotPoint();
+		status = Board_Input();
+		void Switch_WaitForTouch(void);
+    switch(status){                    // switches are negative logic on PF0 and PF4
+      case 0x01: Switch_Debounce(); if(currentDuty + change <= startPeriod - change){currentDuty = currentDuty + change;} break;    // SW1 pressed
+      case 0x10: Switch_Debounce(); if(currentDuty - change >= 0){currentDuty = currentDuty - change;} break;    										// SW2 pressed
+      case 0x00: break;  // both switches pressed
+      case 0x11: break;  // neither switch pressed
+      default: break;		 // unexpected return value
+    }
+		ST7735_SetCursor(0,1);
+		ST7735_OutUDec(currentDuty/100);
+		ST7735_SetCursor(7,2);
+		ST7735_OutUDec(Period);
+		PWM0B_Duty(currentDuty);
   }
 }

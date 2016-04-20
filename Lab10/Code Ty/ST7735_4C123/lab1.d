@@ -4,6 +4,8 @@
 .\lab1.o: ST7735.h
 .\lab1.o: fixed.h
 .\lab1.o: PLL.h
+.\lab1.o: Switch.h
+.\lab1.o: SysTick.h
 .\lab1.o: PWM.h
 .\lab1.o: ..\../../inc/tm4c123gh6pm.h
 .\lab1.o: PeriodMeasure.h
