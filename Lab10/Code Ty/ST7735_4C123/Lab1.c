@@ -51,6 +51,8 @@ void plotInit(void){
 	ST7735_PlotClear(0,100);  // range from 0 to 4095
 	ST7735_SetCursor(0,2); 
 	ST7735_OutString("RPS"); 
+	ST7735_SetCursor(10,2); 
+	ST7735_OutString("DRPS"); 
 }
 
 int Period;
@@ -58,7 +60,7 @@ int startPeriod = 10000;
 int currentDuty = 9000;
 int change = 1000;
 int rps = 0;
-int desiredrps = 40;
+int desiredrps = 45;
 
 int j = 0;
 int N = 1;
@@ -90,7 +92,7 @@ int main(void){
 		status = Board_Input();
 		void Switch_WaitForTouch(void);
 		switch(status){                    // switches are negative logic on PF0 and PF4
-		  case 0x01: Switch_Debounce(); if(currentDuty + change <= startPeriod - change){currentDuty = currentDuty + change;} if(desiredrps + 5 <= 40){desiredrps = desiredrps + 5;} break;    // SW1 pressed
+		  case 0x01: Switch_Debounce(); if(currentDuty + change <= startPeriod - change){currentDuty = currentDuty + change;} if(desiredrps + 5 <= 45){desiredrps = desiredrps + 5;} break;    // SW1 pressed
 		  case 0x10: Switch_Debounce(); if(currentDuty - change >= 0){currentDuty = currentDuty - change;} if(desiredrps - 5 >= 0){desiredrps = desiredrps - 5;} break;    										// SW2 pressed
 		  case 0x00: break;  // both switches pressed
 		  case 0x11: break;  // neither switch pressed
@@ -98,9 +100,13 @@ int main(void){
 		}
 		ST7735_SetCursor(0,1);
 		ST7735_OutUDec(currentDuty/100);
-		ST7735_SetCursor(7,2);
+		ST7735_SetCursor(4,2);
 		ST7735_OutUDec(rps);
 		ST7735_OutChar(' ');
+		ST7735_OutChar(' ');
+		ST7735_OutChar(' ');
+		ST7735_SetCursor(15,2);
+		ST7735_OutUDec(desiredrps);
 		ST7735_OutChar(' ');
 		ST7735_OutChar(' ');
 		ST7735_OutChar(' ');
