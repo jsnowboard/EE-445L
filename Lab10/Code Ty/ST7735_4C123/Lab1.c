@@ -48,13 +48,13 @@ void WaitForInterrupt(void);  // low power mode
 void plotInit(void){
 	ST7735_SetCursor(0,0); 
 	ST7735_OutString("Current Duty");
-	ST7735_PlotClear(0,60);  // range from 0 to 4095
+	ST7735_PlotClear(0,55);  // range from 0 to 4095
 }
 
 int Period;
 int startPeriod = 40000;
 int rps = 0;
-int desiredrps = 45;
+int desiredrps = 40;
 
 int j = 0;
 int N = 1;
@@ -64,6 +64,20 @@ void plotPoint(void){
 		ST7735_PlotNextErase();  // overwrites N points on same line
 	}
 	j++;                       // counts the number of samples
+}
+
+uint32_t Speed;      // motor speed in 0.1 Hz, 0.025rps 
+int32_t E;           // speed error in 0.1 Hz, 0.025rps 
+int32_t U;           // duty cycle 40 to 39960
+int32_t Xstar = 1200;
+void updateMotor(void){
+	Xstar = desiredrps/.025;
+	Speed = 800000000/Period;
+	E = Xstar-Speed;          // 0.1 Hz, 0.025rps
+	U = U + (16*E)/64;         // discrete integral 
+	if(U < 100) U=100;        // Constrain output if(U>39900) 
+	if(U > 39900) U=39900;
+	PWM0B_Duty(U);
 }
 
 //PB6 - PWM_In (To the OPA2350)
@@ -79,21 +93,20 @@ int main(void){
 	EnableInterrupts();	
 	plotInit();
 	PWM0B_Init(startPeriod, 39900);         // initialize PWM0, 1000 Hz, 25% duty
-
 	while(1){
 		rps = ( 1000 * 80000)/(4 * Period);
 		plotPoint();
 		status = Board_Input();
 		void Switch_WaitForTouch(void);
 		switch(status){                    // switches are negative logic on PF0 and PF4
-		  case 0x01: Switch_Debounce(); if(desiredrps + 5 <= 60){desiredrps = desiredrps + 5;} break;    // SW1 pressed
+		  case 0x01: Switch_Debounce(); if(desiredrps + 5 <= 50){desiredrps = desiredrps + 5;} break;    // SW1 pressed
 		  case 0x10: Switch_Debounce(); if(desiredrps - 5 >= 0){desiredrps = desiredrps - 5;} break;     // SW2 pressed
 		  case 0x00: break;  // both switches pressed
 		  case 0x11: break;  // neither switch pressed
 		  default: break;		 // unexpected return value
 		}
 		ST7735_SetCursor(0,1);
-		ST7735_OutUDec((U/startPeriod)*100);
+		ST7735_OutUDec(U/400);
 		ST7735_SetCursor(0,2); 
 		ST7735_OutString("RPS"); 
 		ST7735_SetCursor(4,2);
@@ -108,5 +121,6 @@ int main(void){
 		ST7735_OutChar(' ');
 		ST7735_OutChar(' ');
 		ST7735_OutChar(' ');
+		updateMotor();
   }
 }
