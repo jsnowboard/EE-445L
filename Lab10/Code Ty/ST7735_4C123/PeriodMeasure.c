@@ -27,6 +27,8 @@
 #include "../../inc/tm4c123gh6pm.h"
 #include "PLL.h"
 #include "PeriodMeasure.h"
+#include "Lab1.h"
+#include "PWM.h"
 
 #define NVIC_EN0_INT19          0x00080000  // Interrupt 19 enable
 #define PF2                     (*((volatile uint32_t *)0x40025010))
@@ -87,12 +89,24 @@ void PeriodMeasure_Init(void){
   NVIC_PRI4_R = (NVIC_PRI4_R&0x00FFFFFF)|0x40000000; // top 3 bits
   NVIC_EN0_R = NVIC_EN0_INT19;     // enable interrupt 19 in NVIC
 }
+
+uint32_t Speed;      // motor speed in 0.1 Hz, 0.025rps 
+int32_t E;           // speed error in 0.1 Hz, 0.025rps 
+int32_t U;           // duty cycle 40 to 39960
+int32_t Xstar = 1200;
 void Timer0A_Handler(void){
   PF2 = PF2^0x04;  // toggle PF2
   PF2 = PF2^0x04;  // toggle PF2
   TIMER0_ICR_R = TIMER_ICR_CAECINT;// acknowledge timer0A capture match
   Period = (First - TIMER0_TAR_R)&0xFFFFFF;// 24 bits, 12.5ns resolution
   First = TIMER0_TAR_R;            // setup for next
+	Speed = (800000000000/(Period*1000)); // 0.1 Hz, 0.025rps 
+	Xstar = (desiredrps*1000)/25;
+	E = Xstar-Speed;          // 0.1 Hz, 0.025rps
+	U = U+(12*E)/256;         // discrete integral 
+	if(U < 100) U=100;        // Constrain output if(U>39900) 
+	if(U>39900) U=39900; 
   Done = 1;
   PF2 = PF2^0x04;  // toggle PF2
+	PWM0B_Duty(U);
 }

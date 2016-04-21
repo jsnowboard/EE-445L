@@ -48,17 +48,11 @@ void WaitForInterrupt(void);  // low power mode
 void plotInit(void){
 	ST7735_SetCursor(0,0); 
 	ST7735_OutString("Current Duty");
-	ST7735_PlotClear(0,100);  // range from 0 to 4095
-	ST7735_SetCursor(0,2); 
-	ST7735_OutString("RPS"); 
-	ST7735_SetCursor(10,2); 
-	ST7735_OutString("DRPS"); 
+	ST7735_PlotClear(0,60);  // range from 0 to 4095
 }
 
 int Period;
-int startPeriod = 10000;
-int currentDuty = 9000;
-int change = 1000;
+int startPeriod = 40000;
 int rps = 0;
 int desiredrps = 45;
 
@@ -84,7 +78,7 @@ int main(void){
 	PeriodMeasure_Init();             // initialize 24-bit timer0A in capture mode
 	EnableInterrupts();	
 	plotInit();
-	PWM0B_Init(startPeriod, currentDuty);         // initialize PWM0, 1000 Hz, 25% duty
+	PWM0B_Init(startPeriod, 39900);         // initialize PWM0, 1000 Hz, 25% duty
 
 	while(1){
 		rps = ( 1000 * 80000)/(4 * Period);
@@ -92,24 +86,27 @@ int main(void){
 		status = Board_Input();
 		void Switch_WaitForTouch(void);
 		switch(status){                    // switches are negative logic on PF0 and PF4
-		  case 0x01: Switch_Debounce(); if(currentDuty + change <= startPeriod - change){currentDuty = currentDuty + change;} if(desiredrps + 5 <= 45){desiredrps = desiredrps + 5;} break;    // SW1 pressed
-		  case 0x10: Switch_Debounce(); if(currentDuty - change >= 0){currentDuty = currentDuty - change;} if(desiredrps - 5 >= 0){desiredrps = desiredrps - 5;} break;    										// SW2 pressed
+		  case 0x01: Switch_Debounce(); if(desiredrps + 5 <= 60){desiredrps = desiredrps + 5;} break;    // SW1 pressed
+		  case 0x10: Switch_Debounce(); if(desiredrps - 5 >= 0){desiredrps = desiredrps - 5;} break;     // SW2 pressed
 		  case 0x00: break;  // both switches pressed
 		  case 0x11: break;  // neither switch pressed
 		  default: break;		 // unexpected return value
 		}
 		ST7735_SetCursor(0,1);
-		ST7735_OutUDec(currentDuty/100);
+		ST7735_OutUDec((U/startPeriod)*100);
+		ST7735_SetCursor(0,2); 
+		ST7735_OutString("RPS"); 
 		ST7735_SetCursor(4,2);
 		ST7735_OutUDec(rps);
 		ST7735_OutChar(' ');
 		ST7735_OutChar(' ');
 		ST7735_OutChar(' ');
+		ST7735_SetCursor(10,2); 
+		ST7735_OutString("DRPS"); 
 		ST7735_SetCursor(15,2);
 		ST7735_OutUDec(desiredrps);
 		ST7735_OutChar(' ');
 		ST7735_OutChar(' ');
 		ST7735_OutChar(' ');
-		PWM0B_Duty(currentDuty);
   }
 }
