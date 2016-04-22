@@ -2,15 +2,82 @@ Forward Design Changes Report
 -----------------------------
 
 Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB_rewrite (PCB - Forward Design Changes Report).txt
-Report Written:     Sunday, April 10, 2016
+Report Written:     Thursday, April 21, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB_rewrite.pcb
 Design Title:       
 Created:            4/6/2016 10:57:20 AM
-Last Saved:         4/10/2016 6:30:23 PM
-Editing Time:       2393 min
+Last Saved:         4/21/2016 8:06:44 PM
+Editing Time:       2446 min
 Units:              mil (precision 0)
 
-The designs are the same, so no design changes to forward.
+Net N1410 renamed to InA1
+Net N1412 renamed to InA2
+Net N1413 renamed to InA3
+Net N1414 renamed to InA4
+Net N1415 renamed to InA5
+Net N1417 renamed to InA6
+Net N1418 renamed to InA7
+Net N1419 renamed to InA8
+Net N1429 renamed to InH8
+Net N1430 renamed to InH7
+Net N1431 renamed to InH6
+Net N1432 renamed to InH5
+Net N1433 renamed to InH4
+Net N1434 renamed to InH3
+Net N1435 renamed to InH2
+Net N1436 renamed to InH1
+Net N1451 renamed to InB1
+Net N1452 renamed to InB2
+Net N1453 renamed to InB3
+Net N1454 renamed to InB4
+Net N1455 renamed to InB5
+Net N1456 renamed to InB6
+Net N1457 renamed to InB7
+Net N1458 renamed to InB8
+Net N1459 renamed to InC1
+Net N1460 renamed to InC2
+Net N1461 renamed to InC3
+Net N1462 renamed to InC4
+Net N1463 renamed to InC5
+Net N1464 renamed to InC6
+Net N1465 renamed to InC7
+Net N1466 renamed to InC8
+Net N1473 renamed to InD1
+Net N1474 renamed to InD2
+Net N1475 renamed to InD3
+Net N1476 renamed to InD4
+Net N1478 renamed to InD6
+Net N1479 renamed to InD7
+Net N1480 renamed to InD8
+Net N1481 renamed to InE1
+Net N1482 renamed to InE2
+Net N1483 renamed to InE3
+Net N1484 renamed to InE4
+Net N1486 renamed to InE5
+Net N1487 renamed to InE6
+Net N1488 renamed to InE7
+Net N1489 renamed to InE8
+Net N1490 renamed to InF1
+Net N1491 renamed to InF2
+Net N1492 renamed to InF3
+Net N1493 renamed to InF4
+Net N1494 renamed to InF5
+Net N1495 renamed to InF6
+Net N1496 renamed to InF7
+Net N1497 renamed to InF8
+Net N1498 renamed to InG1
+Net N1499 renamed to InG3
+Net N1501 renamed to InG2
+Net N1502 renamed to InG4
+Net N1503 renamed to InG5
+Net N1504 renamed to InG6
+Net N1505 renamed to InG7
+Net N1506 renamed to InG8
+Net N1477 renamed to InD5
+Net N1507 renamed to PF2
+Net N1508 renamed to PF0
+Net N1509 renamed to PF3
+Net N1510 renamed to PF4
 
 
 End Of Report.

@@ -2,12 +2,12 @@ Design Consistency Status Report
 --------------------------------
 
 Report File:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB_rewrite (PCB - Design Consistency Status Report).txt
-Report Written:     Sunday, April 10, 2016
+Report Written:     Thursday, April 21, 2016
 Design Path:        C:\Users\Jeremiah\Programming\EE-445L\Final Project\chessboardPCB_rewrite.pcb
 Design Title:       
 Created:            4/6/2016 10:57:20 AM
-Last Saved:         4/10/2016 6:30:23 PM
-Editing Time:       2392 min
+Last Saved:         4/21/2016 8:06:44 PM
+Editing Time:       2446 min
 Units:              mil (precision 0)
 
 
