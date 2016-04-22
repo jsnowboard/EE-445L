@@ -154,7 +154,7 @@ uint32_t Switch_Input3(void){
 // debounces switch
 uint32_t Switch_Debounce(void){
 uint32_t in,old,time; 
-  time = 100000; // 10 ms
+  time = 300000; // 10 ms
   old = Board_Input();
   while(time){
     SysTick_Wait(DELAY10US); // 10us

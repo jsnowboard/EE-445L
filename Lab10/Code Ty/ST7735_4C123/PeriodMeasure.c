@@ -90,7 +90,10 @@ void PeriodMeasure_Init(void){
   NVIC_EN0_R = NVIC_EN0_INT19;     // enable interrupt 19 in NVIC
 }
 
+int t1;
+int t2;
 void Timer0A_Handler(void){
+	t1 = TIMER0_TAR_R;
   PF2 = PF2^0x04;  // toggle PF2
   PF2 = PF2^0x04;  // toggle PF2
   TIMER0_ICR_R = TIMER_ICR_CAECINT;// acknowledge timer0A capture match
@@ -98,4 +101,5 @@ void Timer0A_Handler(void){
   First = TIMER0_TAR_R;            // setup for next 
   Done = 1;
   PF2 = PF2^0x04;  // toggle PF2
+	t2 = (t1 - TIMER0_TAR_R)&0xFFFFFF;;
 }

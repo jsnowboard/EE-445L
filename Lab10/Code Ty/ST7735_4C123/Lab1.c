@@ -107,7 +107,11 @@ int main(void){
 		}
 		ST7735_SetCursor(0,1);
 		ST7735_OutUDec(U/400);
-		ST7735_SetCursor(0,2); 
+		ST7735_OutChar(' ');
+		ST7735_OutUDec(U);
+		ST7735_OutChar(' ');
+		ST7735_OutUDec(t2);
+		ST7735_SetCursor(0,2);
 		ST7735_OutString("RPS"); 
 		ST7735_SetCursor(4,2);
 		ST7735_OutUDec(rps);
