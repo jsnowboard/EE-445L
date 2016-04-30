@@ -45,6 +45,7 @@
 
 #include <stdint.h>
 #include "PortF.h"
+#include "SysTick.h"
 #include "../../inc/tm4c123gh6pm.h"
 
 #define PD1   (*((volatile uint32_t *)0x40007008))
@@ -56,7 +57,6 @@
 // assumes: system clock rate less than or equal to 50 MHz
 // 74HC165 clocks out on rise, TM4C123 clocks in on fall
 void Port_InInit(void){
-	PortF_Init();
   SYSCTL_RCGCSSI_R |= 0x02;       // activate SSI1
   SYSCTL_RCGCGPIO_R |= 0x08;      // activate port D
   while((SYSCTL_PRGPIO_R&0x01) == 0){};// ready?
@@ -78,13 +78,14 @@ void Port_InInit(void){
 // inputs:  none
 // outputs: data (0 to 255)
 uint8_t Port_In(void){uint8_t data;
-	Toggle();
   PD1 = 0x08;   // enable shifting
+	SysTick_Wait10ms(4);
   while((SSI1_SR_R&0x02)==0){}; // wait until room in FIFO
   SSI1_DR_R = 0;                // data out to start
   while((SSI1_SR_R&0x04)==0){}; // wait for response
   data = SSI1_DR_R;
   PD1 = 0;   // load mode
+	SysTick_Wait10ms(4);
   return data;
 }
 

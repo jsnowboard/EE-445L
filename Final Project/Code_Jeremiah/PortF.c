@@ -21,8 +21,9 @@ void PortF_Init(void){ volatile unsigned long delay;
   GPIO_PORTF_DEN_R = 0x1F;          // 7) enable digital I/O on PF4-0
 }
 #define PF2 (*((volatile unsigned long *)0x40025010))
-void Toggle(void){
-  PF2 ^= 0x04;  // toggle LED
 	
+uint32_t i;
+void Toggle(void){
+  PF2 ^= 0x04;  // toggle LED	
 }
 
