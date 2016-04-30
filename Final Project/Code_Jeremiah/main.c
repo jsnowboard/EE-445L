@@ -18,21 +18,14 @@ uint32_t status;
 int main(void) {
 	
 	PLL_Init(Bus50MHz); //set up PLL
-	//Port_InInit(); //set up 74HC165 for input serial data
+	
 	//PortF_Init();
 	//Toggle();
 	//Toggle();
-	//SysTick_Init();
-	code=0x02;
+	SysTick_Init();
+	code=0xFF;
 	Port_OutInit(); // set up 74HC595 to output serial data 
-	Port_Out(0);// output
-	Port_Out(0);// output
-	Port_Out(0);// output
-	Port_Out(0);// output
-	Port_Out(0);// output
-	Port_Out(0);// output
-	Port_Out(0);// output
-	Port_Out(0);// output
+	Port_InInit(); //set up 74HC165 for input serial data
 	Port_Out(code);// output
 	
 	while(1) {
@@ -40,8 +33,8 @@ int main(void) {
 //		code=0x03;
 //		Port_Out(code);
 //		code=0x01;
-//		Port_Out(code);
-//		SysTick_Wait10ms(4);
-//		Port_In();
+   		Port_Out(code);
+		  SysTick_Wait10ms(1000);
+		  code=Port_In();
 	}
 }

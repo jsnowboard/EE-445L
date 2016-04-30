@@ -55,9 +55,9 @@ void PortE_Init(void){
   GPIO_PORTE_DIR_R |= 0x01;        // PE0 output 
   GPIO_PORTE_AFSEL_R &= ~0x01;      // not alternative
   GPIO_PORTE_AMSEL_R &= ~0x01;      // no analog
-  GPIO_PORTE_PCTL_R &= ~0x0000000F; // bits for PE4,PE3,PE2,PE1
-  GPIO_PORTE_DEN_R |= 0x01;         // enable PE4,PE3,PE2,PE1
-	PE0 = 1;
+  GPIO_PORTE_PCTL_R &= ~0x0000000F; // bits for PE0
+  GPIO_PORTE_DEN_R |= 0x01;         // enable PE0
+	PE0 = 0;
 }
 
 //********Port_Init*****************
@@ -66,7 +66,6 @@ void PortE_Init(void){
 // outputs: none
 // assumes: system clock rate less than or equal to 50 MHz
 void Port_OutInit(void){
-	PortF_Init();
 	PortE_Init();
   SYSCTL_RCGCSSI_R |= 0x01;       // activate SSI0
   SYSCTL_RCGCGPIO_R |= 0x01;      // activate port A
