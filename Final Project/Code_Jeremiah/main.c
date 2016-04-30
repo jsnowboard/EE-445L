@@ -25,9 +25,18 @@ int main(void) {
 	//SysTick_Init();
 	code=0x02;
 	Port_OutInit(); // set up 74HC595 to output serial data 
+	Port_Out(0);// output
+	Port_Out(0);// output
+	Port_Out(0);// output
+	Port_Out(0);// output
+	Port_Out(0);// output
+	Port_Out(0);// output
+	Port_Out(0);// output
+	Port_Out(0);// output
+	Port_Out(code);// output
 	
 	while(1) {
-		Port_Out(code);// output
+		
 //		code=0x03;
 //		Port_Out(code);
 //		code=0x01;

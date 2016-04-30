@@ -46,9 +46,10 @@
 #include "PortF.h"
 #include "../../inc/tm4c123gh6pm.h"
 
-
+#define PE0 (*((volatile unsigned long *)0x40024004))
+	
 void PortE_Init(void){
-	long delay;
+	volatile unsigned long delay;
   SYSCTL_RCGC2_R |= 0x10;           // Port E clock
   delay = SYSCTL_RCGC2_R;           // allow time for clock to start
   GPIO_PORTE_DIR_R |= 0x01;        // PE0 output 
@@ -56,6 +57,7 @@ void PortE_Init(void){
   GPIO_PORTE_AMSEL_R &= ~0x01;      // no analog
   GPIO_PORTE_PCTL_R &= ~0x0000000F; // bits for PE4,PE3,PE2,PE1
   GPIO_PORTE_DEN_R |= 0x01;         // enable PE4,PE3,PE2,PE1
+	PE0 = 1;
 }
 
 //********Port_Init*****************
