@@ -25,7 +25,7 @@
 
 #define PA7  (*((volatile unsigned long *)0x40004200))
 
-uint8_t code;
+uint16_t code;
 uint32_t status;
 //int outpins[]= {1,2};
 
@@ -41,23 +41,26 @@ void PortA_Init(void){ volatile unsigned long delay;
 
 int i = 0;
 int main(void) {
-	
 	PLL_Init(Bus50MHz); //set up PLL
-	
-	//PortF_Init(0, 0, outpins, 2) ;
-	PortA_Init();
 	SysTick_Init();
-	code = 0xFF;
 	Port_OutInit(); // set up 74HC595 to output serial data 
-	Port_Out(code);// output
+	PortA_Init();
+	code = 0xFF;
+	Port_Out(code); // output
 	SysTick_Wait(100);
   code=0x00;
 	Port_Out(code);
+	code = 0x01;
 	
 	while(1) {
-		PA7=~PA7;
-		SysTick_Wait(100);
-		code=code+1;
+		//PA7=~PA7;
+		code = code<<1;
+		SysTick_Wait10ms(100);
 		Port_Out(code);
+		if(code > 0xFF){
+			code = 0x0001;
+		}
+//		Port_Out(0x01);
+//		Port_Out(0x04);
 	}
 }

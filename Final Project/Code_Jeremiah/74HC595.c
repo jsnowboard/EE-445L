@@ -50,13 +50,14 @@
 	
 void PortE_Init(void){
 	volatile unsigned long delay;
-  SYSCTL_RCGC2_R |= 0x10;           // Port E clock
-  delay = SYSCTL_RCGC2_R;           // allow time for clock to start
-  GPIO_PORTE_DIR_R |= 0x01;        // PE0 output 
-  GPIO_PORTE_AFSEL_R &= ~0x01;      // not alternative
-  GPIO_PORTE_AMSEL_R &= ~0x01;      // no analog
-  GPIO_PORTE_PCTL_R &= ~0x0000000F; // bits for PE0
-  GPIO_PORTE_DEN_R |= 0x01;         // enable PE0
+	SYSCTL_RCGC2_R |= 0x10;       // activate port E
+  delay = SYSCTL_RCGC2_R;        
+  delay = SYSCTL_RCGC2_R;
+  GPIO_PORTE_DIR_R |= 0x01;    // make PE0 output heartbeats
+  GPIO_PORTE_AFSEL_R &= ~0x01;   // disable alt funct on PE0
+  GPIO_PORTE_DEN_R |= 0x01;     // enable digital I/O on PE0
+  GPIO_PORTE_PCTL_R = ~0x0000FFFF;
+  GPIO_PORTE_AMSEL_R &= ~0x01;      // disable analog functionality on PE
 	PE0 = 0;
 }
 
@@ -66,10 +67,12 @@ void PortE_Init(void){
 // outputs: none
 // assumes: system clock rate less than or equal to 50 MHz
 void Port_OutInit(void){
-	PortE_Init();
+	volatile unsigned long delay;
+	//PortE_Init();
   SYSCTL_RCGCSSI_R |= 0x01;       // activate SSI0
   SYSCTL_RCGCGPIO_R |= 0x01;      // activate port A
-  while((SYSCTL_PRGPIO_R&0x01) == 0){};// ready?
+	delay = SYSCTL_RCGC2_R;           // allow time for clock to start
+  //while((SYSCTL_PRGPIO_R&0x01) == 0){};// ready?
   GPIO_PORTA_AFSEL_R |= 0x2C;     // enable alt funct on PA2,3,5
   GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R&0xFF0F00FF)+0x00202200;
   GPIO_PORTA_AMSEL_R = 0;         // disable analog functionality on PA
@@ -85,7 +88,7 @@ void Port_OutInit(void){
 // Send data to 74HC595 32-bit port
 // inputs:  output (0 to 255)
 // outputs: none
-void Port_Out(uint8_t code){
+void Port_Out(uint16_t code){
   while((SSI0_SR_R&0x02)==0){}; // wait until room in FIFO
   SSI0_DR_R = code;             // data out
 }
