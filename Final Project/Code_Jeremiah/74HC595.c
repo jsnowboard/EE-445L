@@ -43,9 +43,9 @@
 
 // see Figure 7.19 for complete schematic
 #include <stdint.h>
-#include "PortF.h"
 #include "../../inc/tm4c123gh6pm.h"
 
+#define PA3   (*((volatile uint32_t *)0x40004020))
 #define PE0 (*((volatile unsigned long *)0x40024004))
 	
 void PortE_Init(void){
