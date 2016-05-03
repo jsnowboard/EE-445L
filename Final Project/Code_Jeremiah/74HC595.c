@@ -45,7 +45,6 @@
 #include <stdint.h>
 #include "../../inc/tm4c123gh6pm.h"
 
-#define PA3   (*((volatile uint32_t *)0x40004020))
 #define PE0 (*((volatile unsigned long *)0x40024004))
 	
 void PortE_Init(void){
@@ -79,8 +78,8 @@ void Port_OutInit(void){
   GPIO_PORTA_DEN_R |= 0x2C;       // enable digital I/O on PA2,3,5
   SSI0_CR1_R = 0x00000000;        // disable SSI, master mode
   SSI0_CPSR_R = 0x02;             // 8 MHz SSIClk
-  SSI0_CR0_R &= ~(0x0000FFF0);    // SCR = 0, SPH = 0, SPO = 0 Freescale
-  SSI0_CR0_R = (SSI0_CR0_R&~0x0F)|0x07; // 8-bit data
+  SSI0_CR0_R &= ~(0x0000F0F0);    // SCR = 0, SPH = 0, SPO = 0 Freescale
+  SSI0_CR0_R = (SSI0_CR0_R&~0x0F)|0x0F; // 16-bit data
   SSI0_CR1_R |= 0x00000002;       // enable SSI
 }
 
@@ -93,3 +92,11 @@ void Port_Out(uint16_t code){
   SSI0_DR_R = code;             // data out
 }
 
+#define PA7 (* ((volatile unsigned long *) 0x40004200))
+#define PA6 (* ((volatile unsigned long *) 0x40004100))
+#define PA5 (* ((volatile unsigned long *) 0x40004080)) //DS
+#define PA4 (* ((volatile unsigned long *) 0x40004030))
+#define PA3 (* ((volatile unsigned long *) 0x40004020)) //ST
+#define PA2 (* ((volatile unsigned long *) 0x40004010)) //SH
+#define PA1 (* ((volatile unsigned long *) 0x40004008))
+#define PA0 (* ((volatile unsigned long *) 0x40004004))

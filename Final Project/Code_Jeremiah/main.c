@@ -54,12 +54,15 @@ int main(void) {
 	
 	while(1) {
 		//PA7=~PA7;
+		Port_Out(code);
 		code = code<<1;
 		SysTick_Wait10ms(100);
-		Port_Out(code);
-		if(code > 0xFF){
+		if(code == 0x0000){
 			code = 0x0001;
 		}
+//		Port_Out(0x10);
+//		Port_Out(0x20);
+//		Port_Out(0x40);
 //		Port_Out(0x01);
 //		Port_Out(0x04);
 	}

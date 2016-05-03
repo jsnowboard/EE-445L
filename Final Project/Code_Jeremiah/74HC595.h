@@ -54,4 +54,17 @@ void Port_OutInit(void);
 // Send data to 74HC595 8-bit port
 // inputs:  output (0 to 255)
 // outputs: none
-void Port_Out(uint8_t code);
+void Port_Out(uint16_t code);
+
+//********Port_Init*****************
+// Initialize 74HC595 serial shift register
+// inputs:  none
+// outputs: none
+// assumes: system clock rate less than or equal to 50 MHz
+void MyPort_OutInit(void);
+
+//********Port_Out*****************
+// Send data to 74HC595 8-bit port
+// inputs:  output (0 to 255)
+// outputs: none
+void MyPort_Out(uint16_t code);
