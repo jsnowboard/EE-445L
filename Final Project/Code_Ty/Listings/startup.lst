@@ -1084,10 +1084,10 @@ ARM Macro Assembler    Page 17
   674 0000001C                 END
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --apcs=interw
 ork --depend=.\objects\startup.d -o.\objects\startup.o -I"A:\Documents\Github\E
-E 445L Fixed\trunk\Final Project\Code_Jeremiah\RTE" -IA:\Keil_v5\ARM\PACK\Keil\
-LM4F_DFP\1.0.0\Device\Include -IA:\Keil_v5\ARM\CMSIS\Include --predefine="__EVA
-L SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 5
-17" --predefine="LM4F120 SETA 1" --list=.\listings\startup.lst startup.s
+E 445L Fixed\trunk\Final Project\Code_Ty\RTE" -IA:\Keil_v5\ARM\PACK\Keil\LM4F_D
+FP\1.0.0\Device\Include -IA:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA
+ 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 517" --
+predefine="LM4F120 SETA 1" --list=.\listings\startup.lst startup.s
 
 
 

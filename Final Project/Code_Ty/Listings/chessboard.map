@@ -4,16 +4,18 @@ Component: ARM Compiler 5.06 update 1 (build 61) Tool: armlink [4d35a8]
 
 Section Cross References
 
-    74hc165.o(i.Port_In) refers to portf.o(i.Toggle) for Toggle
-    74hc165.o(i.Port_InInit) refers to portf.o(i.PortF_Init) for PortF_Init
-    74hc595.o(i.Port_Out) refers to portf.o(i.Toggle) for Toggle
-    74hc595.o(i.Port_OutInit) refers to portf.o(i.PortF_Init) for PortF_Init
     startup.o(RESET) refers to startup.o(STACK) for StackMem
     startup.o(RESET) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    main.o(i.arrayOutput) refers to 74hc595.o(i.Port_Out) for Port_Out
+    main.o(i.arrayOutput) refers to main.o(.data) for myOutput
     main.o(i.main) refers to pll.o(i.PLL_Init) for PLL_Init
+    main.o(i.main) refers to switch.o(i.Board_Init) for Board_Init
     main.o(i.main) refers to 74hc595.o(i.Port_OutInit) for Port_OutInit
     main.o(i.main) refers to 74hc595.o(i.Port_Out) for Port_Out
-    main.o(i.main) refers to main.o(.data) for code
+    main.o(i.main) refers to systick.o(i.SysTick_Wait10ms) for SysTick_Wait10ms
+    main.o(i.main) refers to switch.o(i.Switch_Debounce) for Switch_Debounce
+    main.o(i.main) refers to main.o(i.arrayOutput) for arrayOutput
+    main.o(i.main) refers to main.o(.data) for status
     switch.o(i.Board_Init) refers to systick.o(i.SysTick_Init) for SysTick_Init
     switch.o(i.Switch_Debounce) refers to switch.o(i.Board_Input) for Board_Input
     switch.o(i.Switch_Debounce) refers to systick.o(i.SysTick_Wait) for SysTick_Wait
@@ -21,6 +23,97 @@ Section Cross References
     switch.o(i.Switch_WaitForTouch) refers to switch.o(i.Board_Input) for Board_Input
     switch.o(i.Switch_WaitForTouch) refers to systick.o(i.SysTick_Wait) for SysTick_Wait
     systick.o(i.SysTick_Wait10ms) refers to systick.o(i.SysTick_Wait) for SysTick_Wait
+    st7735.o(i.Output_Clear) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.Output_Color) refers to st7735.o(i.ST7735_SetTextColor) for ST7735_SetTextColor
+    st7735.o(i.Output_Init) refers to st7735.o(i.ST7735_InitR) for ST7735_InitR
+    st7735.o(i.Output_Init) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.Output_Off) refers to st7735.o(i.Output_Clear) for Output_Clear
+    st7735.o(i.Output_On) refers to st7735.o(i.Output_Init) for Output_Init
+    st7735.o(i.ST7735_DrawBitmap) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawBitmap) refers to st7735.o(i.writedata) for writedata
+    st7735.o(i.ST7735_DrawBitmap) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(i.pushColor) for pushColor
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(.constdata) for Font
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(.constdata) for Font
+    st7735.o(i.ST7735_DrawFastHLine) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawFastHLine) refers to st7735.o(i.writedata) for writedata
+    st7735.o(i.ST7735_DrawFastHLine) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawFastVLine) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawFastVLine) refers to st7735.o(i.writedata) for writedata
+    st7735.o(i.ST7735_DrawFastVLine) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawPixel) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawPixel) refers to st7735.o(i.pushColor) for pushColor
+    st7735.o(i.ST7735_DrawPixel) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawString) refers to st7735.o(i.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(i.ST7735_FillRect) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_FillRect) refers to st7735.o(i.writedata) for writedata
+    st7735.o(i.ST7735_FillRect) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_FillScreen) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(i.ST7735_FillScreen) refers to st7735.o(.data) for _height
+    st7735.o(i.ST7735_InitB) refers to st7735.o(i.commonInit) for commonInit
+    st7735.o(i.ST7735_InitB) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    st7735.o(i.ST7735_InitB) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.ST7735_InitB) refers to st7735.o(.constdata) for Bcmd
+    st7735.o(i.ST7735_InitB) refers to st7735.o(.data) for StTextColor
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.commonInit) for commonInit
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.commandList) for commandList
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.writecommand) for writecommand
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.writedata) for writedata
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.ST7735_InitR) refers to st7735.o(.constdata) for Rcmd1
+    st7735.o(i.ST7735_InitR) refers to st7735.o(.data) for ColStart
+    st7735.o(i.ST7735_InvertDisplay) refers to st7735.o(i.writecommand) for writecommand
+    st7735.o(i.ST7735_OutChar) refers to st7735.o(i.ST7735_DrawString) for ST7735_DrawString
+    st7735.o(i.ST7735_OutChar) refers to st7735.o(i.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(i.ST7735_OutChar) refers to st7735.o(.data) for StY
+    st7735.o(i.ST7735_OutString) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(i.fillmessage) for fillmessage
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(i.ST7735_DrawString) for ST7735_DrawString
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(i.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(.data) for Messageindex
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(.bss) for Message
+    st7735.o(i.ST7735_PlotBar) refers to st7735.o(i.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(i.ST7735_PlotBar) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotClear) refers to st7735.o(i.ST7735_Color565) for ST7735_Color565
+    st7735.o(i.ST7735_PlotClear) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(i.ST7735_PlotClear) refers to st7735.o(.data) for Ymax
+    st7735.o(i.ST7735_PlotLine) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_PlotLine) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotNext) refers to st7735.o(.data) for X
+    st7735.o(i.ST7735_PlotNextErase) refers to st7735.o(i.ST7735_Color565) for ST7735_Color565
+    st7735.o(i.ST7735_PlotNextErase) refers to st7735.o(i.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(i.ST7735_PlotNextErase) refers to st7735.o(.data) for X
+    st7735.o(i.ST7735_PlotPoint) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_PlotPoint) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotPoints) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_PlotPoints) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotdBfs) refers to st7735.o(i.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(i.ST7735_PlotdBfs) refers to st7735.o(.constdata) for dBfs
+    st7735.o(i.ST7735_PlotdBfs) refers to st7735.o(.data) for X
+    st7735.o(i.ST7735_SetCursor) refers to st7735.o(.data) for StX
+    st7735.o(i.ST7735_SetRotation) refers to st7735.o(i.writecommand) for writecommand
+    st7735.o(i.ST7735_SetRotation) refers to st7735.o(i.writedata) for writedata
+    st7735.o(i.ST7735_SetRotation) refers to st7735.o(.data) for Rotation
+    st7735.o(i.ST7735_SetTextColor) refers to st7735.o(.data) for StTextColor
+    st7735.o(i.commandList) refers to st7735.o(i.writecommand) for writecommand
+    st7735.o(i.commandList) refers to st7735.o(i.writedata) for writedata
+    st7735.o(i.commandList) refers to st7735.o(i.Delay1ms) for Delay1ms
+    st7735.o(i.commonInit) refers to st7735.o(i.Delay1ms) for Delay1ms
+    st7735.o(i.commonInit) refers to st7735.o(i.commandList) for commandList
+    st7735.o(i.commonInit) refers to st7735.o(.data) for RowStart
+    st7735.o(i.fillmessage) refers to st7735.o(.bss) for Message
+    st7735.o(i.fillmessage) refers to st7735.o(.data) for Messageindex
+    st7735.o(i.fputc) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(i.pushColor) refers to st7735.o(i.writedata) for writedata
+    st7735.o(i.setAddrWindow) refers to st7735.o(i.writecommand) for writecommand
+    st7735.o(i.setAddrWindow) refers to st7735.o(i.writedata) for writedata
+    st7735.o(i.setAddrWindow) refers to st7735.o(.data) for ColStart
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -42,24 +135,67 @@ Section Cross References
 
 Removing Unused input sections from the image.
 
-    Removing 74hc165.o(i.Port_In), (72 bytes).
-    Removing 74hc165.o(i.Port_InInit), (208 bytes).
+    Removing 74hc165.o(i.Port_In), (64 bytes).
+    Removing 74hc165.o(i.Port_InInit), (196 bytes).
+    Removing 74hc595.o(i.PortE_Init), (120 bytes).
     Removing startup.o(HEAP), (0 bytes).
     Removing startup.o(.text), (28 bytes).
-    Removing switch.o(i.Board_Init), (156 bytes).
-    Removing switch.o(i.Board_Input), (12 bytes).
-    Removing switch.o(i.Switch_Debounce), (52 bytes).
+    Removing main.o(.bss), (128 bytes).
     Removing switch.o(i.Switch_Init), (120 bytes).
     Removing switch.o(i.Switch_Init3), (112 bytes).
     Removing switch.o(i.Switch_Input), (12 bytes).
     Removing switch.o(i.Switch_Input2), (16 bytes).
     Removing switch.o(i.Switch_Input3), (12 bytes).
     Removing switch.o(i.Switch_WaitForTouch), (44 bytes).
-    Removing systick.o(i.SysTick_Init), (24 bytes).
-    Removing systick.o(i.SysTick_Wait), (32 bytes).
-    Removing systick.o(i.SysTick_Wait10ms), (28 bytes).
+    Removing st7735.o(i.Delay1ms), (32 bytes).
+    Removing st7735.o(i.Output_Clear), (10 bytes).
+    Removing st7735.o(i.Output_Color), (12 bytes).
+    Removing st7735.o(i.Output_Init), (16 bytes).
+    Removing st7735.o(i.Output_Off), (8 bytes).
+    Removing st7735.o(i.Output_On), (8 bytes).
+    Removing st7735.o(i.ST7735_Color565), (24 bytes).
+    Removing st7735.o(i.ST7735_DrawBitmap), (288 bytes).
+    Removing st7735.o(i.ST7735_DrawChar), (272 bytes).
+    Removing st7735.o(i.ST7735_DrawCharS), (248 bytes).
+    Removing st7735.o(i.ST7735_DrawFastHLine), (124 bytes).
+    Removing st7735.o(i.ST7735_DrawFastVLine), (124 bytes).
+    Removing st7735.o(i.ST7735_DrawPixel), (72 bytes).
+    Removing st7735.o(i.ST7735_DrawString), (84 bytes).
+    Removing st7735.o(i.ST7735_FillRect), (172 bytes).
+    Removing st7735.o(i.ST7735_FillScreen), (36 bytes).
+    Removing st7735.o(i.ST7735_InitB), (40 bytes).
+    Removing st7735.o(i.ST7735_InitR), (124 bytes).
+    Removing st7735.o(i.ST7735_InvertDisplay), (22 bytes).
+    Removing st7735.o(i.ST7735_OutChar), (212 bytes).
+    Removing st7735.o(i.ST7735_OutString), (22 bytes).
+    Removing st7735.o(i.ST7735_OutUDec), (140 bytes).
+    Removing st7735.o(i.ST7735_PlotBar), (88 bytes).
+    Removing st7735.o(i.ST7735_PlotClear), (92 bytes).
+    Removing st7735.o(i.ST7735_PlotLine), (264 bytes).
+    Removing st7735.o(i.ST7735_PlotNext), (32 bytes).
+    Removing st7735.o(i.ST7735_PlotNextErase), (64 bytes).
+    Removing st7735.o(i.ST7735_PlotPoint), (152 bytes).
+    Removing st7735.o(i.ST7735_PlotPoints), (172 bytes).
+    Removing st7735.o(i.ST7735_PlotdBfs), (60 bytes).
+    Removing st7735.o(i.ST7735_SetCursor), (32 bytes).
+    Removing st7735.o(i.ST7735_SetRotation), (212 bytes).
+    Removing st7735.o(i.ST7735_SetTextColor), (12 bytes).
+    Removing st7735.o(i.ST7735_SwapColor), (18 bytes).
+    Removing st7735.o(i.commandList), (86 bytes).
+    Removing st7735.o(i.commonInit), (392 bytes).
+    Removing st7735.o(i.ferror), (8 bytes).
+    Removing st7735.o(i.fgetc), (6 bytes).
+    Removing st7735.o(i.fillmessage), (72 bytes).
+    Removing st7735.o(i.fputc), (16 bytes).
+    Removing st7735.o(i.pushColor), (18 bytes).
+    Removing st7735.o(i.setAddrWindow), (116 bytes).
+    Removing st7735.o(i.writecommand), (48 bytes).
+    Removing st7735.o(i.writedata), (36 bytes).
+    Removing st7735.o(.bss), (12 bytes).
+    Removing st7735.o(.constdata), (2018 bytes).
+    Removing st7735.o(.data), (44 bytes).
 
-16 unused section(s) (total 928 bytes) removed from the image.
+59 unused section(s) (total 7012 bytes) removed from the image.
 
 ==============================================================================
 
@@ -70,23 +206,24 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     RESET                                    0x00000000   Section      644  startup.o(RESET)
+    ../clib/../cmprslib/zerorunl2.c          0x00000000   Number         0  __dczerorl2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     74HC165.c                                0x00000000   Number         0  74hc165.o ABSOLUTE
     74HC595.c                                0x00000000   Number         0  74hc595.o ABSOLUTE
     PLL.c                                    0x00000000   Number         0  pll.o ABSOLUTE
-    PortF.c                                  0x00000000   Number         0  portf.o ABSOLUTE
+    ST7735.c                                 0x00000000   Number         0  st7735.o ABSOLUTE
     Switch.c                                 0x00000000   Number         0  switch.o ABSOLUTE
     SysTick.c                                0x00000000   Number         0  systick.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
@@ -105,18 +242,24 @@ Image Symbol Table
     .ARM.Collect$$$$00002712                 0x00000294   Section        4  entry2.o(.ARM.Collect$$$$00002712)
     __lit__00000000                          0x00000294   Data           4  entry2.o(.ARM.Collect$$$$00002712)
     .text                                    0x00000298   Section       36  init.o(.text)
-    i.PLL_Init                               0x000002bc   Section        0  pll.o(i.PLL_Init)
-    i.PortF_Init                             0x00000328   Section        0  portf.o(i.PortF_Init)
-    i.Port_Out                               0x00000388   Section        0  74hc595.o(i.Port_Out)
-    i.Port_OutInit                           0x000003a8   Section        0  74hc595.o(i.Port_OutInit)
-    i.Toggle                                 0x00000444   Section        0  portf.o(i.Toggle)
-    i.__scatterload_copy                     0x00000458   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x00000466   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x00000468   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.main                                   0x00000478   Section        0  main.o(i.main)
-    .data                                    0x20000000   Section       12  main.o(.data)
-    STACK                                    0x20000010   Section     1024  startup.o(STACK)
-    StackMem                                 0x20000010   Data           0  startup.o(STACK)
+    .text                                    0x000002bc   Section        0  __dczerorl2.o(.text)
+    i.Board_Init                             0x00000314   Section        0  switch.o(i.Board_Init)
+    i.Board_Input                            0x000003b0   Section        0  switch.o(i.Board_Input)
+    i.PLL_Init                               0x000003bc   Section        0  pll.o(i.PLL_Init)
+    i.Port_Out                               0x00000438   Section        0  74hc595.o(i.Port_Out)
+    i.Port_OutInit                           0x00000450   Section        0  74hc595.o(i.Port_OutInit)
+    i.Switch_Debounce                        0x000004f0   Section        0  switch.o(i.Switch_Debounce)
+    i.SysTick_Init                           0x00000528   Section        0  systick.o(i.SysTick_Init)
+    i.SysTick_Wait                           0x00000540   Section        0  systick.o(i.SysTick_Wait)
+    i.SysTick_Wait10ms                       0x00000560   Section        0  systick.o(i.SysTick_Wait10ms)
+    i.__scatterload_copy                     0x0000057c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0000058a   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0000058c   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.arrayOutput                            0x0000059c   Section        0  main.o(i.arrayOutput)
+    i.main                                   0x000007c0   Section        0  main.o(i.main)
+    .data                                    0x20000000   Section      796  main.o(.data)
+    STACK                                    0x20000320   Section     1024  startup.o(STACK)
+    StackMem                                 0x20000320   Data           0  startup.o(STACK)
 
     Global Symbols
 
@@ -127,7 +270,6 @@ Image Symbol Table
     __Vectors                                0x00000000   Data           0  startup.o(RESET)
     __cpp_initialize__aeabi_                  - Undefined Weak Reference
     __cxa_finalize                            - Undefined Weak Reference
-    __decompress                              - Undefined Weak Reference
     _clock_init                               - Undefined Weak Reference
     _microlib_exit                            - Undefined Weak Reference
     Reset_Handler                            0x0000026d   Thumb Code     0  startup.o(RESET)
@@ -265,21 +407,38 @@ Image Symbol Table
     __rt_final_exit                          0x00000295   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
     __scatterload                            0x00000299   Thumb Code    28  init.o(.text)
     __scatterload_rt2                        0x00000299   Thumb Code     0  init.o(.text)
-    PLL_Init                                 0x000002bd   Thumb Code   104  pll.o(i.PLL_Init)
-    PortF_Init                               0x00000329   Thumb Code    76  portf.o(i.PortF_Init)
-    Port_Out                                 0x00000389   Thumb Code    28  74hc595.o(i.Port_Out)
-    Port_OutInit                             0x000003a9   Thumb Code   132  74hc595.o(i.Port_OutInit)
-    Toggle                                   0x00000445   Thumb Code    14  portf.o(i.Toggle)
-    __scatterload_copy                       0x00000459   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x00000467   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x00000469   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    main                                     0x00000479   Thumb Code    28  main.o(i.main)
-    Region$$Table$$Base                      0x00000498   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000004b8   Number         0  anon$$obj.o(Region$$Table)
-    code                                     0x20000000   Data           1  main.o(.data)
-    status                                   0x20000004   Data           4  main.o(.data)
-    i                                        0x20000008   Data           4  main.o(.data)
-    __initial_sp                             0x20000410   Data           0  startup.o(STACK)
+    __decompress                             0x000002bd   Thumb Code     0  __dczerorl2.o(.text)
+    __decompress1                            0x000002bd   Thumb Code    86  __dczerorl2.o(.text)
+    Board_Init                               0x00000315   Thumb Code   136  switch.o(i.Board_Init)
+    Board_Input                              0x000003b1   Thumb Code     6  switch.o(i.Board_Input)
+    PLL_Init                                 0x000003bd   Thumb Code   120  pll.o(i.PLL_Init)
+    Port_Out                                 0x00000439   Thumb Code    20  74hc595.o(i.Port_Out)
+    Port_OutInit                             0x00000451   Thumb Code   132  74hc595.o(i.Port_OutInit)
+    Switch_Debounce                          0x000004f1   Thumb Code    46  switch.o(i.Switch_Debounce)
+    SysTick_Init                             0x00000529   Thumb Code    24  systick.o(i.SysTick_Init)
+    SysTick_Wait                             0x00000541   Thumb Code    32  systick.o(i.SysTick_Wait)
+    SysTick_Wait10ms                         0x00000561   Thumb Code    22  systick.o(i.SysTick_Wait10ms)
+    __scatterload_copy                       0x0000057d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0000058b   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0000058d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    arrayOutput                              0x0000059d   Thumb Code   538  main.o(i.arrayOutput)
+    main                                     0x000007c1   Thumb Code   336  main.o(i.main)
+    Region$$Table$$Base                      0x00000938   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000958   Number         0  anon$$obj.o(Region$$Table)
+    PAWN                                     0x20000000   Data         128  main.o(.data)
+    BPAWN                                    0x20000080   Data           4  main.o(.data)
+    KNIGHT                                   0x20000084   Data         128  main.o(.data)
+    BISHOP                                   0x20000104   Data         128  main.o(.data)
+    ROOK                                     0x20000184   Data         128  main.o(.data)
+    QUEEN                                    0x20000204   Data         128  main.o(.data)
+    KING                                     0x20000284   Data         128  main.o(.data)
+    myOutput                                 0x20000304   Data           4  main.o(.data)
+    i                                        0x20000308   Data           4  main.o(.data)
+    status                                   0x2000030c   Data           4  main.o(.data)
+    mode                                     0x20000310   Data           4  main.o(.data)
+    specialOut                               0x20000314   Data           4  main.o(.data)
+    state                                    0x20000318   Data           4  main.o(.data)
+    __initial_sp                             0x20000720   Data           0  startup.o(STACK)
 
 
 
@@ -289,49 +448,56 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x000004c4, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000c74, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x000009bc])
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x000004b8, Max: 0xffffffff, ABSOLUTE)
-
-    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00000000   0x00000284   Code   RO           47  * RESET               startup.o
-    0x00000284   0x00000000   Code   RO          191  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x00000284   0x00000004   Code   RO          194    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x00000288   0x00000004   Code   RO          197    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x0000028c   0x00000000   Code   RO          199    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x0000028c   0x00000000   Code   RO          201    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x0000028c   0x00000008   Code   RO          202    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x00000294   0x00000000   Code   RO          204    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x00000294   0x00000000   Code   RO          206    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x00000294   0x00000004   Code   RO          195    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x00000298   0x00000024   Code   RO          208    .text               mc_w.l(init.o)
-    0x000002bc   0x0000006c   Code   RO           55    i.PLL_Init          pll.o
-    0x00000328   0x00000060   Code   RO          173    i.PortF_Init        portf.o
-    0x00000388   0x00000020   Code   RO           27    i.Port_Out          74hc595.o
-    0x000003a8   0x0000009c   Code   RO           28    i.Port_OutInit      74hc595.o
-    0x00000444   0x00000014   Code   RO          174    i.Toggle            portf.o
-    0x00000458   0x0000000e   Code   RO          212    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x00000466   0x00000002   Code   RO          213    i.__scatterload_null  mc_w.l(handlers.o)
-    0x00000468   0x0000000e   Code   RO          214    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x00000476   0x00000002   PAD
-    0x00000478   0x00000020   Code   RO           70    i.main              main.o
-    0x00000498   0x00000020   Data   RO          210    Region$$Table       anon$$obj.o
-
-
-    Execution Region ER_RW (Base: 0x20000000, Size: 0x0000000c, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000958, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x0000000c   Data   RW           71    .data               main.o
+    0x00000000   0x00000284   Code   RO           53  * RESET               startup.o
+    0x00000284   0x00000000   Code   RO          458  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x00000284   0x00000004   Code   RO          461    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x00000288   0x00000004   Code   RO          464    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x0000028c   0x00000000   Code   RO          466    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x0000028c   0x00000000   Code   RO          468    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x0000028c   0x00000008   Code   RO          469    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x00000294   0x00000000   Code   RO          471    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x00000294   0x00000000   Code   RO          473    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x00000294   0x00000004   Code   RO          462    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x00000298   0x00000024   Code   RO          475    .text               mc_w.l(init.o)
+    0x000002bc   0x00000056   Code   RO          485    .text               mc_w.l(__dczerorl2.o)
+    0x00000312   0x00000002   PAD
+    0x00000314   0x0000009c   Code   RO          102    i.Board_Init        switch.o
+    0x000003b0   0x0000000c   Code   RO          103    i.Board_Input       switch.o
+    0x000003bc   0x0000007c   Code   RO           61    i.PLL_Init          pll.o
+    0x00000438   0x00000018   Code   RO           28    i.Port_Out          74hc595.o
+    0x00000450   0x000000a0   Code   RO           29    i.Port_OutInit      74hc595.o
+    0x000004f0   0x00000038   Code   RO          104    i.Switch_Debounce   switch.o
+    0x00000528   0x00000018   Code   RO          162    i.SysTick_Init      systick.o
+    0x00000540   0x00000020   Code   RO          163    i.SysTick_Wait      systick.o
+    0x00000560   0x0000001c   Code   RO          164    i.SysTick_Wait10ms  systick.o
+    0x0000057c   0x0000000e   Code   RO          479    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0000058a   0x00000002   Code   RO          480    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0000058c   0x0000000e   Code   RO          481    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0000059a   0x00000002   PAD
+    0x0000059c   0x00000224   Code   RO           76    i.arrayOutput       main.o
+    0x000007c0   0x00000178   Code   RO           77    i.main              main.o
+    0x00000938   0x00000020   Data   RO          477    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_ZI (Base: 0x2000000c, Size: 0x00000404, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Base: 0x20000000, Size: 0x0000031c, Max: 0xffffffff, ABSOLUTE, COMPRESSED[0x00000064])
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x2000000c   0x00000004   PAD
-    0x20000010   0x00000400   Zero   RW           45    STACK               startup.o
+    0x20000000   0x0000031c   Data   RW           79    .data               main.o
+
+
+    Execution Region ER_ZI (Base: 0x2000031c, Size: 0x00000404, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x2000031c   0x00000004   PAD
+    0x20000320   0x00000400   Zero   RW           51    STACK               startup.o
 
 
 ==============================================================================
@@ -342,14 +508,15 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
          0          0          0          0          0       4500   74hc165.o
-       188         28          0          0          0        950   74hc595.o
-        32          4          0         12          0        687   main.o
-       108          4          0          0          0        455   pll.o
-       116         26          0          0          0        870   portf.o
-       644        620          0          0       1024        752   startup.o
+       184         32          0          0          0        934   74hc595.o
+       924         90          0        796          0       2948   main.o
+       124          4          0          0          0        459   pll.o
+       644        620          0          0       1024        748   startup.o
+       224         36          0          0          0       1409   switch.o
+        84          6          0          0          0       1897   systick.o
 
     ----------------------------------------------------------------------
-      1088        682         32         12       1028       8214   Object Totals
+      2184        788         32        796       1028      12895   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          0          4          0   (incl. Padding)
 
@@ -357,6 +524,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
 
+        86          0          0          0          0          0   __dczerorl2.o
          0          0          0          0          0          0   entry.o
          0          0          0          0          0          0   entry10a.o
          0          0          0          0          0          0   entry11a.o
@@ -369,17 +537,17 @@ Image component sizes
         36          8          0          0          0         68   init.o
 
     ----------------------------------------------------------------------
-        88         16          0          0          0         68   Library Totals
-         2          0          0          0          0          0   (incl. Padding)
+       176         16          0          0          0         68   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-        86         16          0          0          0         68   mc_w.l
+       172         16          0          0          0         68   mc_w.l
 
     ----------------------------------------------------------------------
-        88         16          0          0          0         68   Library Totals
+       176         16          0          0          0         68   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -388,15 +556,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1176        698         32         12       1028       8330   Grand Totals
-      1176        698         32         12       1028       8330   ELF Image Totals
-      1176        698         32         12          0          0   ROM Totals
+      2360        804         32        796       1028      12883   Grand Totals
+      2360        804         32        100       1028      12883   ELF Image Totals (compressed)
+      2360        804         32        100          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1208 (   1.18kB)
-    Total RW  Size (RW Data + ZI Data)              1040 (   1.02kB)
-    Total ROM Size (Code + RO Data + RW Data)       1220 (   1.19kB)
+    Total RO  Size (Code + RO Data)                 2392 (   2.34kB)
+    Total RW  Size (RW Data + ZI Data)              1824 (   1.78kB)
+    Total ROM Size (Code + RO Data + RW Data)       2492 (   2.43kB)
 
 ==============================================================================
 

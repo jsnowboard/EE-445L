@@ -6,3 +6,4 @@
 .\objects\main.o: 74HC165.h
 .\objects\main.o: ../../inc/tm4c123gh6pm.h
 .\objects\main.o: Switch.h
+.\objects\main.o: SysTick.h
