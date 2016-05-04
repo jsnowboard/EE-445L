@@ -80,7 +80,7 @@ void Port_OutInit(void){
   SSI0_CPSR_R = 0x02;             // 8 MHz SSIClk
   SSI0_CR0_R &= ~(0x0000F0F0);    // SCR = 0, SPH = 0, SPO = 0 Freescale
   SSI0_CR0_R = (SSI0_CR0_R&~0x0F)|0x0F; // 16-bit data
-  SSI0_CR1_R |= 0x00000002;       // enable SSI
+	SSI0_CR1_R |= 0x00000002;       // enable SSI
 }
 
 //********Port_Out*****************

@@ -63,7 +63,7 @@ void Port_InInit(void){
   GPIO_PORTA_AMSEL_R = 0;         // disable analog functionality on PA
   GPIO_PORTA_DEN_R |= 0x1C;       // enable digital I/O on PA2,3,4
   GPIO_PORTA_DIR_R |= 0x08;       // output on PA3
-  SSI0_CR1_R = 0x00000000;        // disable SSI, master mode
+  SSI0_CR1_R = 0x00000001;        // disable SSI, master mode, and enable internal loopback mode
   SSI0_CPSR_R = 0x02;             // 8 MHz SSIClk
   SSI0_CR0_R = (SSI0_CR0_R&~0xFFF0)|0x40;  // SCR = 0, SPH = 0, SPO = 1 Freescale
   SSI0_CR0_R = (SSI0_CR0_R&~0x0F)|0x07; // 8-bit data

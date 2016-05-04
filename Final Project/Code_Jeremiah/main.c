@@ -56,7 +56,7 @@ int main(void) {
 		//PA7=~PA7;
 		Port_Out(code);
 		code = code<<1;
-		SysTick_Wait10ms(100);
+		SysTick_Wait10ms(1000);
 		if(code == 0x0000){
 			code = 0x0001;
 		}
