@@ -22,6 +22,7 @@
 #define PF7  (*((volatile unsigned long *)0x40025200))
 
 int PAWN[32] = {1,12,18};
+int BPAWN = 133121;
 int KNIGHT[32] = {2,6,8,11,15,23,27,29,31};
 int BISHOP[32] = {1,2,7,13,17,18,19,20,21,25,30};
 int ROOK[32] = {3,5,9,12,14,19,24,26,32};
