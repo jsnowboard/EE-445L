@@ -1,0 +1,35 @@
+Dependencies for Project 'chessboard', Target 'Target 1': (DO NOT MODIFY !)
+F (.\74HC165.c)(0x5723D250)(-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I "A:\Documents\Github\EE 445L Fixed\trunk\Final Project\Code_Jeremiah\RTE"-I A:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include-I A:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DLM4F120-o .\objects\74hc165.o --omf_browse .\objects\74hc165.crf --depend .\objects\74hc165.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (PortF.h)(0x5723D250)
+I (../../inc/tm4c123gh6pm.h)(0x56DCEA27)
+F (.\74HC595.c)(0x5723D250)(-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I "A:\Documents\Github\EE 445L Fixed\trunk\Final Project\Code_Jeremiah\RTE"-I A:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include-I A:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DLM4F120-o .\objects\74hc595.o --omf_browse .\objects\74hc595.crf --depend .\objects\74hc595.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (PortF.h)(0x5723D250)
+I (../../inc/tm4c123gh6pm.h)(0x56DCEA27)
+F (.\Constants.h)(0x5723D250)()
+F (.\startup.s)(0x5723D250)(--cpu Cortex-M4 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "A:\Documents\Github\EE 445L Fixed\trunk\Final Project\Code_Jeremiah\RTE"-I A:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include-I A:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 517" --pd "LM4F120 SETA 1"--list .\listings\startup.lst --xref -o .\objects\startup.o --depend .\objects\startup.d)
+F (.\PLL.c)(0x5723D250)(-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I "A:\Documents\Github\EE 445L Fixed\trunk\Final Project\Code_Jeremiah\RTE"-I A:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include-I A:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DLM4F120-o .\objects\pll.o --omf_browse .\objects\pll.crf --depend .\objects\pll.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (PLL.h)(0x5723D250)
+I (../../inc/tm4c123gh6pm.h)(0x56DCEA27)
+F (.\main.c)(0x5724D36D)(-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I "A:\Documents\Github\EE 445L Fixed\trunk\Final Project\Code_Jeremiah\RTE"-I A:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include-I A:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DLM4F120-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (A:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (PLL.h)(0x5723D250)
+I (74HC595.h)(0x5723D250)
+I (74HC165.h)(0x5723D250)
+I (../../inc/tm4c123gh6pm.h)(0x56DCEA27)
+I (Switch.h)(0x5723D250)
+F (.\Switch.c)(0x5723D250)(-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I "A:\Documents\Github\EE 445L Fixed\trunk\Final Project\Code_Jeremiah\RTE"-I A:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include-I A:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DLM4F120-o .\objects\switch.o --omf_browse .\objects\switch.crf --depend .\objects\switch.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (../../inc/tm4c123gh6pm.h)(0x56DCEA27)
+I (SysTick.h)(0x5723D250)
+F (.\SysTick.c)(0x5723D250)(-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I "A:\Documents\Github\EE 445L Fixed\trunk\Final Project\Code_Jeremiah\RTE"-I A:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include-I A:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DLM4F120-o .\objects\systick.o --omf_browse .\objects\systick.crf --depend .\objects\systick.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (../../inc/tm4c123gh6pm.h)(0x56DCEA27)
+F (.\PortF.c)(0x5723D250)(-c --cpu Cortex-M4 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I "A:\Documents\Github\EE 445L Fixed\trunk\Final Project\Code_Jeremiah\RTE"-I A:\Keil_v5\ARM\PACK\Keil\LM4F_DFP\1.0.0\Device\Include-I A:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DLM4F120-o .\objects\portf.o --omf_browse .\objects\portf.crf --depend .\objects\portf.d)
+I (A:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55DBF060)
+I (A:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DBF056)
+I (PortF.h)(0x5723D250)
+I (../../inc/tm4c123gh6pm.h)(0x56DCEA27)
